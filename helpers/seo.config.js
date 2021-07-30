@@ -1,12 +1,12 @@
 export default {
-  defaultTitle: 'Boilerplate | Next x Tailwind x Motion x Locomotive Scroll',
-  description: 'A simple Next.js starter kit with Tailwind, Framer Motion and Locomotive.',
-  titleTemplate: '%s | Next x Tailwind x Motion x Locomotive',
+  defaultTitle: 'Field Playground',
+  description: 'ShiftWalk boilerplate',
+  titleTemplate: '%s | ShiftWalk Boilerplate',
   openGraph: {
     type: 'website',
     locale: 'en_GB',
-    url: 'https://sg-next-tailwind-motion.vercel.app/',
-    site_name: 'Next x Tailwind x Motion x Locomotive',
+    url: 'https://field-playground.vercel.app/',
+    site_name: 'Field Playground',
   },
   twitter: {
     handle: '@samuelgoddard',
