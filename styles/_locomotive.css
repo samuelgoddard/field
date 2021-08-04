@@ -25,9 +25,5 @@ html.has-scroll-dragging {
 }
 
 [data-scroll-direction="horizontal"] [data-scroll-container] {
-  @apply h-screen inline-block whitespace-nowrap;
-}
-
-[data-scroll-direction="horizontal"] [data-scroll-section] {
-  @apply inline-block align-top whitespace-nowrap h-full;
+  @apply h-screen inline-block;
 }

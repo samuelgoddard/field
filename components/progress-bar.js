@@ -17,8 +17,8 @@ export default function ProgressBar() {
   }, [scroll])
 
   return(
-    <div className="fixed bottom-0 left-0 right-0 w-full bg-black bg-opacity-[0.075] h-[8px] progress-bar ml-[75px]">
-      <div className="progress-bar__progress absolute bottom-0 left-0 top-0 h-full w-[0px] bg-black bg-opacity-100"></div>
+    <div className="hidden lg:block fixed bottom-0 left-0 right-0 w-full bg-soft-black-dark bg-opacity-[0.075] h-[8px] progress-bar z-[40] ml-[85px] border-t border-soft-black-dark">
+      <div className="progress-bar__progress absolute bottom-0 left-0 top-0 h-full w-[0px] bg-soft-black-dark bg-opacity-100"></div>
     </div>
   )
 }

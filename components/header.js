@@ -20,14 +20,17 @@ export default function Header({ route }) {
   }, [scroll])
   
   return (
-    <header className="fixed top-0 left-0 right-0 md:right-auto md:bottom-0 h-[80px] md:h-full w-full md:w-[90px] border-b md:border-b-none md:border-r border-black bg-white z-[50] flex items-center justify-center bg-white">
+    <header className="fixed top-0 left-0 right-0 lg:right-auto lg:bottom-0 h-[80px] lg:h-full w-full lg:w-[90px] lg:border-r border-soft-black-dark z-[50] flex items-center justify-end px-[25px] lg:px-0 lg:justify-center">
+
+      <img className="hidden lg:block w-full h-full absolute inset-0 z-0 object-cover object-right-bottom" src="/images/supergraphic.jpg" alt="Field Supergraphic" />
+
       {/* Menu Button */}
-      <button className="w-[55px] h-[55px] rounded-full flex items-center justify-center bg-[#F8F3ED] relative overflow-hidden" onClick={() => modalEl.current.open()}>
-        <div className="w-full flex flex-wrap justify-center">
-          <span className="w-[52%] h-[3px] bg-black block mb-[5px]"></span>
-          <span className="w-[52%] h-[3px] bg-black block"></span>
+      <button className="w-[45px] lg:w-[55px] h-[45px] lg:h-[55px] rounded-full flex items-center justify-center bg-off-white relative overflow-hidden" onClick={() => modalEl.current.open()}>
+        <div className="w-full flex flex-wrap justify-center relative z-10">
+          <span className="w-[52%] h-[3px] bg-soft-black block mb-[5px]"></span>
+          <span className="w-[52%] h-[3px] bg-soft-black block"></span>
         </div>
-        <span className="menu-button block w-full h-0 absolute bottom-0 left-0 right-0 bg-black bg-opacity-10"></span>
+        <span className="menu-button block w-full h-0 absolute bottom-0 left-0 right-0 bg-off-white-dark z-0"></span>
       </button>
 
       {/* Menu Tray */}

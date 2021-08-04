@@ -62,7 +62,7 @@ export function Modal({ children, defaultOpened = false }, ref) {
               animate={"isOpen"}
               exit={"exit"}
               variants={modalTrayVariant}
-              className={`absolute top-0 max-w-lg z-[70] w-[90vw] max-w-[420px] bg-[#F8F3ED] h-full left-0`}
+              className={`absolute top-0 z-[70] w-[90vw] max-w-[490px] bg-off-white h-full left-0`}
             >
               <m.div
                 initial={"initial"}
