@@ -10,13 +10,13 @@ export default function App({ Component, pageProps }) {
   const router = useRouter()
 
   return (
-    <div className="bg-[#F8F3ED]">
+    <>
       <FPSStats left={'auto'} top={0} right={0} />
       <DefaultSeo {...SEO} />
 
       <AnimatePresence exitBeforeEnter>
         <Component {...pageProps} key={router.asPath} />
       </AnimatePresence>
-    </div>
+    </>
   )
 }

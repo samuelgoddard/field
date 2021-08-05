@@ -12,13 +12,13 @@ import MetaText from '@/components/meta-text'
 import ScrollToButton from '@/components/scroll-to-button'
 import Link from 'next/link'
 
-export default function Home() {
+export default function Mission() {
   const containerRef = useRef(null)
   const router = useRouter()
 
   return (
     <Layout>
-      <NextSeo title="Home" />
+      <NextSeo title="Mission" />
       
       <LocomotiveScrollProvider
         options={{ smooth: true, lerp: 0.125, direction: 'horizontal', tablet: { smooth: false, breakpoint: 1024 }}}
@@ -43,47 +43,33 @@ export default function Home() {
                         <div className="flex flex-wrap lg:items-center h-full relative z-10">
                           <div className="w-full lg:w-8/12 xl:w-9/12 lg:flex lg:flex-wrap lg:h-full text-soft-black-dark pb-16">
                             <div className="w-full mb-auto lg:border-b lg:border-soft-black-dark lg:px-[30px] pt-[35px] pb-12 lg:py-10">
-                              <Logo width="w-24 lg:w-40" />
+                              <Link href="/">
+                                <a className="block">
+                                  <Logo width="w-24 lg:w-40" />
+                                </a>
+                              </Link>
                             </div>
-                            <div className="w-full lg:pr-10 my-auto">
-                              <h1 className="text-[16vw] lg:text-[14vmin] xl:text-[15vmin] 2xl:text-[16vmin] block leading-[0.85] uppercase italic lg:ml-[-13px]">Energy Evolution</h1>
-                            </div>
-                            <div className="w-full flex space-x-3 lg:space-x-5 mt-auto lg:px-[30px]">
-                              <div className="w-auto">
-                                {/* @TODO CONVERT TO BUTTON */}
-                                <Link href="/mission">
-                                  <a className="group w-full block bg-off-white uppercase text-center rounded-full px-4 lg:px-8 py-4 lg:py-5 text-[16px] lg:text-[23px] relative overflow-hidden">
-                                    <span className="absolute inset-0 w-0 bg-soft-black-dark group-hover:w-full transition-all ease-in-out duration-[600ms]"></span>
-                                    <span className="block overflow-hidden relative leading-none">
-                                      <span className="block relative z-10 transition-transform ease-in-out duration-[600ms] group-hover:translate-y-full">Our Mission</span>
-                                      <span className="absolute inset-0 block z-10 transition-transform ease-in-out duration-[600ms] group-hover:translate-y-0 translate-y-full text-off-white">Our Mission</span>
-                                    </span>
-                                  </a>
-                                </Link>
-                              </div>
-                              <div className="w-auto">
-                                {/* @TODO CONVERT TO BUTTON */}
-                                <Link href="/team">
-                                  <a className="group w-full block bg-off-white uppercase text-center rounded-full px-4 lg:px-8 py-4 lg:py-5 text-[16px] lg:text-[23px] relative overflow-hidden">
-                                    <span className="absolute inset-0 w-0 bg-soft-black-dark group-hover:w-full transition-all ease-in-out duration-[600ms]"></span>
-                                    <span className="block overflow-hidden relative leading-none">
-                                      <span className="block relative z-10 transition-transform ease-in-out duration-[600ms] group-hover:translate-y-full">Our Team</span>
-                                      <span className="absolute inset-0 block z-10 transition-transform ease-in-out duration-[600ms] group-hover:translate-y-0 translate-y-full text-off-white">Our Team</span>
-                                    </span>
-                                  </a>
-                                </Link>
-                              </div>
+                            <div className="w-full lg:pr-10 mb-auto">
+                              <h1 className="text-[16vw] lg:text-[14vmin] xl:text-[15vmin] 2xl:text-[16vmin] block leading-[0.85] uppercase italic lg:ml-[-13px]">Making Net Zero Make Sense</h1>
                             </div>
                           </div>
 
-                          <div className="w-full lg:w-4/12 xl:w-3/12 mt-auto lg:mt-0 border-t lg:border-t-0 lg:border-l border-soft-black-dark lg:h-full flex items-end text-soft-black-dark pt-6 lg:pt-0">
-                            <div className="w-full lg:p-8 lg:pb-10">
-                              <div className="mb-6 lg:mb-12">
-                                <MetaText>Who we are</MetaText>
+                          <div className="w-full lg:w-4/12 xl:w-3/12 mt-auto lg:mt-0 border-t lg:border-t-0 lg:border-l border-soft-black-dark lg:h-full flex items-start text-soft-black-dark pt-6 lg:pt-0">
+                            <div className="w-full lg:p-8 lg:pt-16 lg:pb-10 h-full flex flex-wrap">
+                              <div className="w-full">
+                                <div className="mb-6 lg:mb-12">
+                                  <MetaText>The Mission</MetaText>
+                                </div>
+                                <ol className="text-[20px] lg:text-[22px] leading-tight lg:leading-tight w-10/12 mb-8 list-decimal list-inside">
+                                  <li className="mb-1"><span className="inline-block underline">Energy Evolution</span></li>
+                                  <li className="mb-1"><span className="inline-block underline">Unleashing Renewables</span></li>
+                                  <li className="mb-1"><span className="inline-block underline">Scaling Up</span></li>
+                                  <li className="mb-1"><span className="inline-block underline">Outsized Returns</span></li>
+                                  <li className="mb-1"><span className="inline-block underline">Projects &amp; Pipeline</span></li>
+                                </ol>
                               </div>
-                              <p className="text-lg lg:text-xl leading-tight lg:leading-tight w-10/12 mb-8">We are a new kind of energy company. We innovate from the ground up, building energy infrastructure to be both renewable and profitable as standard.</p>
 
-                              <div className="hidden lg:block">
+                              <div className="hidden lg:block w-full mt-auto">
                                 <ScrollToButton scrollTarget="#intro">
                                   <span className="w-full block bg-soft-black-dark text-off-white uppercase text-center rounded-full px-4 lg:px-8 py-3 lg:py-3 text-[16px] lg:text-[50px] relative overflow-hidden leading-[0.8]">
                                     <span className="absolute inset-0 w-0 bg-off-white group-hover:w-full transition-all ease-in-out duration-[600ms]"></span>
@@ -99,13 +85,13 @@ export default function Home() {
                         </div>
                       </section>
 
-                      <section className="w-full lg:w-[100vmin] lg:min-w-[100vmin] lg:h-full whitespace-normal px-[25px] lg:px-40 py-[40px] lg:py-0 lg:flex lg:flex-wrap lg:items-center" id="intro" data-scroll-section>
+                      <section className="w-full lg:w-[110vmin] lg:min-w-[110vmin] lg:h-full whitespace-normal px-[25px] lg:px-40 py-[40px] lg:py-0 lg:flex lg:flex-wrap lg:items-center" id="intro" data-scroll-section>
                         <div className="w-full">
                           <div className="mb-8 lg:mb-12 lg:ml-[8px]">
                             <MetaText>Energy Evolution</MetaText>
                           </div>
 
-                          <h2 className="text-[12.5vw] lg:text-[10vmin] xl:text-[11vmin] 2xl:text-[12vmin] leading-[0.9]">Field. Smart, investable solutions towards net zero.</h2>
+                          <h2 className="text-[12.5vw] lg:text-[10vmin] xl:text-[11vmin] 2xl:text-[12vmin] leading-[0.9]">To change the choices we have, a seismic shift of energy is needed.</h2>
                         </div>
                       </section>
 
@@ -156,8 +142,8 @@ export default function Home() {
                             <a className="group block w-auto bg-off-white uppercase text-center rounded-full px-4 lg:px-8 py-3 lg:py-5 text-[16px] lg:text-[23px] relative overflow-hidden">
                               <span className="absolute inset-0 w-0 bg-soft-black-dark group-hover:w-full transition-all ease-in-out duration-[600ms]"></span>
                               <span className="block overflow-hidden relative leading-none">
-                                <span className="block relative z-10 transition-transform ease-in-out duration-[600ms] group-hover:translate-y-full">Our Mission</span>
-                                <span className="absolute inset-0 block z-10 transition-transform ease-in-out duration-[600ms] group-hover:translate-y-0 translate-y-full text-off-white">Our Mission</span>
+                                <span className="block relative z-10 transition-transform ease-in-out duration-[600ms] group-hover:translate-y-full">Our Team</span>
+                                <span className="absolute inset-0 block z-10 transition-transform ease-in-out duration-[600ms] group-hover:translate-y-0 translate-y-full text-off-white">Our Team</span>
                               </span>
                             </a>
                           </Link>
@@ -165,16 +151,16 @@ export default function Home() {
 
                         <div className="w-full h-full overflow-hidden flex flex-wrap relative z-10">
                           <div className="w-full mt-[-5vh] lg:mt-[-60vh]" data-scroll data-scroll-direction="vertical" data-scroll-speed={2}>
-                            <span className="block leading-[0.8] uppercase italic text-[24vw] lg:text-[26vmin] xl:text-[30vmin] 2xl:text-[35vmin] lg:ml-[-10px] will-change">Net Zero</span>
-                            <span className="block leading-[0.8] uppercase italic text-[24vw] lg:text-[26vmin] xl:text-[30vmin] 2xl:text-[35vmin] lg:ml-[-10px] will-change">Net Zero</span>
-                            <span className="block leading-[0.8] uppercase italic text-[24vw] lg:text-[26vmin] xl:text-[30vmin] 2xl:text-[35vmin] lg:ml-[-10px] will-change">Net Zero</span>
-                            <span className="block leading-[0.8] uppercase italic text-[24vw] lg:text-[26vmin] xl:text-[30vmin] 2xl:text-[35vmin] lg:ml-[-10px] will-change">Net Zero</span>
-                            <span className="block leading-[0.8] uppercase italic text-[24vw] lg:text-[26vmin] xl:text-[30vmin] 2xl:text-[35vmin] lg:ml-[-10px] will-change">Net Zero</span>
-                            <span className="block leading-[0.8] uppercase italic text-[24vw] lg:text-[26vmin] xl:text-[30vmin] 2xl:text-[35vmin] lg:ml-[-10px] will-change">Net Zero</span>
-                            <span className="block leading-[0.8] uppercase italic text-[24vw] lg:text-[26vmin] xl:text-[30vmin] 2xl:text-[35vmin] lg:ml-[-10px] will-change">Net Zero</span>
-                            <span className="block leading-[0.8] uppercase italic text-[24vw] lg:text-[26vmin] xl:text-[30vmin] 2xl:text-[35vmin] lg:ml-[-10px] will-change">Net Zero</span>
-                            <span className="block leading-[0.8] uppercase italic text-[24vw] lg:text-[26vmin] xl:text-[30vmin] 2xl:text-[35vmin] lg:ml-[-10px] will-change">Net Zero</span>
-                            <span className="block leading-[0.8] uppercase italic text-[24vw] lg:text-[26vmin] xl:text-[30vmin] 2xl:text-[35vmin] lg:ml-[-10px] will-change">Net Zero</span>
+                            <span className="block leading-[0.8] uppercase italic text-[24vw] lg:text-[26vmin] xl:text-[30vmin] 2xl:text-[35vmin] lg:ml-[-10px] will-change">Progress</span>
+                            <span className="block leading-[0.8] uppercase italic text-[24vw] lg:text-[26vmin] xl:text-[30vmin] 2xl:text-[35vmin] lg:ml-[-10px] will-change">Progress</span>
+                            <span className="block leading-[0.8] uppercase italic text-[24vw] lg:text-[26vmin] xl:text-[30vmin] 2xl:text-[35vmin] lg:ml-[-10px] will-change">Progress</span>
+                            <span className="block leading-[0.8] uppercase italic text-[24vw] lg:text-[26vmin] xl:text-[30vmin] 2xl:text-[35vmin] lg:ml-[-10px] will-change">Progress</span>
+                            <span className="block leading-[0.8] uppercase italic text-[24vw] lg:text-[26vmin] xl:text-[30vmin] 2xl:text-[35vmin] lg:ml-[-10px] will-change">Progress</span>
+                            <span className="block leading-[0.8] uppercase italic text-[24vw] lg:text-[26vmin] xl:text-[30vmin] 2xl:text-[35vmin] lg:ml-[-10px] will-change">Progress</span>
+                            <span className="block leading-[0.8] uppercase italic text-[24vw] lg:text-[26vmin] xl:text-[30vmin] 2xl:text-[35vmin] lg:ml-[-10px] will-change">Progress</span>
+                            <span className="block leading-[0.8] uppercase italic text-[24vw] lg:text-[26vmin] xl:text-[30vmin] 2xl:text-[35vmin] lg:ml-[-10px] will-change">Progress</span>
+                            <span className="block leading-[0.8] uppercase italic text-[24vw] lg:text-[26vmin] xl:text-[30vmin] 2xl:text-[35vmin] lg:ml-[-10px] will-change">Progress</span>
+                            <span className="block leading-[0.8] uppercase italic text-[24vw] lg:text-[26vmin] xl:text-[30vmin] 2xl:text-[35vmin] lg:ml-[-10px] will-change">Progress</span>
                           </div>
                         </div>
                       </section>
