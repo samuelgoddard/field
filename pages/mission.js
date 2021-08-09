@@ -96,11 +96,11 @@ export default function Mission() {
                         </div>
                       </section>
 
-                      <section className="w-full lg:w-[110vmin] lg:min-w-[110vmin] lg:h-full whitespace-normal pb-[40px] lg:pb-12 lg:flex lg:flex-wrap relative lg:border-l lg:border-soft-black-dark overflow-hidden" data-scroll-section>
+                      <section className="w-full lg:w-[110vmin] lg:min-w-[110vmin] lg:h-full whitespace-normal pb-12 lg:flex lg:flex-wrap relative lg:border-l lg:border-soft-black-dark overflow-hidden" data-scroll-section>
                         <div className="absolute z-[20] top-0 left-0 bottom-0 h-full border-r border-soft-black-dark lg:border-r-0 lg:hidden w-5"></div>
                         
-                        <div className="w-full mb-auto relative h-[38%] overflow-hidden">
-                          <div className="absolute inset-0">
+                        <div className="w-full relative h-[35%] lg:h-[38%] overflow-hidden mb-8 lg:mb-auto">
+                          <div className="lg:absolute inset-0">
                             <div className="scale-[1.3]">
                               <img src="/images/mission.jpg" alt="PLACEHOLDER" className="w-full h-full object-center object-cover" data-scroll data-scroll-direction="vertical" data-scroll-speed={-0.6} />
                             </div>
@@ -118,25 +118,25 @@ export default function Mission() {
                         </div>
                       </section>
 
-                      <section className="w-full lg:w-[100vmin] lg:min-w-[100vmin] lg:h-full whitespace-normal pb-[40px] lg:pb-12 lg:flex lg:flex-wrap relative lg:border-l lg:border-soft-black-dark overflow-hidden bg-purple" data-scroll-section>
+                      <section className="w-full lg:w-[100vmin] lg:min-w-[100vmin] lg:h-full whitespace-normal lg:pb-12 lg:flex lg:flex-wrap relative lg:border-l lg:border-soft-black-dark overflow-hidden bg-purple pt-8 lg:pt-0" data-scroll-section>
                         <div className="absolute z-[20] top-0 left-0 bottom-0 h-full border-r border-soft-black-dark lg:border-r-0 lg:hidden w-5"></div>
                         
-                        <div className="w-full lg:w-10/12 mt-auto pl-[42px] pr-[25pxw] lg:py-12 lg:px-12 max-w-2xl lg:absolute top-0 left-0">
+                        <div className="w-10/12 lg:w-10/12 mt-auto pl-[42px] pr-[25pxw] lg:py-12 lg:px-12 max-w-2xl lg:absolute lg:top-0 lg:left-0">
                           <p className="block text-base lg:text-xl 2xl:text-2xl leading-tight lg:leading-tight 2xl:leading-tight text-off-white">We’ll begin with energy storage, then push into other infrastructure. With 160MW of battery storage fields across Europe in the works, we’ll deliver a 1.3GW portfolio of batteries by 2024.</p>
                         </div>
 
-                        <div className="flex flex-wrap absolute inset-0 items-end">
-                          <div className="w-full lg:w-1/3 px-5 py-3 h-[25%] bg-blue">
-                            <span className="block uppercase italic text-[42px]">2022</span>
-                            <span className="block text-base lg:text-lg leading-tight lg:leading-tight w-9/12">20 MW UK battery</span>
+                        <div className="lg:flex lg:flex-wrap lg:absolute inset-0 items-end mt-12 lg:mt-0">
+                          <div className="w-1/2 h-[100px] lg:w-1/3 pl-10 pr-5 lg:px-5 py-3 lg:h-[25%] bg-blue flex flex-wrap lg:block items-center">
+                            <span className="w-full block uppercase italic text-[30px] lg:text-[42px] leading-none lg:leading-none">2022</span>
+                            <span className="w-full block text-[13px] lg:text-lg leading-tight lg:leading-tight lg:w-9/12">20 MW UK battery</span>
                           </div>
-                          <div className="w-full lg:w-1/3 px-5 py-3 h-[50%] bg-off-white">
-                            <span className="block uppercase italic text-[42px]">2023</span>
-                            <span className="block text-base lg:text-lg leading-tight lg:leading-tight w-9/12">300 MW UK batteries</span>
+                          <div className="w-2/3 h-[100px] lg:w-1/3 pl-10 pr-5 lg:px-5 py-3 lg:h-[50% flex flex-wrap lg:block items-center bg-off-white">
+                            <span className="w-full block uppercase italic text-[30px] lg:text-[42px] leading-none lg:leading-none">2023</span>
+                            <span className="w-full block text-[13px] lg:text-lg leading-tight lg:leading-tight lg:w-9/12">300 MW UK batteries</span>
                           </div>
-                          <div className="w-full lg:w-1/3 px-5 py-3 h-[80%] bg-orange">
-                            <span className="block uppercase italic text-[42px]">2024</span>
-                            <span className="block text-base lg:text-lg leading-tight lg:leading-tight w-9/12">1.3 GW UK &amp; EU batteries</span>
+                          <div className="w-10/12 h-[100px] lg:w-1/3 pl-10 pr-5 lg:px-5 py-3 lg:h-[80% flex flex-wrap lg:block items-center bg-orange">
+                            <span className="w-full block uppercase italic text-[30px] lg:text-[42px] leading-none lg:leading-none">2024</span>
+                            <span className="w-full block text-[13px] lg:text-lg leading-tight lg:leading-tight lg:w-9/12">1.3 GW UK &amp; EU batteries</span>
                           </div>
                         </div>
                       </section>
