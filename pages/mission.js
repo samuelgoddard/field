@@ -130,11 +130,11 @@ export default function Mission() {
                             <span className="w-full block uppercase italic text-[30px] lg:text-[42px] leading-none lg:leading-none">2022</span>
                             <span className="w-full block text-[13px] lg:text-lg leading-tight lg:leading-tight lg:w-9/12">20 MW UK battery</span>
                           </div>
-                          <div className="w-2/3 h-[100px] lg:w-1/3 pl-10 pr-5 lg:px-5 py-3 lg:h-[50% flex flex-wrap lg:block items-center bg-off-white">
+                          <div className="w-2/3 h-[100px] lg:w-1/3 pl-10 pr-5 lg:px-5 py-3 lg:h-[50%] flex flex-wrap lg:block items-center bg-off-white">
                             <span className="w-full block uppercase italic text-[30px] lg:text-[42px] leading-none lg:leading-none">2023</span>
                             <span className="w-full block text-[13px] lg:text-lg leading-tight lg:leading-tight lg:w-9/12">300 MW UK batteries</span>
                           </div>
-                          <div className="w-10/12 h-[100px] lg:w-1/3 pl-10 pr-5 lg:px-5 py-3 lg:h-[80% flex flex-wrap lg:block items-center bg-orange">
+                          <div className="w-10/12 h-[100px] lg:w-1/3 pl-10 pr-5 lg:px-5 py-3 lg:h-[80%] flex flex-wrap lg:block items-center bg-orange">
                             <span className="w-full block uppercase italic text-[30px] lg:text-[42px] leading-none lg:leading-none">2024</span>
                             <span className="w-full block text-[13px] lg:text-lg leading-tight lg:leading-tight lg:w-9/12">1.3 GW UK &amp; EU batteries</span>
                           </div>
