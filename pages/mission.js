@@ -36,36 +36,36 @@ export default function Mission() {
                   className=""
                 >
                   <m.main variants={fade} className="">
-                    <div className="flex flex-wrap lg:flex-nowrap flex-row h-screen min-h-screen lg:max-h-[100vh]">
-                      <section className="w-[100vw] min-w-[100vw] h-full px-[25px] lg:pl-[90px] lg:pr-0 whitespace-normal bg-yellow relative overflow-hidden lg:border-r-2 lg:border-soft-black-dark" data-scroll-section>
+                    <div className="flex flex-wrap lg:flex-nowrap flex-row lg:h-screen lg:min-h-screen lg:max-h-[100vh]">
+                      <section className="w-[100vw] min-w-[100vw] h-full pl-[42px] pr-[25px] lg:pl-[90px] lg:pr-0 whitespace-normal bg-yellow relative overflow-hidden lg:border-r-2 lg:border-soft-black-dark" data-scroll-section>
+                        <div className="absolute z-[20] top-0 left-0 bottom-0 h-full border-r border-soft-black-dark lg:border-r-0 lg:hidden w-5 bg-transparent backdrop-blur-3xl"></div>
+
                         <img className="w-full h-full absolute inset-0 z-0 object-cover object-center animate-supergraphic will-change" src="/images/supergraphic.jpg" alt="Field Supergraphic" />
                         
-                        <div className="flex flex-wrap lg:items-center h-full relative z-10">
-                          <div className="w-full lg:w-8/12 xl:w-9/12 lg:flex lg:flex-wrap lg:h-full text-soft-black-dark pb-16">
-                            <div className="w-full mb-auto lg:border-b lg:border-soft-black-dark lg:px-[30px] pt-[35px] pb-12 lg:py-10">
+                        <div className="flex flex-wrap lg:items-center h-full relative">
+                          <div className="w-full lg:w-8/12 xl:w-9/12 lg:flex lg:flex-wrap lg:h-full text-soft-black-dark pb-10">
+                            <div className="w-10/12 mb-auto lg:px-[30px] pt-[35px] pb-12 lg:py-10">
                               <Link href="/">
-                                <a className="block">
-                                  <Logo width="w-24 lg:w-40" />
+                                <a className="inline-block relative z-[60]">
+                                  <Logo width="w-[108px] lg:w-[240px]" />
                                 </a>
                               </Link>
                             </div>
                             <div className="w-full lg:pr-10 mb-auto">
-                              <h1 className="text-[16vw] lg:text-[14vmin] xl:text-[15vmin] 2xl:text-[16vmin] block leading-[0.85] uppercase italic lg:ml-[-13px]">Making Net Zero Make Sense</h1>
+                              <h1 className="text-[23vw] lg:text-[14vmin] xl:text-[15vmin] 2xl:text-[16vmin] block leading-[0.85] uppercase italic ml-[-30px] lg:ml-[-13px] break-hyphen">Zero in on a new energy economy</h1>
                             </div>
                           </div>
 
-                          <div className="w-full lg:w-4/12 xl:w-3/12 mt-auto lg:mt-0 border-t lg:border-t-0 lg:border-l border-soft-black-dark lg:h-full flex items-start text-soft-black-dark pt-6 lg:pt-0">
-                            <div className="w-full lg:p-8 lg:pt-16 lg:pb-10 h-full flex flex-wrap">
+                          <div className="w-full lg:w-4/12 xl:w-3/12 mt-auto lg:mt-0 lg:border-l border-soft-black-dark lg:h-full flex items-start text-soft-black-dark pt-6 lg:pt-0">
+                            <div className="w-full lg:p-8 lg:pt-12 lg:pb-10 h-full flex flex-wrap">
                               <div className="w-full">
                                 <div className="mb-6 lg:mb-12">
                                   <MetaText>The Mission</MetaText>
                                 </div>
-                                <ol className="text-[20px] lg:text-[22px] leading-tight lg:leading-tight w-10/12 mb-8 list-decimal list-inside">
+                                <ol className="text-[20px] lg:text-[22px] leading-tight lg:leading-tight w-full mb-8 list-decimal list-inside">
                                   <li className="mb-1"><span className="inline-block underline">Energy Evolution</span></li>
-                                  <li className="mb-1"><span className="inline-block underline">Unleashing Renewables</span></li>
+                                  <li className="mb-1"><span className="inline-block underline">Investable Innovation</span></li>
                                   <li className="mb-1"><span className="inline-block underline">Scaling Up</span></li>
-                                  <li className="mb-1"><span className="inline-block underline">Outsized Returns</span></li>
-                                  <li className="mb-1"><span className="inline-block underline">Projects &amp; Pipeline</span></li>
                                 </ol>
                               </div>
 
@@ -85,7 +85,8 @@ export default function Mission() {
                         </div>
                       </section>
 
-                      <section className="w-full lg:w-[110vmin] lg:min-w-[110vmin] lg:h-full whitespace-normal px-[25px] lg:px-40 py-[40px] lg:py-0 lg:flex lg:flex-wrap lg:items-center" id="intro" data-scroll-section>
+                      <section className="w-full lg:w-[110vmin] lg:min-w-[110vmin] lg:h-full whitespace-normal pl-[42px] pr-[25px] lg:px-40 py-[40px] lg:py-12 lg:flex lg:flex-wrap relative" id="intro" data-scroll-section>
+                        <div className="absolute z-[20] top-0 left-0 bottom-0 h-full border-r border-soft-black-dark lg:border-r-0 lg:hidden w-5"></div>
                         <div className="w-full">
                           <div className="mb-8 lg:mb-12 lg:ml-[8px]">
                             <MetaText>Energy Evolution</MetaText>
@@ -95,40 +96,47 @@ export default function Mission() {
                         </div>
                       </section>
 
-                      <section className="lg:h-full whitespace-normal px-[25px] lg:px-40 py-[40px] lg:py-0 flex flex-wrap lg:flex-nowrap" data-scroll-section>
-                        <div className="lg:border-l lg:border-soft-black-dark lg:h-full flex items-end lg:min-w-[600px] lg:p-16 mb-8 lg:mb-0">
-                          <div className="">
-                            <img className="w-5/12 will-change mb-8" src="/images/finance.png" alt="Finance Icon" />
-                            <h3 className="text-[9vw] lg:text-[74px] leading-none">Finance</h3>
-                            <p className="block text-lg lg:text-xl 2xl:text-2xl leading-tight">We’ll draw on our unique experience and network to raise capital not just from infrastructure investors but other sources including VCs, public market, retail investors. Allowing us to scale quickly with a lower cost of capital.</p>
+                      <section className="w-full lg:w-[110vmin] lg:min-w-[110vmin] lg:h-full whitespace-normal pb-[40px] lg:pb-12 lg:flex lg:flex-wrap relative lg:border-l lg:border-soft-black-dark overflow-hidden" data-scroll-section>
+                        <div className="absolute z-[20] top-0 left-0 bottom-0 h-full border-r border-soft-black-dark lg:border-r-0 lg:hidden w-5"></div>
+                        
+                        <div className="w-full mb-auto relative h-[38%] overflow-hidden">
+                          <div className="absolute inset-0">
+                            <div className="scale-[1.3]">
+                              <img src="/images/mission.jpg" alt="PLACEHOLDER" className="w-full h-full object-center object-cover" data-scroll data-scroll-direction="vertical" data-scroll-speed={-0.6} />
+                            </div>
                           </div>
                         </div>
-                        <div className="lg:border-l lg:border-soft-black-dark lg:h-full flex items-end lg:min-w-[600px] lg:p-16 mb-8 lg:mb-0">
-                          <div className="">
-                            <img className="w-5/12 will-change mb-8" src="/images/finance.png" alt="Finance Icon" />
-                            <h3 className="text-[9vw] lg:text-[74px] leading-none">Build</h3>
-                            <p className="block text-lg lg:text-xl 2xl:text-2xl leading-tight">We’ll draw on our unique experience and network to raise capital not just from infrastructure investors but other sources including VCs, public market, retail investors. Allowing us to scale quickly with a lower cost of capital.</p>
+                        
+                        <div className="w-full lg:w-10/12 mt-auto pl-[42px] pr-[25px] lg:px-12 max-w-4xl">
+                          <div className="mb-8 lg:mb-12">
+                            <MetaText>Investable Innovation</MetaText>
                           </div>
+
+                          <h3 className="text-[24px] lg:text-[29px] xl:text-[32px] 2xl:text-[34px] leading-[1.2]">Field will finance, build, operate and monetise the renewable infrastructure, putting capital to work to create the energy the world needs.</h3>
+
+                          <p className="block text-base lg:text-xl 2xl:text-2xl leading-tight lg:leading-tight 2xl:leading-tight">We’re creating the renewable energy infrastructure and trading company of the future, showing there’s a better way to invest. We are using capital to accelerate the renewable transition, with positive returns for the planet and investors.</p>
                         </div>
-                        <div className="lg:border-l lg:border-soft-black-dark lg:h-full flex items-end lg:min-w-[600px] lg:p-16 mb-8 lg:mb-0">
-                          <div className="">
-                            <img className="w-5/12 will-change mb-8" src="/images/finance.png" alt="Finance Icon" />
-                            <h3 className="text-[9vw] lg:text-[74px] leading-none">Network</h3>
-                            <p className="block text-lg lg:text-xl 2xl:text-2xl leading-tight">We’ll draw on our unique experience and network to raise capital not just from infrastructure investors but other sources including VCs, public market, retail investors. Allowing us to scale quickly with a lower cost of capital.</p>
+                      </section>
+
+                      <section className="w-full lg:w-[100vmin] lg:min-w-[100vmin] lg:h-full whitespace-normal pb-[40px] lg:pb-12 lg:flex lg:flex-wrap relative lg:border-l lg:border-soft-black-dark overflow-hidden bg-purple" data-scroll-section>
+                        <div className="absolute z-[20] top-0 left-0 bottom-0 h-full border-r border-soft-black-dark lg:border-r-0 lg:hidden w-5"></div>
+                        
+                        <div className="w-full lg:w-10/12 mt-auto pl-[42px] pr-[25pxw] lg:py-12 lg:px-12 max-w-2xl lg:absolute top-0 left-0">
+                          <p className="block text-base lg:text-xl 2xl:text-2xl leading-tight lg:leading-tight 2xl:leading-tight text-off-white">We’ll begin with energy storage, then push into other infrastructure. With 160MW of battery storage fields across Europe in the works, we’ll deliver a 1.3GW portfolio of batteries by 2024.</p>
+                        </div>
+
+                        <div className="flex flex-wrap absolute inset-0 items-end">
+                          <div className="w-full lg:w-1/3 px-5 py-3 h-[25%] bg-blue">
+                            <span className="block uppercase italic text-[42px]">2022</span>
+                            <span className="block text-base lg:text-lg leading-tight lg:leading-tight w-9/12">20 MW UK battery</span>
                           </div>
-                        </div>
-                        <div className="lg:border-l lg:border-soft-black-dark lg:h-full flex items-end lg:min-w-[600px] lg:p-16 mb-8 lg:mb-0">
-                          <div className="">
-                            <img className="w-5/12 will-change mb-8" src="/images/finance.png" alt="Finance Icon" />
-                            <h3 className="text-[9vw] lg:text-[74px] leading-none">Operate</h3>
-                            <p className="block text-lg lg:text-xl 2xl:text-2xl leading-tight">We’ll draw on our unique experience and network to raise capital not just from infrastructure investors but other sources including VCs, public market, retail investors. Allowing us to scale quickly with a lower cost of capital.</p>
+                          <div className="w-full lg:w-1/3 px-5 py-3 h-[50%] bg-off-white">
+                            <span className="block uppercase italic text-[42px]">2023</span>
+                            <span className="block text-base lg:text-lg leading-tight lg:leading-tight w-9/12">300 MW UK batteries</span>
                           </div>
-                        </div>
-                        <div className="lg:border-l lg:border-soft-black-dark lg:h-full flex items-end lg:min-w-[600px] lg:p-16 mb-8 lg:mb-0">
-                          <div className="">
-                            <img className="w-5/12 will-change mb-8" src="/images/finance.png" alt="Finance Icon" />
-                            <h3 className="text-[9vw] lg:text-[74px] leading-none">Grow</h3>
-                            <p className="block text-lg lg:text-xl 2xl:text-2xl leading-tight">We’ll draw on our unique experience and network to raise capital not just from infrastructure investors but other sources including VCs, public market, retail investors. Allowing us to scale quickly with a lower cost of capital.</p>
+                          <div className="w-full lg:w-1/3 px-5 py-3 h-[80%] bg-orange">
+                            <span className="block uppercase italic text-[42px]">2024</span>
+                            <span className="block text-base lg:text-lg leading-tight lg:leading-tight w-9/12">1.3 GW UK &amp; EU batteries</span>
                           </div>
                         </div>
                       </section>
@@ -166,11 +174,14 @@ export default function Mission() {
                       </section>
                     </div>
                   </m.main>
+
+                  <m.div variants={fade} className="">
+                    <ProgressBar />
+                  </m.div>
                 </m.div>
               </div>
             </div>
           </LazyMotion>
-        <ProgressBar />
       </LocomotiveScrollProvider>
     </Layout>
   )

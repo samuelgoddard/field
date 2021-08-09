@@ -36,20 +36,22 @@ export default function Home() {
                   className=""
                 >
                   <m.main variants={fade} className="">
-                    <div className="flex flex-wrap lg:flex-nowrap flex-row h-screen min-h-screen lg:max-h-[100vh]">
-                      <section className="w-[100vw] min-w-[100vw] h-full px-[25px] lg:pl-[90px] lg:pr-0 whitespace-normal bg-yellow relative overflow-hidden lg:border-r-2 lg:border-soft-black-dark" data-scroll-section>
+                    <div className="flex flex-wrap lg:flex-nowrap flex-row lg:h-screen lg:min-h-screen lg:max-h-[100vh]">
+                      <section className="w-[100vw] min-w-[100vw] h-full pl-[42px] pr-[25px] lg:pl-[90px] lg:pr-0 whitespace-normal bg-yellow overflow-hidden lg:border-r-2 lg:border-soft-black-dark relative" data-scroll-section>
+                        <div className="absolute z-[20] top-0 left-0 bottom-0 h-full border-r border-soft-black-dark lg:border-r-0 lg:hidden w-5 bg-transparent backdrop-blur-3xl"></div>
+
                         <img className="w-full h-full absolute inset-0 z-0 object-cover object-center animate-supergraphic will-change" src="/images/supergraphic.jpg" alt="Field Supergraphic" />
                         
-                        <div className="flex flex-wrap lg:items-center h-full relative z-10">
-                          <div className="w-full lg:w-8/12 xl:w-9/12 lg:flex lg:flex-wrap lg:h-full text-soft-black-dark pb-16">
-                            <div className="w-full mb-auto lg:border-b lg:border-soft-black-dark lg:px-[30px] pt-[35px] pb-12 lg:py-10">
-                              <Logo width="w-24 lg:w-40" />
+                        <div className="flex flex-wrap lg:items-center h-full relative">
+                          <div className="w-full lg:w-8/12 xl:w-9/12 lg:flex lg:flex-wrap lg:h-full text-soft-black-dark pb-10">
+                            <div className="w-full mb-auto lg:px-[30px] pt-[35px] pb-12 lg:py-10">
+                              <Logo width="w-[108px] lg:w-[240px]" />
                             </div>
-                            <div className="w-full lg:pr-10 my-auto">
-                              <h1 className="text-[16vw] lg:text-[14vmin] xl:text-[15vmin] 2xl:text-[16vmin] block leading-[0.85] uppercase italic lg:ml-[-13px]">Energy Evolution</h1>
+                            <div className="w-full lg:pr-32 my-auto">
+                              <h1 className="text-[22vw] lg:text-[14vmin] xl:text-[15vmin] 2xl:text-[16vmin] block leading-[0.85] uppercase italic ml-[-30px] lg:ml-[-13px] break-hyphen">Making The Planet Worth More</h1>
                             </div>
                             <div className="w-full flex space-x-3 lg:space-x-5 mt-auto lg:px-[30px]">
-                              <div className="w-auto">
+                              <div className="w-1/2 lg:w-auto">
                                 {/* @TODO CONVERT TO BUTTON */}
                                 <Link href="/mission">
                                   <a className="group w-full block bg-off-white uppercase text-center rounded-full px-4 lg:px-8 py-4 lg:py-5 text-[16px] lg:text-[23px] relative overflow-hidden">
@@ -61,7 +63,7 @@ export default function Home() {
                                   </a>
                                 </Link>
                               </div>
-                              <div className="w-auto">
+                              <div className="w-1/2 lg:w-auto">
                                 {/* @TODO CONVERT TO BUTTON */}
                                 <Link href="/team">
                                   <a className="group w-full block bg-off-white uppercase text-center rounded-full px-4 lg:px-8 py-4 lg:py-5 text-[16px] lg:text-[23px] relative overflow-hidden">
@@ -76,12 +78,14 @@ export default function Home() {
                             </div>
                           </div>
 
-                          <div className="w-full lg:w-4/12 xl:w-3/12 mt-auto lg:mt-0 border-t lg:border-t-0 lg:border-l border-soft-black-dark lg:h-full flex items-end text-soft-black-dark pt-6 lg:pt-0">
+                          <div className="w-full lg:w-4/12 xl:w-3/12 mt-auto lg:mt-0 lg:border-l border-soft-black-dark lg:h-full flex items-end text-soft-black-dark pt-6 lg:pt-0">
                             <div className="w-full lg:p-8 lg:pb-10">
                               <div className="mb-6 lg:mb-12">
-                                <MetaText>Who we are</MetaText>
+                                <MetaText>About Us</MetaText>
                               </div>
-                              <p className="text-lg lg:text-xl leading-tight lg:leading-tight w-10/12 mb-8">We are a new kind of energy company. We innovate from the ground up, building energy infrastructure to be both renewable and profitable as standard.</p>
+                              <p className="text-base lg:text-xl leading-tight lg:leading-tight w-10/12 mb-8">We’re breaking new ground, building energy infrastructure to be both renewable and profitable as standard.</p>
+                              
+                              <p className="text-base lg:text-xl leading-tight lg:leading-tight w-10/12 mb-8">Field will finance, build, operate and monetise the renewable infrastructure we need to tackle these challenges - starting with battery storage. First in the UK, then globally.</p>
 
                               <div className="hidden lg:block">
                                 <ScrollToButton scrollTarget="#intro">
@@ -99,50 +103,52 @@ export default function Home() {
                         </div>
                       </section>
 
-                      <section className="w-full lg:w-[100vmin] lg:min-w-[100vmin] lg:h-full whitespace-normal px-[25px] lg:px-40 py-[40px] lg:py-0 lg:flex lg:flex-wrap lg:items-center" id="intro" data-scroll-section>
+                      <section className="w-full lg:w-[100vmin] lg:min-w-[100vmin] lg:h-full whitespace-normal pl-[42px] pr-[25px] lg:px-40 py-[40px] lg:py-12 lg:flex lg:flex-wrap relative" id="intro" data-scroll-section>
+                        <div className="absolute z-[20] top-0 left-0 bottom-0 h-full border-r border-soft-black-dark lg:border-r-0 lg:hidden w-5"></div>
                         <div className="w-full">
                           <div className="mb-8 lg:mb-12 lg:ml-[8px]">
-                            <MetaText>Energy Evolution</MetaText>
+                            <MetaText>New Generation</MetaText>
                           </div>
 
                           <h2 className="text-[12.5vw] lg:text-[10vmin] xl:text-[11vmin] 2xl:text-[12vmin] leading-[0.9]">Field. Smart, investable solutions towards net zero.</h2>
                         </div>
                       </section>
 
-                      <section className="lg:h-full whitespace-normal px-[25px] lg:px-40 py-[40px] lg:py-0 flex flex-wrap lg:flex-nowrap" data-scroll-section>
-                        <div className="lg:border-l lg:border-soft-black-dark lg:h-full flex items-end lg:min-w-[600px] lg:p-16 mb-8 lg:mb-0">
+                      <section className="lg:h-full whitespace-normal pl-[42px] pr-[25px] lg:px-40 py-[40px] lg:py-0 flex flex-wrap lg:flex-nowrap relative" data-scroll-section>
+                        <div className="absolute z-[20] top-0 left-0 bottom-0 h-full border-r border-soft-black-dark lg:border-r-0 lg:hidden w-5"></div>
+                        <div className="lg:border-l lg:border-soft-black-dark lg:h-full flex items-end lg:min-w-[600px] lg:p-12 mb-6 lg:mb-0">
                           <div className="">
-                            <img className="w-5/12 will-change mb-8" src="/images/finance.png" alt="Finance Icon" />
+                            <img className="w-4/12 lg:w-5/12 will-change mb-8" src="/images/finance.png" alt="Finance Icon" />
                             <h3 className="text-[9vw] lg:text-[74px] leading-none">Finance</h3>
-                            <p className="block text-lg lg:text-xl 2xl:text-2xl leading-tight">We’ll draw on our unique experience and network to raise capital not just from infrastructure investors but other sources including VCs, public market, retail investors. Allowing us to scale quickly with a lower cost of capital.</p>
+                            <p className="block text-base lg:text-xl 2xl:text-2xl leading-tight lg:leading-tight 2xl:leading-tight">We’ll draw on our unique experience and network to raise capital not just from infrastructure investors but other sources including VCs, public market, retail investors. Allowing us to scale quickly with a lower cost of capital.</p>
                           </div>
                         </div>
-                        <div className="lg:border-l lg:border-soft-black-dark lg:h-full flex items-end lg:min-w-[600px] lg:p-16 mb-8 lg:mb-0">
+                        <div className="lg:border-l lg:border-soft-black-dark lg:h-full flex items-end lg:min-w-[600px] lg:p-12 mb-6 lg:mb-0">
                           <div className="">
-                            <img className="w-5/12 will-change mb-8" src="/images/finance.png" alt="Finance Icon" />
+                            <img className="w-4/12 lg:w-5/12 will-change mb-8" src="/images/finance.png" alt="Finance Icon" />
                             <h3 className="text-[9vw] lg:text-[74px] leading-none">Build</h3>
-                            <p className="block text-lg lg:text-xl 2xl:text-2xl leading-tight">We’ll draw on our unique experience and network to raise capital not just from infrastructure investors but other sources including VCs, public market, retail investors. Allowing us to scale quickly with a lower cost of capital.</p>
+                            <p className="block text-base lg:text-xl 2xl:text-2xl leading-tight lg:leading-tight 2xl:leading-tight">We’ll draw on our unique experience and network to raise capital not just from infrastructure investors but other sources including VCs, public market, retail investors. Allowing us to scale quickly with a lower cost of capital.</p>
                           </div>
                         </div>
-                        <div className="lg:border-l lg:border-soft-black-dark lg:h-full flex items-end lg:min-w-[600px] lg:p-16 mb-8 lg:mb-0">
+                        <div className="lg:border-l lg:border-soft-black-dark lg:h-full flex items-end lg:min-w-[600px] lg:p-12 mb-6 lg:mb-0">
                           <div className="">
-                            <img className="w-5/12 will-change mb-8" src="/images/finance.png" alt="Finance Icon" />
+                            <img className="w-4/12 lg:w-5/12 will-change mb-8" src="/images/finance.png" alt="Finance Icon" />
                             <h3 className="text-[9vw] lg:text-[74px] leading-none">Network</h3>
-                            <p className="block text-lg lg:text-xl 2xl:text-2xl leading-tight">We’ll draw on our unique experience and network to raise capital not just from infrastructure investors but other sources including VCs, public market, retail investors. Allowing us to scale quickly with a lower cost of capital.</p>
+                            <p className="block text-base lg:text-xl 2xl:text-2xl leading-tight lg:leading-tight 2xl:leading-tight">We’ll draw on our unique experience and network to raise capital not just from infrastructure investors but other sources including VCs, public market, retail investors. Allowing us to scale quickly with a lower cost of capital.</p>
                           </div>
                         </div>
-                        <div className="lg:border-l lg:border-soft-black-dark lg:h-full flex items-end lg:min-w-[600px] lg:p-16 mb-8 lg:mb-0">
+                        <div className="lg:border-l lg:border-soft-black-dark lg:h-full flex items-end lg:min-w-[600px] lg:p-12 mb-6 lg:mb-0">
                           <div className="">
-                            <img className="w-5/12 will-change mb-8" src="/images/finance.png" alt="Finance Icon" />
+                            <img className="w-4/12 lg:w-5/12 will-change mb-8" src="/images/finance.png" alt="Finance Icon" />
                             <h3 className="text-[9vw] lg:text-[74px] leading-none">Operate</h3>
-                            <p className="block text-lg lg:text-xl 2xl:text-2xl leading-tight">We’ll draw on our unique experience and network to raise capital not just from infrastructure investors but other sources including VCs, public market, retail investors. Allowing us to scale quickly with a lower cost of capital.</p>
+                            <p className="block text-base lg:text-xl 2xl:text-2xl leading-tight lg:leading-tight 2xl:leading-tight">We’ll draw on our unique experience and network to raise capital not just from infrastructure investors but other sources including VCs, public market, retail investors. Allowing us to scale quickly with a lower cost of capital.</p>
                           </div>
                         </div>
-                        <div className="lg:border-l lg:border-soft-black-dark lg:h-full flex items-end lg:min-w-[600px] lg:p-16 mb-8 lg:mb-0">
+                        <div className="lg:border-l lg:border-soft-black-dark lg:h-full flex items-end lg:min-w-[600px] lg:p-12 mb-6 lg:mb-0">
                           <div className="">
-                            <img className="w-5/12 will-change mb-8" src="/images/finance.png" alt="Finance Icon" />
+                            <img className="w-4/12 lg:w-5/12 will-change mb-8" src="/images/finance.png" alt="Finance Icon" />
                             <h3 className="text-[9vw] lg:text-[74px] leading-none">Grow</h3>
-                            <p className="block text-lg lg:text-xl 2xl:text-2xl leading-tight">We’ll draw on our unique experience and network to raise capital not just from infrastructure investors but other sources including VCs, public market, retail investors. Allowing us to scale quickly with a lower cost of capital.</p>
+                            <p className="block text-base lg:text-xl 2xl:text-2xl leading-tight lg:leading-tight 2xl:leading-tight">We’ll draw on our unique experience and network to raise capital not just from infrastructure investors but other sources including VCs, public market, retail investors. Allowing us to scale quickly with a lower cost of capital.</p>
                           </div>
                         </div>
                       </section>
@@ -152,7 +158,7 @@ export default function Home() {
 
                         <div className="h-full w-full absolute inset-0 z-20 flex items-center justify-center">
                           {/* @TODO CONVERT TO BUTTON */}
-                          <Link href="/team">
+                          <Link href="/mission">
                             <a className="group block w-auto bg-off-white uppercase text-center rounded-full px-4 lg:px-8 py-3 lg:py-5 text-[16px] lg:text-[23px] relative overflow-hidden">
                               <span className="absolute inset-0 w-0 bg-soft-black-dark group-hover:w-full transition-all ease-in-out duration-[600ms]"></span>
                               <span className="block overflow-hidden relative leading-none">
@@ -180,11 +186,14 @@ export default function Home() {
                       </section>
                     </div>
                   </m.main>
+
+                  <m.div variants={fade} className="">
+                    <ProgressBar />
+                  </m.div>
                 </m.div>
               </div>
             </div>
           </LazyMotion>
-        <ProgressBar />
       </LocomotiveScrollProvider>
     </Layout>
   )
