@@ -42,16 +42,14 @@ export default function MenuTray({ modalEl, route }) {
         <nav className="block mb-5">
           <ul>
             <li className="block px-8">
-              <Link href="/">
-                <a className={`block text-2xl leading-none py-2 ${route === '/' && ''}`} onClick={() => modalEl.current.close()}>Contact Us</a>
-              </Link>
+              <a href="mailto:hello@field.energy" className={`block text-2xl leading-none py-2`} onClick={() => modalEl.current.close()}>Contact Us</a>
             </li>
           </ul>
         </nav>
 
         <span className="block px-8 text-[#9696A0] text-[14px]">
           Virmati Energy Ltd, trading as Field. Company number 13095982.<br/>
-          &copy; {new Date().getFullYear()} &bull; <Link href="#"><a className="hover:text-soft-black-dark focus:text-soft-black-dark transition-colors ease-in-out duration-300 hover:underline focus:underline">Privacy Policy</a></Link>
+          &copy; {new Date().getFullYear()} &bull; <Link href="/privacy"><a onClick={() => modalEl.current.close()} className="hover:text-soft-black-dark focus:text-soft-black-dark transition-colors ease-in-out duration-300 hover:underline focus:underline">Privacy Policy</a></Link>
         </span>
       </div>
     </div>

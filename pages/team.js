@@ -10,10 +10,19 @@ import { NextSeo } from 'next-seo'
 import Logo from '@/components/logo'
 import MetaText from '@/components/meta-text'
 import ScrollToButton from '@/components/scroll-to-button'
+import ModalTeam from '@/components/modal-team'
 import Link from 'next/link'
+import { team } from '@/helpers/temp-data'
 
 export default function Team() {
   const containerRef = useRef(null)
+  const modalEl1 = useRef(null)
+  const modalEl2 = useRef(null)
+  const modalEl3 = useRef(null)
+  const modalEl4 = useRef(null)
+  const modalEl5 = useRef(null)
+  const modalEl6 = useRef(null)
+  const modalEl7 = useRef(null)
   const router = useRouter()
 
   return (
@@ -90,37 +99,61 @@ export default function Team() {
 
                       <section className="lg:h-full pl-[42px] pr-[25px] lg:px-40 py-[40px] lg:py-0 flex flex-wrap lg:flex-nowrap relative" data-scroll-section>
                         <div className="absolute z-[20] top-0 left-0 bottom-0 h-full border-r border-soft-black-dark lg:border-r-0 lg:hidden w-5 bg-transparent backdrop-blur-3xl"></div>
+                        
                         <div className="lg:h-full">
-                          <div className="h-full w-auto lg:w-[28vh] lg:min-w-[28vh]" data-scroll data-scroll-speed={1.75} data-scroll-direction="vertical">
-                            <div className="w-full lg:mt-[-15vh] h-full">
-                              <img className="opacity-70 hover:opacity-100 transition-opacity duration-500 ease-in-out block w-full object-center object-cover will-change mb-6 lg:mb-16" src="/images/avatar.jpg" alt="Avatar" />
+                          <div className="h-full w-auto lg:w-[28vh] lg:min-w-[28vh]" data-scroll data-scroll-speed={0.75} data-scroll-direction="vertical">
+                            <div className="w-full lg:mt-[-8vh] h-full">
+                              <button className="group block hover:border-0 focus:border-0 hover:outline-none focus:outline-none mb-6 lg:mb-16" onClick={() => modalEl1.current.open()}>
+                                <img className="opacity-70 hover:opacity-100 transition-opacity duration-500 ease-in-out block w-full object-center object-cover will-change" src="/images/avatar.jpg" alt="Avatar" />
+                              </button>
+
+                              <ModalTeam
+                                ref={modalEl1}
+                                name={team[0].name}
+                                jobTitle={team[0].jobTitle}
+                                bio={team[0].bio}
+                              />
+
+                              <button className="group block hover:border-0 focus:border-0 hover:outline-none focus:outline-none mb-6 lg:mb-16" onClick={() => modalEl2.current.open()}>
+                                <img className="opacity-70 hover:opacity-100 transition-opacity duration-500 ease-in-out block w-full object-center object-cover will-change" src="/images/avatar.jpg" alt="Avatar" />
+                              </button>
+
+                              <ModalTeam
+                                ref={modalEl2}
+                                name={team[1].name}
+                                jobTitle={team[1].jobTitle}
+                                bio={team[1].bio}
+                              />
+
+                              <img className="opacity-30 block w-full object-center object-cover will-change mb-6 lg:mb-16" src="/images/avatar.jpg" alt="Avatar" />
+                            </div>
+                          </div>
+                        </div>
+
+                        <div className="lg:h-full lg:pl-16">
+                          <div className="h-full w-auto lg:w-[28vh] lg:min-w-[28vh]" data-scroll data-scroll-speed={-0.75} data-scroll-direction="vertical">
+                            <div className="w-full lg:mt-[-18vh] h-full">
+                              <img className="opacity-30 block w-full object-center object-cover will-change mb-6 lg:mb-16" src="/images/avatar.jpg" alt="Avatar" />
                               <img className="opacity-70 hover:opacity-100 transition-opacity duration-500 ease-in-out block w-full object-center object-cover will-change mb-6 lg:mb-16" src="/images/avatar.jpg" alt="Avatar" />
                               <img className="opacity-70 hover:opacity-100 transition-opacity duration-500 ease-in-out block w-full object-center object-cover will-change mb-6 lg:mb-16" src="/images/avatar.jpg" alt="Avatar" />
                             </div>
                           </div>
                         </div>
+
                         <div className="lg:h-full lg:pl-16">
-                          <div className="h-full w-auto lg:w-[28vh] lg:min-w-[28vh]" data-scroll data-scroll-speed={-1.75} data-scroll-direction="vertical">
-                            <div className="w-full lg:mt-[-15vh] h-full">
+                          <div className="h-full w-auto lg:w-[28vh] lg:min-w-[28vh]" data-scroll data-scroll-speed={0.75} data-scroll-direction="vertical">
+                            <div className="w-full lg:mt-[-8vh] h-full">
                               <img className="opacity-70 hover:opacity-100 transition-opacity duration-500 ease-in-out block w-full object-center object-cover will-change mb-6 lg:mb-16" src="/images/avatar.jpg" alt="Avatar" />
                               <img className="opacity-70 hover:opacity-100 transition-opacity duration-500 ease-in-out block w-full object-center object-cover will-change mb-6 lg:mb-16" src="/images/avatar.jpg" alt="Avatar" />
-                              <img className="opacity-70 hover:opacity-100 transition-opacity duration-500 ease-in-out block w-full object-center object-cover will-change mb-6 lg:mb-16" src="/images/avatar.jpg" alt="Avatar" />
+                              <img className="opacity-30 block w-full object-center object-cover will-change mb-6 lg:mb-16" src="/images/avatar.jpg" alt="Avatar" />
                             </div>
                           </div>
                         </div>
+
                         <div className="lg:h-full lg:pl-16">
-                          <div className="h-full w-auto lg:w-[28vh] lg:min-w-[28vh]" data-scroll data-scroll-speed={1.75} data-scroll-direction="vertical">
-                            <div className="w-full lg:mt-[-15vh] h-full">
-                              <img className="opacity-70 hover:opacity-100 transition-opacity duration-500 ease-in-out block w-full object-center object-cover will-change mb-6 lg:mb-16" src="/images/avatar.jpg" alt="Avatar" />
-                              <img className="opacity-70 hover:opacity-100 transition-opacity duration-500 ease-in-out block w-full object-center object-cover will-change mb-6 lg:mb-16" src="/images/avatar.jpg" alt="Avatar" />
-                              <img className="opacity-70 hover:opacity-100 transition-opacity duration-500 ease-in-out block w-full object-center object-cover will-change mb-6 lg:mb-16" src="/images/avatar.jpg" alt="Avatar" />
-                            </div>
-                          </div>
-                        </div>
-                        <div className="lg:h-full lg:pl-16">
-                          <div className="h-full w-auto lg:w-[28vh] lg:min-w-[28vh]" data-scroll data-scroll-speed={-1.75} data-scroll-direction="vertical">
-                            <div className="w-full lg:mt-[-15vh] h-full">
-                              <img className="opacity-70 hover:opacity-100 transition-opacity duration-500 ease-in-out block w-full object-center object-cover will-change mb-6 lg:mb-16" src="/images/avatar.jpg" alt="Avatar" />
+                          <div className="h-full w-auto lg:w-[28vh] lg:min-w-[28vh]" data-scroll data-scroll-speed={-0.75} data-scroll-direction="vertical">
+                            <div className="w-full lg:mt-[-18vh] h-full">
+                              <img className="opacity-30 block w-full object-center object-cover will-change mb-6 lg:mb-16" src="/images/avatar.jpg" alt="Avatar" />
                               <img className="opacity-70 hover:opacity-100 transition-opacity duration-500 ease-in-out block w-full object-center object-cover will-change mb-6 lg:mb-16" src="/images/avatar.jpg" alt="Avatar" />
                               <img className="opacity-70 hover:opacity-100 transition-opacity duration-500 ease-in-out block w-full object-center object-cover will-change mb-6 lg:mb-16" src="/images/avatar.jpg" alt="Avatar" />
                             </div>
