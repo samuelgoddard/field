@@ -40,7 +40,7 @@ export default function Home() {
                       <section className="w-[100vw] min-w-[100vw] h-full pl-[42px] pr-[25px] lg:pl-[90px] lg:pr-0 whitespace-normal bg-yellow overflow-hidden lg:border-r-2 lg:border-soft-black-dark relative" data-scroll-section>
                         <div className="absolute z-[20] top-0 left-0 bottom-0 h-full border-r border-soft-black-dark lg:border-r-0 lg:hidden w-5 bg-transparent backdrop-blur-3xl"></div>
 
-                        <img className="w-full h-full absolute inset-0 z-0 object-cover object-center animate-supergraphic will-change" src="/images/supergraphic.jpg" alt="Field Supergraphic" />
+                        <img className="w-full h-full absolute inset-0 z-0 object-cover object-center will-change" src="/images/supergraphic.jpg" alt="Field Supergraphic" />
                         
                         <div className="flex flex-wrap lg:items-center h-full relative">
                           <div className="w-full lg:w-8/12 xl:w-9/12 lg:flex lg:flex-wrap lg:h-full text-soft-black-dark pb-10">
