@@ -74,7 +74,7 @@ export default function Privacy() {
                             <ul>
                             <li><strong>Account</strong> means a unique account created for You to access our Service or parts of our Service.</li>
                             <li>
-                            <strong>Company</strong> (referred to as either &quot;the Company&quot;, &quot;We&quot;, &quot;Us&quot; or &quot;Our&quot; in this Agreement) refers to Field Energy, [ADD ADDRESS...]
+                            <strong>Company</strong> (referred to as either "the Company", "We", "Us" or "Our" in this Agreement) refers to Virmati Energy Ltd, trading as Field Energy, Second Home, 68 Hanbury Street, London, E1 5JL
                             </li>
                             <li>
                             <strong>Cookies</strong> are small files that are placed on Your computer, mobile device or any other device by a website, containing the details of Your browsing history on that website among its many uses.

@@ -4,7 +4,7 @@ import { createPortal } from 'react-dom'
 import { m, AnimatePresence } from 'framer-motion'
 import MetaText from './meta-text';
 
-export function ModalTeam({ children, name, jobTitle, bio, defaultOpened = false }, ref) {
+export function ModalTeam({ children, image, name, jobTitle, bio, defaultOpened = false }, ref) {
   const [isBrowser, setIsBrowser] = useState(false);
   const [isOpen, setIsOpen] = useState(defaultOpened)
   const close = useCallback(() => setIsOpen(false), [])
@@ -63,7 +63,7 @@ export function ModalTeam({ children, name, jobTitle, bio, defaultOpened = false
               animate={"isOpen"}
               exit={"exit"}
               variants={modalTrayVariant}
-              className={`z-[70] w-[85%] lg:w-1/2 bg-off-white h-[85%] lg:h-[37vh] left-0`}
+              className={`z-[70] w-[85%] lg:w-1/2 bg-off-white min-h-[85%] h-[85%] lg:min-h-[50vh] lg:h-[50vh] left-0`}
             >
               <m.div
                 initial={"initial"}
@@ -74,7 +74,7 @@ export function ModalTeam({ children, name, jobTitle, bio, defaultOpened = false
               >
                 <div className="flex flex-wrap h-full relative overflow-hidden">
                   <div className="w-full lg:w-1/3 h-[40vh] lg:h-full border-r border-soft-black-dark absolute top-0 left-0 right-0 lg:right-auto lg:bottom-0">
-                    <img className="block w-full h-full object-top object-cover will-change absolute inset-0" src="/images/avatar.jpg" alt="Avatar" />
+                    <img className="block w-full h-full object-top object-cover will-change absolute inset-0" src={image} alt={name} />
                   </div>
 
                   <div className="w-full lg:w-2/3 ml-auto h-full overflow-y-scroll pt-[45vh] p-6 lg:p-10 lg:pt-10">

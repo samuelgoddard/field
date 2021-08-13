@@ -1,6 +1,6 @@
 import { useLocomotiveScroll } from 'react-locomotive-scroll'
 
-export default function ScrollToButton({ children, scrollTarget }) {
+export default function ScrollToButton({ children, scrollTarget, full }) {
   const { scroll } = useLocomotiveScroll()
   let scrollTargetElement = null;
 
@@ -12,7 +12,7 @@ export default function ScrollToButton({ children, scrollTarget }) {
   }
 
   return (
-    <button onClick={scrollToArea} className="block w-full hover:border-0 focus:border-0 hover:outline-none focus:outline-none group">
+    <button onClick={scrollToArea} className={`hover:border-0 focus:border-0 hover:outline-none focus:outline-none group ${full ? 'block w-full' : ''}`}>
       {children}
     </button>
   )

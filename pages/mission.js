@@ -37,10 +37,10 @@ export default function Mission() {
                 >
                   <m.main variants={fade} className="">
                     <div className="flex flex-wrap lg:flex-nowrap flex-row lg:h-screen lg:min-h-screen lg:max-h-[100vh]">
-                      <section className="w-[100vw] min-w-[100vw] h-full pl-[42px] pr-[25px] lg:pl-[90px] lg:pr-0 whitespace-normal bg-yellow relative overflow-hidden lg:border-r-2 lg:border-soft-black-dark" data-scroll-section>
+                      <section className="w-[100vw] min-w-[100vw] h-full pl-[42px] pr-[25px] lg:pl-[90px] lg:pr-0 whitespace-normal bg-yellow relative overflow-hidden" data-scroll-section id="hero">
                         <div className="absolute z-[20] top-0 left-0 bottom-0 h-full border-r border-soft-black-dark lg:border-r-0 lg:hidden w-5 bg-transparent backdrop-blur-3xl"></div>
 
-                        <img className="w-full h-full absolute inset-0 z-0 object-cover object-center animate-supergraphic will-change" src="/images/supergraphic.jpg" alt="Field Supergraphic" />
+                        <img className="w-full h-full absolute inset-0 z-0 object-cover object-center will-change" src="/images/mission-sg.jpg" alt="Field Supergraphic" />
                         
                         <div className="flex flex-wrap lg:items-center h-full relative">
                           <div className="w-full lg:w-8/12 xl:w-9/12 lg:flex lg:flex-wrap lg:h-full text-soft-black-dark pb-10">
@@ -52,7 +52,7 @@ export default function Mission() {
                               </Link>
                             </div>
                             <div className="w-full lg:pr-10 mb-auto">
-                              <h1 className="text-[23vw] lg:text-[14vmin] xl:text-[15vmin] 2xl:text-[16vmin] block leading-[0.85] uppercase italic ml-[-30px] lg:ml-[-13px] break-hyphen">Zero in on a new energy economy</h1>
+                              <h1 className="text-[10vw] lg:text-[11vmin] xl:text-[12vmin] 2xl:text-[13vmin] block leading-[0.85] uppercase italic ml-[-24px] lg:ml-[-13px] ">Accelerate renewable energy infrastructure</h1>
                             </div>
                           </div>
 
@@ -60,17 +60,29 @@ export default function Mission() {
                             <div className="w-full lg:p-8 lg:pt-12 lg:pb-10 h-full flex flex-wrap">
                               <div className="w-full">
                                 <div className="mb-6 lg:mb-12">
-                                  <MetaText>The Mission</MetaText>
+                                  <MetaText>Chapters</MetaText>
                                 </div>
                                 <ol className="text-[20px] lg:text-[22px] leading-tight lg:leading-tight w-full mb-8 list-decimal list-inside">
-                                  <li className="mb-1"><span className="inline-block underline">Energy Evolution</span></li>
-                                  <li className="mb-1"><span className="inline-block underline">Investable Innovation</span></li>
-                                  <li className="mb-1"><span className="inline-block underline">Scaling Up</span></li>
+                                  <li className="mb-1">
+                                    <ScrollToButton scrollTarget="#challenge">
+                                      <span className="inline-block underline group-hover:text-orange-dark focus:text-orange-dark transition-colors ease-in-out duration-500">The Challenge</span>
+                                    </ScrollToButton>
+                                  </li>
+                                  <li className="mb-1">
+                                    <ScrollToButton scrollTarget="#mission">
+                                      <span className="inline-block underline group-hover:text-orange-dark focus:text-orange-dark transition-colors ease-in-out duration-500">Our Mission</span>
+                                    </ScrollToButton>
+                                  </li>
+                                  <li className="mb-1">
+                                    <ScrollToButton scrollTarget="#plan">
+                                      <span className="inline-block underline group-hover:text-orange-dark focus:text-orange-dark transition-colors ease-in-out duration-500">The Plan</span>
+                                    </ScrollToButton>
+                                  </li>
                                 </ol>
                               </div>
 
                               <div className="hidden lg:block w-full mt-auto">
-                                <ScrollToButton scrollTarget="#intro">
+                                <ScrollToButton full scrollTarget="#challenge">
                                   <span className="w-full block bg-soft-black-dark text-off-white uppercase text-center rounded-full px-4 lg:px-8 py-3 lg:py-3 text-[16px] lg:text-[50px] relative overflow-hidden leading-[0.8]">
                                     <span className="absolute inset-0 w-0 bg-off-white group-hover:w-full transition-all ease-in-out duration-[600ms]"></span>
                                     <span className="block overflow-hidden relative">
@@ -85,18 +97,18 @@ export default function Mission() {
                         </div>
                       </section>
 
-                      <section className="w-full lg:w-[110vmin] lg:min-w-[110vmin] lg:h-full whitespace-normal pl-[42px] pr-[25px] lg:px-40 py-[40px] lg:py-12 lg:flex lg:flex-wrap relative" id="intro" data-scroll-section>
+                      <section className="w-full lg:w-[110vmin] lg:min-w-[110vmin] lg:h-full whitespace-normal pl-[42px] pr-[25px] lg:px-40 py-[40px] lg:py-12 lg:flex lg:flex-wrap relative lg:border-l lg:border-soft-black-dark" id="challenge" data-scroll-section>
                         <div className="absolute z-[20] top-0 left-0 bottom-0 h-full border-r border-soft-black-dark lg:border-r-0 lg:hidden w-5"></div>
                         <div className="w-full">
                           <div className="mb-8 lg:mb-12 lg:ml-[8px]">
-                            <MetaText>Energy Evolution</MetaText>
+                            <MetaText>The Challenge</MetaText>
                           </div>
 
-                          <h2 className="text-[12.5vw] lg:text-[10vmin] xl:text-[11vmin] 2xl:text-[12vmin] leading-[0.9]">To change the choices we have, a seismic shift of energy is needed.</h2>
+                          <h2 className="text-[10.5vw] lg:text-[10vmin] xl:text-[11vmin] 2xl:text-[12vmin] leading-[0.9]">We need a seismic shift in our energy systems - and we need it now.</h2>
                         </div>
                       </section>
 
-                      <section className="w-full lg:w-[110vmin] lg:min-w-[110vmin] lg:h-full whitespace-normal pb-12 lg:flex lg:flex-wrap relative lg:border-l lg:border-soft-black-dark overflow-hidden" data-scroll-section>
+                      <section className="w-full lg:w-[110vmin] lg:min-w-[110vmin] lg:h-full whitespace-normal pb-12 lg:flex lg:flex-wrap relative lg:border-l lg:border-soft-black-dark overflow-hidden" id="mission" data-scroll-section>
                         <div className="absolute z-[20] top-0 left-0 bottom-0 h-full border-r border-soft-black-dark lg:border-r-0 lg:hidden w-5"></div>
                         
                         <div className="w-full relative h-[35%] lg:h-[38%] overflow-hidden mb-8 lg:mb-auto">
@@ -109,40 +121,53 @@ export default function Mission() {
                         
                         <div className="w-full lg:w-10/12 mt-auto pl-[42px] pr-[25px] lg:px-12 max-w-4xl">
                           <div className="mb-8 lg:mb-12">
-                            <MetaText>Investable Innovation</MetaText>
+                            <MetaText>Our Mission</MetaText>
                           </div>
 
-                          <h3 className="text-[24px] lg:text-[29px] xl:text-[32px] 2xl:text-[34px] leading-[1.2]">Field will finance, build, operate and monetise the renewable infrastructure, putting capital to work to create the energy the world needs.</h3>
+                          <h3 className="text-[24px] lg:text-[29px] xl:text-[32px] 2xl:text-[34px] leading-[1.2]">Field will finance, build, operate and monetise the renewable infrastructure needed to reach net zero, putting capital to work to create the energy the world needs.</h3>
 
                           <p className="block text-base lg:text-xl 2xl:text-2xl leading-tight lg:leading-tight 2xl:leading-tight">We’re creating the renewable energy infrastructure and trading company of the future, showing there’s a better way to invest. We are using capital to accelerate the renewable transition, with positive returns for the planet and investors.</p>
                         </div>
                       </section>
 
-                      <section className="w-full lg:w-[100vmin] lg:min-w-[100vmin] lg:h-full whitespace-normal lg:pb-12 lg:flex lg:flex-wrap relative lg:border-l lg:border-soft-black-dark overflow-hidden bg-purple pt-8 lg:pt-0" data-scroll-section>
+                      <section className="w-full lg:w-[100vmin] lg:min-w-[100vmin] lg:h-full whitespace-normal lg:pb-12 lg:flex lg:flex-wrap relative lg:border-l lg:border-soft-black-dark lg:border-r overflow-hidden bg-purple pt-8 lg:pt-0" data-scroll-section id="plan">
                         <div className="absolute z-[20] top-0 left-0 bottom-0 h-full border-r border-soft-black-dark lg:border-r-0 lg:hidden w-5"></div>
                         
-                        <div className="w-10/12 lg:w-10/12 mt-auto pl-[42px] pr-[25pxw] lg:py-12 lg:px-12 max-w-2xl lg:absolute lg:top-0 lg:left-0">
-                          <p className="block text-base lg:text-xl 2xl:text-2xl leading-tight lg:leading-tight 2xl:leading-tight text-off-white">We’ll begin with energy storage, then push into other infrastructure. With 160MW of battery storage fields across Europe in the works, we’ll deliver a 1.3GW portfolio of batteries by 2024.</p>
+                        <div className="w-10/12 lg:w-10/12 mt-auto pl-[42px] pr-[25pxw] lg:py-12 lg:px-12 max-w-xl lg:absolute lg:top-0 lg:left-0 text-off-white">
+                          <div className="mb-6">
+                            <MetaText>The Plan</MetaText>
+                          </div>
+                          <p className="block text-base lg:text-xl 2xl:text-2xl leading-tight lg:leading-tight 2xl:leading-tight text-off-white">We’ll begin with energy storage, then push into other infrastructure.</p>
                         </div>
 
                         <div className="lg:flex lg:flex-wrap lg:absolute inset-0 items-end mt-12 lg:mt-0">
-                          <div className="w-1/2 h-[100px] lg:w-1/3 pl-10 pr-5 lg:px-5 py-3 lg:h-[25%] bg-blue flex flex-wrap lg:block items-center">
-                            <span className="w-full block uppercase italic text-[30px] lg:text-[42px] leading-none lg:leading-none">2022</span>
-                            <span className="w-full block text-[13px] lg:text-lg leading-tight lg:leading-tight lg:w-9/12">20 MW UK battery</span>
+                          <div className="w-1/2 h-[100px] lg:w-1/3 pl-10 pr-5 lg:px-6 py-3 lg:py-5 lg:h-[25%] flex flex-wrap lg:flex items-center lg:items-start bg-blue">
+                            <div className="w-full">
+                              <span className="w-full block uppercase italic text-[30px] lg:text-[42px] leading-none lg:leading-none mb-1 lg:mb-2">2022</span>
+                              <span className="w-full block text-[13px] lg:text-lg leading-tight lg:leading-tight lg:w-9/12">20 MW UK battery</span>
+                            </div>
+                            <img className="w-[30px] lg:w-[55px] block mt-auto" src="/images/battery-2.png" alt="Battery Icon" />
                           </div>
-                          <div className="w-2/3 h-[100px] lg:w-1/3 pl-10 pr-5 lg:px-5 py-3 lg:h-[50%] flex flex-wrap lg:block items-center bg-off-white">
-                            <span className="w-full block uppercase italic text-[30px] lg:text-[42px] leading-none lg:leading-none">2023</span>
-                            <span className="w-full block text-[13px] lg:text-lg leading-tight lg:leading-tight lg:w-9/12">300 MW UK batteries</span>
+
+                          <div className="w-2/3 h-[100px] lg:w-1/3 pl-10 pr-5 lg:px-6 py-3 lg:py-5 lg:h-[50%] flex flex-wrap lg:flex items-center lg:items-start bg-off-white">
+                            <div className="w-full">
+                              <span className="w-full block uppercase italic text-[30px] lg:text-[42px] leading-none lg:leading-none mb-1 lg:mb-2">2023</span>
+                              <span className="w-full block text-[13px] lg:text-lg leading-tight lg:leading-tight lg:w-9/12">300 MW UK batteries</span>
+                            </div>
+                            <img className="w-[30px] lg:w-[55px] block mt-auto" src="/images/battery-2.png" alt="Battery Icon" />
                           </div>
-                          <div className="w-10/12 h-[100px] lg:w-1/3 pl-10 pr-5 lg:px-5 py-3 lg:h-[80%] flex flex-wrap lg:block items-center bg-orange">
-                            <span className="w-full block uppercase italic text-[30px] lg:text-[42px] leading-none lg:leading-none">2024</span>
-                            <span className="w-full block text-[13px] lg:text-lg leading-tight lg:leading-tight lg:w-9/12">1.3 GW UK &amp; EU batteries</span>
+                          <div className="w-full h-[100px] lg:w-1/3 pl-10 pr-5 lg:px-6 py-3 lg:py-5 lg:h-[80%] flex flex-wrap lg:flex items-center lg:items-start bg-orange">
+                            <div className="w-full">
+                              <span className="w-full block uppercase italic text-[30px] lg:text-[42px] leading-none lg:leading-none mb-1 lg:mb-2">2024</span>
+                              <span className="w-full block text-[13px] lg:text-lg leading-tight lg:leading-tight lg:w-9/12">1.3 GW UK &amp; EU batteries</span>
+                            </div>
+                            <img className="w-[30px] lg:w-[55px] block mt-auto" src="/images/battery-3.png" alt="Battery Icon" />
                           </div>
                         </div>
                       </section>
 
-                      <section className="min-w-[100vw] w-[100vw] bg-yellow h-screen lg:h-full whitespace-nowrap relative overflow-hidden lg:border-l lg:border-soft-black-dark" data-scroll-section>
-                        <div className="h-full bg-yellow w-[20px] lg:w-[35px] border-r border-soft-black-dark absolute top-0 left-0 bottom-0 z-20"></div>
+                      <section className="min-w-[100vw] w-[100vw] bg-yellow h-screen lg:h-full whitespace-nowrap relative overflow-hidden" data-scroll-section>
+                        <img className="w-full h-full absolute inset-0 z-0 object-cover object-center will-change" src="/images/mission-sg.jpg" alt="Field Supergraphic" />
 
                         <div className="h-full w-full absolute inset-0 z-20 flex items-center justify-center">
                           {/* @TODO CONVERT TO BUTTON */}
@@ -158,17 +183,17 @@ export default function Mission() {
                         </div>
 
                         <div className="w-full h-full overflow-hidden flex flex-wrap relative z-10">
-                          <div className="w-full mt-[-5vh] lg:mt-[-60vh]" data-scroll data-scroll-direction="vertical" data-scroll-speed={2}>
-                            <span className="block leading-[0.8] uppercase italic text-[24vw] lg:text-[26vmin] xl:text-[30vmin] 2xl:text-[35vmin] lg:ml-[-10px] will-change">Progress</span>
-                            <span className="block leading-[0.8] uppercase italic text-[24vw] lg:text-[26vmin] xl:text-[30vmin] 2xl:text-[35vmin] lg:ml-[-10px] will-change">Progress</span>
-                            <span className="block leading-[0.8] uppercase italic text-[24vw] lg:text-[26vmin] xl:text-[30vmin] 2xl:text-[35vmin] lg:ml-[-10px] will-change">Progress</span>
-                            <span className="block leading-[0.8] uppercase italic text-[24vw] lg:text-[26vmin] xl:text-[30vmin] 2xl:text-[35vmin] lg:ml-[-10px] will-change">Progress</span>
-                            <span className="block leading-[0.8] uppercase italic text-[24vw] lg:text-[26vmin] xl:text-[30vmin] 2xl:text-[35vmin] lg:ml-[-10px] will-change">Progress</span>
-                            <span className="block leading-[0.8] uppercase italic text-[24vw] lg:text-[26vmin] xl:text-[30vmin] 2xl:text-[35vmin] lg:ml-[-10px] will-change">Progress</span>
-                            <span className="block leading-[0.8] uppercase italic text-[24vw] lg:text-[26vmin] xl:text-[30vmin] 2xl:text-[35vmin] lg:ml-[-10px] will-change">Progress</span>
-                            <span className="block leading-[0.8] uppercase italic text-[24vw] lg:text-[26vmin] xl:text-[30vmin] 2xl:text-[35vmin] lg:ml-[-10px] will-change">Progress</span>
-                            <span className="block leading-[0.8] uppercase italic text-[24vw] lg:text-[26vmin] xl:text-[30vmin] 2xl:text-[35vmin] lg:ml-[-10px] will-change">Progress</span>
-                            <span className="block leading-[0.8] uppercase italic text-[24vw] lg:text-[26vmin] xl:text-[30vmin] 2xl:text-[35vmin] lg:ml-[-10px] will-change">Progress</span>
+                          <div className="w-full mt-[-5vh] lg:mt-[-60vh] ml-[-2vw]" data-scroll data-scroll-direction="vertical" data-scroll-speed={2}>
+                            <span className="block leading-[0.8] uppercase italic text-[24vw] lg:text-[33vmin] xl:text-[33vmin] 2xl:text-[35vmin] lg:ml-[-10px] will-change">Progress</span>
+                            <span className="block leading-[0.8] uppercase italic text-[24vw] lg:text-[33vmin] xl:text-[33vmin] 2xl:text-[35vmin] lg:ml-[-10px] will-change">Progress</span>
+                            <span className="block leading-[0.8] uppercase italic text-[24vw] lg:text-[33vmin] xl:text-[33vmin] 2xl:text-[35vmin] lg:ml-[-10px] will-change">Progress</span>
+                            <span className="block leading-[0.8] uppercase italic text-[24vw] lg:text-[33vmin] xl:text-[33vmin] 2xl:text-[35vmin] lg:ml-[-10px] will-change">Progress</span>
+                            <span className="block leading-[0.8] uppercase italic text-[24vw] lg:text-[33vmin] xl:text-[33vmin] 2xl:text-[35vmin] lg:ml-[-10px] will-change">Progress</span>
+                            <span className="block leading-[0.8] uppercase italic text-[24vw] lg:text-[33vmin] xl:text-[33vmin] 2xl:text-[35vmin] lg:ml-[-10px] will-change">Progress</span>
+                            <span className="block leading-[0.8] uppercase italic text-[24vw] lg:text-[33vmin] xl:text-[33vmin] 2xl:text-[35vmin] lg:ml-[-10px] will-change">Progress</span>
+                            <span className="block leading-[0.8] uppercase italic text-[24vw] lg:text-[33vmin] xl:text-[33vmin] 2xl:text-[35vmin] lg:ml-[-10px] will-change">Progress</span>
+                            <span className="block leading-[0.8] uppercase italic text-[24vw] lg:text-[33vmin] xl:text-[33vmin] 2xl:text-[35vmin] lg:ml-[-10px] will-change">Progress</span>
+                            <span className="block leading-[0.8] uppercase italic text-[24vw] lg:text-[33vmin] xl:text-[33vmin] 2xl:text-[35vmin] lg:ml-[-10px] will-change">Progress</span>
                           </div>
                         </div>
                       </section>
