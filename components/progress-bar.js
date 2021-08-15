@@ -28,9 +28,11 @@ export default function ProgressBar() {
 
   return(
     <>
-    <div className={`hidden lg:block fixed top-0 left-0 mt-[40px] z-[40] transition-all ease-in-out duration-500 ${ showLogo ? 'ml-[120px]' : 'ml-0'}`}>
+    <div className={`hidden lg:block fixed top-0 left-0 mt-[40px] z-[100] transition-all ease-in-out duration-500 overflow-hidden ml-[18px]`}>
       <ScrollToButton full scrollTarget="#hero">
-        <LogoMark width="w-16 text-soft-black-dark" />
+        <div className={`transition-transform ease-in-out duration-500 ${ showLogo ? 'translate-x-[0px]' : '-translate-x-full'}`}>
+          <LogoMark width="w-12 text-soft-black-dark" />
+        </div>
       </ScrollToButton>
     </div>
     <div className="hidden lg:block fixed bottom-0 left-0 right-0 w-full bg-soft-black-dark bg-opacity-[0.075] h-[8px] progress-bar z-[40] ml-[85px]">

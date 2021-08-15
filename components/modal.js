@@ -3,27 +3,55 @@ import React, { useEffect, useImperativeHandle, useState, forwardRef, useCallbac
 import { createPortal } from 'react-dom'
 import { m, AnimatePresence } from 'framer-motion'
 
+function useWindowSize() {
+  // Initialize state with undefined width/height so server and client renders match
+  // Learn more here: https://joshwcomeau.com/react/the-perils-of-rehydration/
+  const [windowSize, setWindowSize] = useState({
+    width: undefined,
+    height: undefined,
+  });
+  useEffect(() => {
+    // Handler to call on window resize
+    function handleResize() {
+      // Set window width/height to state
+      setWindowSize({
+        width: window.innerWidth,
+        height: window.innerHeight,
+      });
+    }
+    // Add event listener
+    window.addEventListener("resize", handleResize);
+    // Call handler right away so state gets updated with initial window size
+    handleResize();
+    // Remove event listener on cleanup
+    return () => window.removeEventListener("resize", handleResize);
+  }, []); // Empty array ensures that effect is only run on mount
+  return windowSize;
+}
+
 export function Modal({ children, defaultOpened = false }, ref) {
   const [isBrowser, setIsBrowser] = useState(false);
   const [isOpen, setIsOpen] = useState(defaultOpened)
   const close = useCallback(() => setIsOpen(false), [])
+  const size = useWindowSize();
 
   const modalTrayVariant = {
+    // @TODO mobile state for x
     initial: { x: '-100%' },
-    isOpen: { x: '0', transition: { type: "easeInOut", duration: 0.6, delay: 0.2, ease: [0.83, 0, 0.17, 1] }},
-    exit: { x: '-100%', transition: { type: "easeInOut", duration: 0.6, ease: [0.83, 0, 0.17, 1] }}
+    isOpen: { x: size.width > 1024 ? '90px' : '0px', transition: { type: "easeInOut", duration: 0.75, delay: 0.25, ease: [0.83, 0, 0.17, 1] }},
+    exit: { x: '-100%', transition: { type: "easeInOut", duration: 0.75, ease: [0.83, 0, 0.17, 1] }}
   };
 
   const modalVariant = {
     initial: { opacity: 0 },
-    isOpen: { opacity: 1, transition: { type: "easeInOut", duration: 0.6, ease: [0.83, 0, 0.17, 1] }},
-    exit: { opacity: 0, transition: { type: "easeInOut", duration: 0.6, delay: 0.25, ease: [0.83, 0, 0.17, 1] }}
+    isOpen: { opacity: 1, transition: { type: "easeInOut", duration: 0.75, ease: [0.83, 0, 0.17, 1] }},
+    exit: { opacity: 0, transition: { type: "easeInOut", duration: 0.75, delay: 0.25, ease: [0.83, 0, 0.17, 1] }}
   };
 
   const containerVariant = {
     initial: { opacity: 0 },
-    isOpen: { opacity: 1, transition: { type: "easeInOut", duration: 0.6, ease: [0.83, 0, 0.17, 1] }},
-    exit: { opacity: 0, transition: { type: "easeInOut", duration: 0.6, ease: [0.83, 0, 0.17, 1] }}
+    isOpen: { opacity: 1, transition: { type: "easeInOut", duration: 0.75, ease: [0.83, 0, 0.17, 1] }},
+    exit: { opacity: 0, transition: { type: "easeInOut", duration: 0.75, ease: [0.83, 0, 0.17, 1] }}
   };
 
   useImperativeHandle(ref, () => ({
@@ -62,7 +90,7 @@ export function Modal({ children, defaultOpened = false }, ref) {
               animate={"isOpen"}
               exit={"exit"}
               variants={modalTrayVariant}
-              className={`absolute top-0 z-[70] w-[90vw] max-w-[490px] bg-off-white h-full left-0`}
+              className={`absolute top-0 z-[70] w-[100vw] max-w-[490px] bg-off-white h-full left-0`}
             >
               <m.div
                 initial={"initial"}

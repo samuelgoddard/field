@@ -54,10 +54,10 @@ const TeamCarousel = ({ slides }) => {
                   alt={slide.name}
                 />
               </div>
-              <h2 className="text-3xl lg:text-4xl 2xl:text-5xl block uppercase italic mt-2">{slide.name}</h2>
+              {/* <h2 className="text-3xl lg:text-4xl 2xl:text-5xl block uppercase italic mt-2">{slide.name}</h2>
 
               <div className="content" dangerouslySetInnerHTML={{ __html: slide.bio }}>
-              </div>
+              </div> */}
             </div>
           ))}
         </div>

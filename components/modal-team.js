@@ -54,7 +54,7 @@ export function ModalTeam({ children, image, name, jobTitle, bio, defaultOpened 
             animate={"isOpen"}
             exit={"exit"}
             variants={modalVariant}
-            className={`fixed z-[70] h-full inset-0 flex items-center justify-center w-full`}
+            className={`fixed z-[100] h-full inset-0 flex items-center justify-center w-full`}
           >
             <div className="bg-black absolute inset-0 w-full h-full bg-opacity-80 z-[60] flex items-center jusfity-center" onClick={close} />
 
@@ -63,7 +63,7 @@ export function ModalTeam({ children, image, name, jobTitle, bio, defaultOpened 
               animate={"isOpen"}
               exit={"exit"}
               variants={modalTrayVariant}
-              className={`z-[70] w-[85%] lg:w-1/2 bg-off-white min-h-[85%] h-[85%] lg:min-h-[50vh] lg:h-[50vh] left-0`}
+              className={`z-[100] w-[85%] lg:w-1/2 bg-off-white min-h-[85%] h-[85%] lg:min-h-[50vh] lg:h-[50vh] left-0`}
             >
               <m.div
                 initial={"initial"}
@@ -79,7 +79,7 @@ export function ModalTeam({ children, image, name, jobTitle, bio, defaultOpened 
 
                   <div className="w-full lg:w-2/3 ml-auto h-full overflow-y-scroll pt-[45vh] p-6 lg:p-10 lg:pt-10">
                     <MetaText>{jobTitle}</MetaText>
-                    <h2 className="text-3xl lg:text-4xl 2xl:text-5xl block uppercase italic mt-2">{name}</h2>
+                    <h2 className="text-3xl lg:text-4xl 2xl:text-5xl block uppercase italic mt-2" dangerouslySetInnerHTML={{ __html: name }}></h2>
 
                     <div className="content" dangerouslySetInnerHTML={{ __html: bio }}>
                     </div>
