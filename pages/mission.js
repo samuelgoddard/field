@@ -1,4 +1,4 @@
-import { useRef } from 'react'
+import { useRef, useState } from 'react'
 import { useRouter } from 'next/router'
 import Layout from '@/components/layout'
 import Header from '@/components/header'
@@ -11,10 +11,14 @@ import Logo from '@/components/logo'
 import MetaText from '@/components/meta-text'
 import ScrollToButton from '@/components/scroll-to-button'
 import Link from 'next/link'
+import Image from 'next/image'
+import MissionSupergraphic from 'public/images/mission-sg.jpg'
+import missionImage from 'public/images/mission.jpg'
 
 export default function Mission() {
   const containerRef = useRef(null)
   const router = useRouter()
+  const [imageIsLoaded, setImageIsLoaded] = useState(false)
 
   return (
     <Layout>
@@ -40,7 +44,14 @@ export default function Mission() {
                       <section className="w-[100vw] min-w-[100vw] 3xl:w-[1920px] 3xl:min-w-[1920px] 3xl:max-w-[1920px] h-full pl-[42px] pr-[25px] lg:pl-[90px] lg:pr-0 whitespace-normal bg-yellow relative overflow-hidden border-b border-soft-black-dark lg:border-b-0" data-scroll-section id="hero">
                         <div className="absolute z-[20] top-0 left-0 bottom-0 h-full border-r border-soft-black-dark lg:border-r-0 lg:hidden w-5 bg-transparent backdrop-blur-3xl"></div>
 
-                        <img className="w-full h-full absolute inset-0 z-0 object-cover object-center will-change" src="/images/mission-sg.jpg" alt="Field Supergraphic" />
+                        <Image
+                          priority
+                          layout="fill"
+                          src={MissionSupergraphic}
+                          alt="Field Supergraphic"
+                          quality={90}
+                          className={`w-full h-full absolute inset-0 z-0 object-cover object-center will-change`}
+                        />
                         
                         <div className="flex flex-wrap lg:items-center h-full relative">
                           <div className="w-full lg:w-8/12 xl:w-9/12 lg:flex lg:flex-wrap lg:h-full text-soft-black-dark pb-5 lg:pb-8">
@@ -53,7 +64,7 @@ export default function Mission() {
                             </div>
 
                             <div className="w-full lg:pr-10 mb-auto">
-                              <h1 className="text-[14.5vw] lg:text-[100px] xl:text-[120px] 2xl:text-[140px] 3xl:text-[155px] block leading-[0.85] uppercase italic ml-[-24px] lg:ml-[-13px] ">Accelerate renewable energy <span className="inline lg:hidden">infra-structure</span><span className="hidden lg:inline">infrastructure</span></h1>
+                              <h1 className="text-[14.5vw] lg:text-[100px] xl:text-[120px] 2xl:text-[140px] 3xl:text-[155px] block leading-[0.85] uppercase italic ml-[-24px] lg:ml-[-5px]">Accelerate renewable energy <span className="inline lg:hidden">infra-structure</span><span className="hidden lg:inline">infrastructure</span></h1>
                             </div>
                           </div>
 
@@ -115,7 +126,21 @@ export default function Mission() {
                         <div className="w-full relative h-[35%] lg:h-[38%] overflow-hidden mb-8 lg:mb-auto">
                           <div className="lg:absolute inset-0">
                             <div className="scale-[1.3]">
-                              <img src="/images/mission.jpg" alt="PLACEHOLDER" className="w-full h-full object-center object-cover" data-scroll data-scroll-direction="vertical" data-scroll-speed={-0.6} />
+                              <Image
+                                layout="intrinsic"
+                                src={missionImage}
+                                alt="Isometric Building"
+                                quality={90}
+                                className={`w-full h-full object-center object-cover ${imageIsLoaded ? 'opacity-100' : 'opacity-0'} transition-opacity duration-500 ease-in-out`}
+                                data-scroll data-scroll-direction="vertical" data-scroll-speed={-0.6}
+                                onLoad={event => {
+                                  const target = event.target;
+                                  if (target.src.indexOf('data:image/gif;base64') < 0) {
+                                      setImageIsLoaded(true)
+                                  }
+                                }}
+
+                              />
                             </div>
                           </div>
                         </div>
@@ -168,9 +193,15 @@ export default function Mission() {
                       </section>
 
                       <section className="min-w-[100vw] w-[100vw] bg-yellow h-[40vh] lg:h-full whitespace-nowrap relative overflow-hidden border-soft-black-dark border-t lg:border-t-0" data-scroll-section>
-                        <div className="absolute z-[20] top-0 left-0 bottom-0 h-full border-r border-soft-black-dark lg:border-r-0 lg:hidden w-5 bg-off-white"></div>
+                        {/* <div className="absolute z-[20] top-0 left-0 bottom-0 h-full border-r border-soft-black-dark lg:border-r-0 lg:hidden w-5 bg-off-white"></div> */}
 
-                        <img className="w-full h-full absolute inset-0 z-0 object-cover object-center will-change" src="/images/mission-sg.jpg" alt="Field Supergraphic" />
+                        <Image
+                          layout="fill"
+                          src={MissionSupergraphic}
+                          alt="Field Supergraphic"
+                          quality={90}
+                          className={`w-full h-full absolute inset-0 z-0 object-cover object-center will-change`}
+                        />
 
                         <div className="h-full w-full absolute inset-0 z-20 flex items-center justify-center">
                           {/* @TODO CONVERT TO BUTTON */}

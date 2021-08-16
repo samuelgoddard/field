@@ -66,6 +66,11 @@ export function Modal({ children, defaultOpened = false }, ref) {
   useEffect(() => {
     setIsBrowser(true);
     if (isOpen) document.addEventListener('keydown', handleEscape, false)
+    if (isOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
     return () => {
       document.removeEventListener('keydown', handleEscape, false)
     }

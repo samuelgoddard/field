@@ -1,4 +1,4 @@
-import { useRef } from 'react'
+import { useRef, useState } from 'react'
 import { useRouter } from 'next/router'
 import Layout from '@/components/layout'
 import Header from '@/components/header'
@@ -13,7 +13,10 @@ import ScrollToButton from '@/components/scroll-to-button'
 import ModalTeam from '@/components/modal-team'
 import Link from 'next/link'
 import { team } from '@/helpers/temp-data'
-import TeamCarousel from '@/components/team-carousel'
+// import TeamCarousel from '@/components/team-carousel'
+import Image from 'next/image'
+import teamSupergraphic from 'public/images/team-sg.jpg'
+import teamSupportingImage from 'public/images/team.jpg'
 
 export default function Team() {
   const containerRef = useRef(null)
@@ -26,6 +29,7 @@ export default function Team() {
   const modalEl7 = useRef(null)
   const modalEl8 = useRef(null)
   const router = useRouter()
+  const [imageIsLoaded, setImageIsLoaded] = useState(false)
 
   return (
     <Layout>
@@ -51,7 +55,16 @@ export default function Team() {
                       <section className="w-[100vw] min-w-[100vw] 3xl:w-[1920px] 3xl:min-w-[1920px] 3xl:max-w-[1920px] h-full pl-[42px] pr-[25px] lg:pl-[90px] lg:pr-0 whitespace-normal bg-yellow relative overflow-hidden" data-scroll-section id="hero">
                         <div className="absolute z-[20] top-0 left-0 bottom-0 h-full border-r border-soft-black-dark lg:border-r-0 lg:hidden w-5 bg-transparent backdrop-blur-3xl"></div>
 
-                        <img className="w-full h-full absolute inset-0 z-0 object-cover object-center will-change" src="/images/team-sg.jpg" alt="Field Supergraphic" />
+                        {/* <img className="w-full h-full absolute inset-0 z-0 object-cover object-center will-change" src="/images/team-sg.jpg" alt="Field Supergraphic" /> */}
+
+                        <Image
+                          priority
+                          layout="fill"
+                          src={teamSupergraphic}
+                          alt="Field Supergraphic"
+                          quality={90}
+                          className={`w-full h-full absolute inset-0 z-0 object-cover object-center will-change`}
+                        />
 
                         <div className="flex flex-wrap lg:items-center h-full relative">
                           <div className="w-full lg:flex lg:flex-wrap lg:h-full text-soft-black-dark pb-16 lg:pb-10">
@@ -64,7 +77,7 @@ export default function Team() {
                             </div>
 
                             <div className="w-full lg:w-[620px] xl:w-[720px] 2xl:w-[800px]  mb-auto">
-                              <h1 className="text-[14.5vw] lg:text-[100px] xl:text-[120px] 2xl:text-[140px] 3xl:text-[155px] block leading-[0.85] uppercase italic ml-[-26px] lg:ml-[-13px]">Progress Needs Energy</h1>
+                              <h1 className="text-[14.5vw] lg:text-[100px] xl:text-[120px] 2xl:text-[140px] 3xl:text-[155px] block leading-[0.85] uppercase italic ml-[-26px] lg:ml-[-5px]">Progress Needs Energy</h1>
                             </div>
                           </div>
 
@@ -85,7 +98,19 @@ export default function Team() {
                       <section className="w-full h-[40vh] lg:w-[65vw] lg:max-w-7xl lg:h-full whitespace-normal pl-[42px] pr-[25px] lg:px-0 py-[40px] lg:py-0 relative overflow-hidden" data-scroll-section>
                         <div className="absolute z-[20] top-0 left-0 bottom-0 h-full border-r border-soft-black-dark lg:border-r-0 lg:hidden w-5"></div>
                         <div className="absolute inset-0" data-scroll data-scroll-speed={-3}>
-                          <img src="/images/team.jpg" alt="PLACEHOLDER" className="w-full h-full  object-center object-cover absolute inset-0 scale-125" />
+                          <Image
+                            onLoad={event => {
+                            const target = event.target;
+                            if (target.src.indexOf('data:image/gif;base64') < 0) {
+                                setImageIsLoaded(true)
+                            }
+                          }}
+                            layout="fill"
+                            src={teamSupportingImage}
+                            alt="An Isometric Building"
+                            quality={90}
+                            className={`w-full h-full  object-center object-cover absolute inset-0 scale-125 ${imageIsLoaded ? 'opacity-100' : 'opacity-0'} transition-opacity duration-500 ease-in-out`}
+                          />
                         </div>
                       </section>
 
@@ -129,7 +154,24 @@ export default function Team() {
                               return (
                                 <div className="w-1/2 px-3 mb-4" key={index}>
                                   <button className="group block hover:border-0 focus:border-0 hover:outline-none focus:outline-none lg:mb-16 relative overflow-hidden" onClick={() => modal.current.open()}>
-                                    <img className="block w-full object-center object-cover will-change" src={team.image} alt={team.name} />
+                                    {/* <img className="block w-full object-center object-cover will-change" src={team.image} alt={team.name} /> */}
+
+                                    <Image
+                                      onLoad={event => {
+                                        const target = event.target;
+                                        if (target.src.indexOf('data:image/gif;base64') < 0) {
+                                            setImageIsLoaded(true)
+                                        }
+                                      }}
+                                      layout="intrinsic"
+                                      src={team.image}
+                                      alt={team.name}
+                                      width={580}
+                                      height={796}
+                                      quality={90}
+                                      className={`block w-full object-center object-cover will-change ${imageIsLoaded ? 'opacity-100' : 'opacity-0'} transition-opacity duration-500 ease-in-out`}
+                                    />
+
                                     <div className="text-left mt-3">
                                       <MetaText small>{team.jobTitle}</MetaText>
                                     </div>
@@ -332,9 +374,21 @@ export default function Team() {
                       </section>
 
                       <section className="min-w-[100vw] w-[100vw] bg-yellow h-[40vh] lg:h-full whitespace-nowrap relative overflow-hidden border-t border-soft-black-dark lg:border-t-0" data-scroll-section>
-                        <div className="absolute z-[20] top-0 left-0 bottom-0 h-full border-r border-soft-black-dark lg:border-r-0 lg:hidden w-5 bg-off-white"></div>
+                        {/* <div className="absolute z-[20] top-0 left-0 bottom-0 h-full border-r border-soft-black-dark lg:border-r-0 lg:hidden w-5 bg-off-white"></div> */}
                         
-                        <img className="w-full h-full absolute inset-0 z-0 object-cover object-center will-change " src="/images/team-sg.jpg" alt="Field Supergraphic" />
+                        <Image
+                          onLoad={event => {
+                            const target = event.target;
+                            if (target.src.indexOf('data:image/gif;base64') < 0) {
+                                setImageIsLoaded(true)
+                            }
+                          }}
+                          layout="fill"
+                          src={teamSupergraphic}
+                          alt="Field Supergraphic"
+                          quality={90}
+                          className={`w-full h-full absolute inset-0 z-0 object-cover object-center will-change ${imageIsLoaded ? 'opacity-100' : 'opacity-0'} transition-opacity duration-500 ease-in-out`}
+                        />
 
                         <div className="h-full w-full absolute inset-0 z-20 flex items-center justify-center">
                           {/* @TODO CONVERT TO BUTTON */}

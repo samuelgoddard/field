@@ -13,28 +13,28 @@ export default function MenuTray({ modalEl, route }) {
         <ul>
           <li className="block border-t border-soft-black-dark">
             <Link href="/">
-              <a className={`flex items-end text-[13vw] md:text-[60px] lg:text-[55px] 2xl:text-[72px] leading-none py-5 px-6 relative group hover:text-orange focus:text-orange transition-colors ease-in-out duration-500 ${route === '/' && 'text-orange'}`} onClick={() => modalEl.current.close()}>
+              <a className={`flex items-center text-[13vw] md:text-[60px] lg:text-[55px] 2xl:text-[72px] leading-none py-5 px-6 relative group hover:text-orange focus:text-orange transition-colors ease-in-out duration-500 ${route === '/' && 'text-orange'}`} onClick={() => modalEl.current.close()}>
                 <div className="absolute bottom-0 left-0 h-[1px] mb-[-1px] bg-orange w-0 group-hover:w-full group-focus:w-full transition-all ease-in-out duration-1000"></div>
                 <MetaText>01</MetaText>
-                <span className="block ml-2 mb-[-6px]">Home</span>
+                <span className="block ml-2">Home</span>
               </a>
             </Link>
           </li>
           <li className="block border-t border-soft-black-dark">
             <Link href="/mission">
-              <a className={`flex items-end text-[13vw] md:text-[60px] lg:text-[55px] 2xl:text-[72px] leading-none py-5 px-6 pb-7 relative group hover:text-orange focus:text-orange transition-colors ease-in-out duration-500 ${route === '/mission' && 'text-orange'}`} onClick={() => modalEl.current.close()}>
+              <a className={`flex items-center text-[13vw] md:text-[60px] lg:text-[55px] 2xl:text-[72px] leading-none py-5 px-6 relative group hover:text-orange focus:text-orange transition-colors ease-in-out duration-500 ${route === '/mission' && 'text-orange'}`} onClick={() => modalEl.current.close()}>
                 <div className="absolute bottom-0 left-0 h-[1px] mb-[-1px] bg-orange w-0 group-hover:w-full group-focus:w-full transition-all ease-in-out duration-1000"></div>
                 <MetaText>02</MetaText>
-                <span className="block ml-2 mb-[-6px] lg:mb-[-8px]">Mission</span>
+                <span className="block ml-2">Mission</span>
               </a>
             </Link>
           </li>
           <li className="block border-t border-b border-soft-black-dark">
             <Link href="/team">
-              <a className={`flex items-end text-[13vw] md:text-[60px] lg:text-[55px] 2xl:text-[72px] leading-none py-5 px-6 relative group hover:text-orange focus:text-orange transition-colors ease-in-out duration-500 ${route === '/team' && 'text-orange'}`} onClick={() => modalEl.current.close()}>
+              <a className={`flex items-center text-[13vw] md:text-[60px] lg:text-[55px] 2xl:text-[72px] leading-none py-5 px-6 relative group hover:text-orange focus:text-orange transition-colors ease-in-out duration-500 ${route === '/team' && 'text-orange'}`} onClick={() => modalEl.current.close()}>
                 <div className="absolute bottom-0 left-0 h-[1px] mb-[-1px] bg-orange w-0 group-hover:w-full group-focus:w-full transition-all ease-in-out duration-1000"></div>
                 <MetaText>03</MetaText>
-                <span className="block ml-2 mb-[-6px]">Team</span>
+                <span className="block ml-2">Team</span>
               </a>
             </Link>
           </li>

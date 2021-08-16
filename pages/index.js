@@ -11,6 +11,8 @@ import Logo from '@/components/logo'
 import MetaText from '@/components/meta-text'
 import ScrollToButton from '@/components/scroll-to-button'
 import Link from 'next/link'
+import Image from 'next/image'
+import homeSupergraphic from 'public/images/home-sh.jpg'
 
 export default function Home() {
   const containerRef = useRef(null)
@@ -40,7 +42,14 @@ export default function Home() {
                       <section className="w-[100vw] min-w-[100vw] 3xl:w-[1920px] 3xl:min-w-[1920px] 3xl:max-w-[1920px] h-full pl-[42px] pr-[20px] lg:pl-[90px] lg:pr-0 whitespace-normal bg-yellow overflow-hidden relative border-b border-soft-black-dark lg:border-b-0" data-scroll-section id="hero">
                         <div className="absolute z-[20] top-0 left-0 bottom-0 h-full border-r border-soft-black-dark lg:border-r-0 lg:hidden w-5 bg-transparent backdrop-blur-3xl"></div>
 
-                        <img className="w-full h-full absolute inset-0 z-0 object-cover object-center will-change" src="/images/home-sh.jpg" alt="Field Supergraphic" />
+                        <Image
+                          priority
+                          layout="fill"
+                          src={homeSupergraphic}
+                          alt="Field Supergraphic"
+                          quality={90}
+                          className={`w-full h-full absolute inset-0 z-0 object-cover object-center will-change`}
+                        />
                         
                         <div className="flex flex-wrap lg:items-center h-full relative">
                           <div className="w-full lg:w-8/12 xl:w-9/12 lg:flex lg:flex-wrap lg:h-full text-soft-black-dark pb-8">
@@ -48,13 +57,13 @@ export default function Home() {
                               <Logo width="w-[140px] lg:w-[240px]" />
                             </div>
                             <div className="w-full lg:pr-32 mt-5 my-auto lg:my-auto mb-16">
-                              <h1 className="text-[18vw] lg:text-[100px] xl:text-[120px] 2xl:text-[140px] 3xl:text-[155px] block leading-[0.85] uppercase italic ml-[-28px] lg:ml-[-13px]">Making The Planet Worth More</h1>
+                              <h1 className="text-[18vw] lg:text-[100px] xl:text-[120px] 2xl:text-[140px] 3xl:text-[155px] block leading-[0.85] uppercase italic ml-[-28px] lg:ml-[-5px]">Making The Planet Worth More</h1>
                             </div>
                             <div className="w-full flex flex-wrap lg:space-x-7 mt-auto lg:px-[30px]">
                               <div className="w-full lg:w-auto mb-2 lg:mb-0">
                                 {/* @TODO CONVERT TO BUTTON */}
                                 <Link href="/mission">
-                                  <a className="group w-full block bg-off-white uppercase text-center rounded-full px-4 lg:px-8 py-4 lg:py-5 text-[16px] lg:text-[21px] relative overflow-hidden">
+                                  <a className="group w-full block bg-off-white uppercase text-center rounded-full px-4 lg:px-8 py-4 lg:py-[18px] text-[16px] lg:text-[21px] relative overflow-hidden">
                                     <span className="absolute inset-0 w-0 bg-soft-black-dark group-hover:w-full transition-all ease-in-out duration-[600ms]"></span>
                                     <span className="block overflow-hidden relative leading-none">
                                       <span className="block relative z-10 transition-transform ease-in-out duration-[600ms] group-hover:translate-y-full">Our Mission</span>
@@ -66,7 +75,7 @@ export default function Home() {
                               <div className="w-full lg:w-auto">
                                 {/* @TODO CONVERT TO BUTTON */}
                                 <Link href="/team">
-                                  <a className="group w-full block bg-off-white uppercase text-center rounded-full px-4 lg:px-8 py-4 lg:py-5 text-[16px] lg:text-[21px] relative overflow-hidden">
+                                  <a className="group w-full block bg-off-white uppercase text-center rounded-full px-4 lg:px-8 py-4 lg:py-[18px] text-[16px] lg:text-[21px] relative overflow-hidden">
                                     <span className="absolute inset-0 w-0 bg-soft-black-dark group-hover:w-full transition-all ease-in-out duration-[600ms]"></span>
                                     <span className="block overflow-hidden relative leading-none">
                                       <span className="block relative z-10 transition-transform ease-in-out duration-[600ms] group-hover:translate-y-full">Our Team</span>
@@ -155,9 +164,15 @@ export default function Home() {
                       </section>
 
                       <section className="min-w-[100vw] w-[100vw] bg-yellow h-[40vh] lg:h-full whitespace-nowrap relative overflow-hidden border-soft-black-dark border-t lg:border-t-0" data-scroll-section>
-                        <div className="absolute z-[20] top-0 left-0 bottom-0 h-full border-r border-soft-black-dark lg:border-r-0 lg:hidden w-5 bg-off-white"></div>
+                        {/* <div className="absolute z-[20] top-0 left-0 bottom-0 h-full border-r border-soft-black-dark lg:border-r-0 lg:hidden w-5 bg-off-white"></div> */}
 
-                        <img className="w-full h-full absolute inset-0 z-0 object-cover object-center will-change" src="/images/home-sh.jpg" alt="Field Supergraphic" />
+                        <Image
+                          layout="fill"
+                          src={homeSupergraphic}
+                          alt="Field Supergraphic"
+                          quality={90}
+                          className={`w-full h-full absolute inset-0 z-0 object-cover object-center will-change`}
+                        />
 
                         <div className="h-full w-full absolute inset-0 z-20 flex items-center justify-center">
                           {/* @TODO CONVERT TO BUTTON */}
@@ -174,16 +189,16 @@ export default function Home() {
 
                         <div className="w-full h-full overflow-hidden flex flex-wrap relative z-10">
                           <div className="w-full mt-[-3vh] lg:mt-[-60vh] ml-[-2vw]" data-scroll data-scroll-direction="vertical" data-scroll-speed={2}>
-                            <span className="block leading-[0.8] uppercase italic text-[22vw] lg:text-[24vw] ml-[18px] lg:ml-[-10px] will-change">Net Zero</span>
-                            <span className="block leading-[0.8] uppercase italic text-[22vw] lg:text-[24vw] ml-[18px] lg:ml-[-10px] will-change">Net Zero</span>
-                            <span className="block leading-[0.8] uppercase italic text-[22vw] lg:text-[24vw] ml-[18px] lg:ml-[-10px] will-change">Net Zero</span>
-                            <span className="block leading-[0.8] uppercase italic text-[22vw] lg:text-[24vw] ml-[18px] lg:ml-[-10px] will-change">Net Zero</span>
-                            <span className="block leading-[0.8] uppercase italic text-[22vw] lg:text-[24vw] ml-[18px] lg:ml-[-10px] will-change">Net Zero</span>
-                            <span className="block leading-[0.8] uppercase italic text-[22vw] lg:text-[24vw] ml-[18px] lg:ml-[-10px] will-change">Net Zero</span>
-                            <span className="block leading-[0.8] uppercase italic text-[22vw] lg:text-[24vw] ml-[18px] lg:ml-[-10px] will-change">Net Zero</span>
-                            <span className="block leading-[0.8] uppercase italic text-[22vw] lg:text-[24vw] ml-[18px] lg:ml-[-10px] will-change">Net Zero</span>
-                            <span className="block leading-[0.8] uppercase italic text-[22vw] lg:text-[24vw] ml-[18px] lg:ml-[-10px] will-change">Net Zero</span>
-                            <span className="block leading-[0.8] uppercase italic text-[22vw] lg:text-[24vw] ml-[18px] lg:ml-[-10px] will-change">Net Zero</span>
+                            <span className="block leading-[0.8] uppercase italic text-[24vw] lg:text-[24vw] ml-[0px] lg:ml-[-10px] will-change">Net Zero</span>
+                            <span className="block leading-[0.8] uppercase italic text-[24vw] lg:text-[24vw] ml-[0px] lg:ml-[-10px] will-change">Net Zero</span>
+                            <span className="block leading-[0.8] uppercase italic text-[24vw] lg:text-[24vw] ml-[0px] lg:ml-[-10px] will-change">Net Zero</span>
+                            <span className="block leading-[0.8] uppercase italic text-[24vw] lg:text-[24vw] ml-[0px] lg:ml-[-10px] will-change">Net Zero</span>
+                            <span className="block leading-[0.8] uppercase italic text-[24vw] lg:text-[24vw] ml-[0px] lg:ml-[-10px] will-change">Net Zero</span>
+                            <span className="block leading-[0.8] uppercase italic text-[24vw] lg:text-[24vw] ml-[0px] lg:ml-[-10px] will-change">Net Zero</span>
+                            <span className="block leading-[0.8] uppercase italic text-[24vw] lg:text-[24vw] ml-[0px] lg:ml-[-10px] will-change">Net Zero</span>
+                            <span className="block leading-[0.8] uppercase italic text-[24vw] lg:text-[24vw] ml-[0px] lg:ml-[-10px] will-change">Net Zero</span>
+                            <span className="block leading-[0.8] uppercase italic text-[24vw] lg:text-[24vw] ml-[0px] lg:ml-[-10px] will-change">Net Zero</span>
+                            <span className="block leading-[0.8] uppercase italic text-[24vw] lg:text-[24vw] ml-[0px] lg:ml-[-10px] will-change">Net Zero</span>
                           </div>
                         </div>
                       </section>

@@ -32,7 +32,7 @@ export default function Header({ route }) {
   }
   
   return (
-    <header className="fixed top-0 left-0 right-0 lg:right-auto lg:bottom-0 h-[75px] lg:h-full w-full lg:w-[90px] lg:border-r border-soft-black-dark z-[100] flex items-center justify-end pl-[25px] pr-[20px] lg:px-0 lg:justify-center">
+    <header className="fixed top-0 right-0 lg:left-0 lg:right-auto lg:bottom-0 h-[75px] lg:h-full w-[90px] lg:w-[90px] lg:border-r border-soft-black-dark z-[100] flex items-center justify-end pl-[25px] pr-[20px] lg:px-0 lg:justify-center">
 
       <img className="hidden lg:block w-full h-full absolute inset-0 z-0 object-cover object-right-bottom" src="/images/supergraphic.jpg" alt="Field Supergraphic" />
 

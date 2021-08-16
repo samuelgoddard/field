@@ -7,7 +7,9 @@ export default function ScrollToButton({ children, scrollTarget, full }) {
   const scrollToArea = () => {
     scrollTargetElement = document.querySelector(scrollTarget)
     if (scroll) {
-      scroll.scrollTo(scrollTargetElement)
+      scroll.scrollTo(scrollTargetElement, { 
+        'offset': -85
+      })
     }
   }
 
