@@ -12,7 +12,7 @@ export const team = [{
   name: `Amit<br/> Gudka`,
   jobTitle: 'Founder',
   image: '/images/amit.jpg',
-  bio: `<p><p>Amit Gudka is an entrepreneur on a mission to make the transition to renewable energy happen. He co-founded Bulb - now one of the UK’s biggest green energy suppliers and one of the fastest growing companies in Europe - making green energy easy and affordable for people to power their homes. He’s now founded Field to finance, build and operate the renewable infrastructure needed to reach net zero and avoid climate catastrophe - starting with battery storage.</p><p>Before Bulb, Amit spent nearly a decade trading electricity and gas at Barclays. He's also one of the founders of music label and club night Man Make Music, releasing and promoting forward thinking electronic music.</p>`
+  bio: `<p><p>Amit Gudka is an entrepreneur on a mission to make the transition to renewable energy happen. He co-founded Bulb - now one of the UK’s biggest green energy suppliers and one of the fastest growing companies in Europe - making green energy easy and affordable for people to power their homes. He’s now founded Field to finance, build and operate the renewable infrastructure needed to reach net zero and avoid climate catastrophe - starting with battery storage.</p><p>Before Bulb, Amit spent nearly a decade trading electricity and gas at Barclays. He's also one of the founders of music label and club night Make Music, releasing and promoting forward thinking electronic music.</p>`
 },{
   name: `Charlotte<br/>Nathan`,
   jobTitle: 'Head of Brand & Comms',
@@ -22,7 +22,7 @@ export const team = [{
   name: `Clare<br/>Cooke`,
   jobTitle: `EA to Amit Gudka`,
   image: '/images/clare.jpg',
-  bio: `Clare has over 25 years’ experience in event management & logistics within the media industry as well as diary and timeline management for C-Suite executives, NEDs and Entrepreneurs across a broad range of industries.`
+  bio: `<p>Clare has over 25 years’ experience in event management & logistics within the media industry as well as diary and timeline management for C-Suite executives, NEDs and Entrepreneurs across a broad range of industries.</p>`
 },{
   name: `Stephen<br/>White`,
   jobTitle: 'Finance Director',

@@ -73,16 +73,26 @@ export function ModalTeam({ children, image, name, jobTitle, bio, defaultOpened 
                 className="h-full"
               >
                 <div className="flex flex-wrap h-full relative overflow-hidden">
+
+                <button className="w-[45px] lg:w-[55px] h-[45px] lg:h-[55px] rounded-full flex items-center justify-center bg-off-white-dark hover:text-off-white overflow-hidden group absolute top-0 right-0 m-5 transition-colors ease-in-out duration-500" onClick={close}>
+                  <span className="absolute inset-0 w-0 bg-soft-black-dark group-hover:w-full transition-all ease-in-out duration-[600ms]"></span>
+
+                  <div className="w-full flex flex-wrap justify-center relative z-10 overflow-hidden mt-[3px]">
+                    <svg className="w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 357 357"><path fill="currentColor" d="M357 35.7L321.3 0 178.5 142.8 35.7 0 0 35.7l142.8 142.8L0 321.3 35.7 357l142.8-142.8L321.3 357l35.7-35.7-142.8-142.8z"/></svg>
+                  </div>
+
+                </button>
+
                   <div className="w-full lg:w-1/3 h-[40vh] lg:h-full border-r border-soft-black-dark absolute top-0 left-0 right-0 lg:right-auto lg:bottom-0 hidden lg:block overflow-hidden">
                     <img className="block w-full h-full object-top object-cover will-change absolute inset-0 scale-[1.02]" src={image} alt={name} />
                   </div>
 
                   <div className="w-full lg:w-2/3 ml-auto h-full overflow-y-scroll p-6 lg:p-10 lg:pt-10">
-                    <div className="mb-5">
+                    <div className="mb-5 w-10/12">
                       <MetaText>{jobTitle}</MetaText>
                     </div>
 
-                    <h2 className="text-4xl lg:text-4xl 2xl:text-5xl block uppercase italic leading-none mt-2 lg:mb-8" dangerouslySetInnerHTML={{ __html: name }}></h2>
+                    <h2 className="text-4xl lg:text-4xl 2xl:text-5xl block uppercase italic leading-[1] lg:leading-[0.9] mt-2 lg:mb-8" dangerouslySetInnerHTML={{ __html: name }}></h2>
 
                     <div className="content leading-snug lg:leading-none lg:text-base" dangerouslySetInnerHTML={{ __html: bio }}>
                     </div>

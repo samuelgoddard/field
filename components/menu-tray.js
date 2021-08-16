@@ -2,10 +2,10 @@ import Link from 'next/link'
 import MetaText from './meta-text'
 import LogoMark from './logo-mark'
 
-export default function MenuTray({ modalEl, route }) {
+export default function MenuTray({ modalEl, route, showLogo }) {
   return (
     <div className="h-full flex flex-wrap py-6">
-      <div className="px-6 w-full mb-auto text-soft-black-dark">
+      <div className={`px-6 w-full mb-auto text-soft-black-dark ${showLogo ? 'opacity-0' : 'opacity-100'}`}>
         <LogoMark width="w-[62px]" />
       </div>
       

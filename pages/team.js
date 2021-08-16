@@ -67,7 +67,7 @@ export default function Team() {
                         />
 
                         <div className="flex flex-wrap lg:items-center h-full relative">
-                          <div className="w-full lg:flex lg:flex-wrap lg:h-full text-soft-black-dark pb-16 lg:pb-10">
+                          <div className="w-full lg:w-8/12 xl:w-9/12 lg:flex lg:flex-wrap lg:h-full text-soft-black-dark pb-5 lg:pb-8">
                             <div className="w-full mb-auto lg:px-[30px] pt-[25px] pb-16 lg:py-8">
                               <Link href="/">
                                 <a className="inline-block relative z-[60]">
@@ -76,21 +76,43 @@ export default function Team() {
                               </Link>
                             </div>
 
-                            <div className="w-full lg:w-[620px] xl:w-[720px] 2xl:w-[800px]  mb-auto">
-                              <h1 className="text-[14.5vw] lg:text-[100px] xl:text-[120px] 2xl:text-[140px] 3xl:text-[155px] block leading-[0.85] uppercase italic ml-[-26px] lg:ml-[-5px]">Progress Needs Energy</h1>
+                            <div className="lg:pr-10 mb-auto w-full lg:w-[620px] xl:w-[720px] 2xl:w-[800px]">
+                              <h1 className="text-[14.5vw] lg:text-[100px] xl:text-[120px] 2xl:text-[140px] 3xl:text-[155px] block leading-[0.85] uppercase italic ml-[-24px] lg:ml-[55px]" data-scroll data-scroll-speed={2}>Progress Needs Energy</h1>
                             </div>
                           </div>
 
-                          <div className="hidden lg:block absolute bottom-0 right-0 w-full max-w-xs m-8 my-8">
-                            <ScrollToButton full scrollTarget="#intro">
-                              <span className="w-full block bg-soft-black-dark text-off-white uppercase text-center rounded-full px-4 lg:px-8 py-3 lg:py-3 text-[16px] lg:text-[50px] relative overflow-hidden leading-[0.8]">
-                                <span className="absolute inset-0 w-0 bg-off-white group-hover:w-full transition-all ease-in-out duration-[600ms]"></span>
-                                <span className="block overflow-hidden relative">
-                                  <span className="block relative z-10 transition-transform ease-in-out duration-[600ms] group-hover:translate-y-full mt-[-6px]">→</span>
-                                  <span className="absolute inset-0 block z-10 transition-transform ease-in-out duration-[600ms] group-hover:translate-y-0 translate-y-full text-soft-black-dark mt-[-6px]">→</span>
-                                </span>
-                              </span>
-                            </ScrollToButton>
+                          <div className="w-full lg:w-4/12 xl:w-3/12 mt-auto lg:mt-0 lg:border-l border-soft-black-dark lg:h-full flex items-start text-soft-black-dark pt-6 lg:pt-0">
+                            <div className="w-full lg:p-8 lg:pt-8 lg:pb-8 h-full flex flex-wrap">
+                              <div className="w-full">
+                                <div className="mb-6 lg:mb-12">
+                                  <MetaText>Chapters</MetaText>
+                                </div>
+                                <ol className="text-[20px] lg:text-[22px] leading-tight lg:leading-tight w-full mb-16 lg:mb-8 list-decimal list-inside">
+                                  <li className="mb-1">
+                                    <ScrollToButton scrollTarget="#intro">
+                                      <span className="inline-block underline group-hover:text-orange-dark focus:text-orange-dark transition-colors ease-in-out duration-500">Our Team</span>
+                                    </ScrollToButton>
+                                  </li>
+                                  <li className="mb-1">
+                                    <ScrollToButton scrollTarget="#careers">
+                                      <span className="inline-block underline group-hover:text-orange-dark focus:text-orange-dark transition-colors ease-in-out duration-500">Career Opportunities</span>
+                                    </ScrollToButton>
+                                  </li>
+                                </ol>
+                              </div>
+
+                              <div className="hidden lg:block w-full mt-auto">
+                                <ScrollToButton full scrollTarget="#intro">
+                                  <span className="w-full block bg-soft-black-dark text-off-white uppercase text-center rounded-full px-4 lg:px-8 py-3 lg:py-3 text-[16px] lg:text-[50px] relative overflow-hidden leading-[0.8]">
+                                    <span className="absolute inset-0 w-0 bg-off-white group-hover:w-full transition-all ease-in-out duration-[600ms]"></span>
+                                    <span className="block overflow-hidden relative">
+                                      <span className="block relative z-10 transition-transform ease-in-out duration-[600ms] group-hover:translate-y-full mt-[-6px]">→</span>
+                                      <span className="absolute inset-0 block z-10 transition-transform ease-in-out duration-[600ms] group-hover:translate-y-0 translate-y-full text-soft-black-dark mt-[-6px]">→</span>
+                                    </span>
+                                  </span>
+                                </ScrollToButton>
+                              </div>
+                            </div>
                           </div>
                         </div>
                       </section>
@@ -98,19 +120,21 @@ export default function Team() {
                       <section className="w-full h-[40vh] lg:w-[65vw] lg:max-w-7xl lg:h-full whitespace-normal pl-[42px] pr-[25px] lg:px-0 py-[40px] lg:py-0 relative overflow-hidden" data-scroll-section>
                         <div className="absolute z-[20] top-0 left-0 bottom-0 h-full border-r border-soft-black-dark lg:border-r-0 lg:hidden w-5"></div>
                         <div className="absolute inset-0" data-scroll data-scroll-speed={-3}>
-                          <Image
-                            onLoad={event => {
-                            const target = event.target;
-                            if (target.src.indexOf('data:image/gif;base64') < 0) {
-                                setImageIsLoaded(true)
-                            }
-                          }}
-                            layout="fill"
-                            src={teamSupportingImage}
-                            alt="An Isometric Building"
-                            quality={90}
-                            className={`w-full h-full  object-center object-cover absolute inset-0 scale-125 ${imageIsLoaded ? 'opacity-100' : 'opacity-0'} transition-opacity duration-500 ease-in-out`}
-                          />
+                          <div className="w-full h-full scale-125" >
+                            <Image
+                              onLoad={event => {
+                              const target = event.target;
+                              if (target.src.indexOf('data:image/gif;base64') < 0) {
+                                  setImageIsLoaded(true)
+                              }
+                            }}
+                              layout="fill"
+                              src={teamSupportingImage}
+                              alt="An Isometric Building"
+                              quality={90}
+                              className={`w-full h-full  object-center object-cover absolute inset-0 scale-125 ${imageIsLoaded ? 'opacity-100' : 'opacity-0'} transition-opacity duration-500 ease-in-out`}
+                            />
+                          </div>
                         </div>
                       </section>
 
@@ -125,7 +149,7 @@ export default function Team() {
                         </div>
                       </section>
 
-                      <section className="lg:h-full pl-[42px] pr-[25px] lg:pr-16 2xl:pl-16 pb-[40px] lg:py-0 flex flex-wrap lg:flex-nowrap relative w-full lg:w-auto" data-scroll-section>
+                      <section className="lg:h-full pl-[42px] pr-[25px] lg:pr-16 2xl:pl-16 pb-[40px] lg:py-0 flex flex-wrap lg:flex-nowrap relative w-full lg:w-auto" data-scroll-section id="team">
                         <div className="absolute z-[20] top-0 left-0 bottom-0 h-full border-r border-soft-black-dark lg:border-r-0 lg:hidden w-5 bg-transparent backdrop-blur-3xl"></div>
                         
                         <div className="block lg:hidden w-full">
@@ -249,7 +273,7 @@ export default function Team() {
 
                                 <img className="opacity-100 hover:opacity-100 transition-opacity duration-500 ease-in-out block w-full object-center object-cover will-change" src={team[3].image} alt={team[3].name} />
 
-                                <h3 className="absolute top-0 mt-8 left-0 text-off-white z-20 text-[28px] 2xl:text-[34px] uppercase italic w-full text-left leading-[0.9] -translate-x-full group-hover:-translate-x-1 transition-transform ease-in-out duration-500" dangerouslySetInnerHTML={{ __html: team[3].name }}></h3>
+                                <h3 className="absolute top-0 mt-[40%] left-0 text-off-white z-20 text-[28px] 2xl:text-[34px] uppercase italic w-full text-left leading-[0.9] -translate-x-full group-hover:-translate-x-1 transition-transform ease-in-out duration-500" dangerouslySetInnerHTML={{ __html: team[3].name }}></h3>
                               </button>
 
                               <ModalTeam
@@ -331,7 +355,7 @@ export default function Team() {
 
                                 <img className="opacity-100 hover:opacity-100 transition-opacity duration-500 ease-in-out block w-full object-center object-cover will-change" src={team[7].image} alt={team[7].name} />
 
-                                <h3 className="absolute top-0 mt-8 left-0 text-off-white z-20 text-[28px] 2xl:text-[34px] uppercase italic w-full text-left leading-[0.9] -translate-x-full group-hover:-translate-x-1 transition-transform ease-in-out duration-500" dangerouslySetInnerHTML={{ __html: team[7].name}}></h3>
+                                <h3 className="absolute top-0 mt-[40%] left-0 text-off-white z-20 text-[28px] 2xl:text-[34px] uppercase italic w-full text-left leading-[0.9] -translate-x-full group-hover:-translate-x-1 transition-transform ease-in-out duration-500" dangerouslySetInnerHTML={{ __html: team[7].name}}></h3>
                               </button>
 
                               <ModalTeam
@@ -346,7 +370,7 @@ export default function Team() {
                         </div>
                       </section>
 
-                      <section className="w-full lg:w-[110vmin] lg:min-w-[110vmin] lg:h-full whitespace-normal pl-[42px] pr-[25px] lg:pl-12 lg:pr-12 pb-[70px] lg:py-8 lg:flex lg:flex-wrap relative lg:border-r lg:border-soft-black-dark" data-scroll-section>
+                      <section className="w-full lg:w-[110vmin] lg:min-w-[110vmin] lg:h-full whitespace-normal pl-[42px] pr-[25px] lg:pl-12 lg:pr-12 pb-[70px] lg:py-8 lg:flex lg:flex-wrap relative lg:border-r lg:border-soft-black-dark" data-scroll-section id="careers">
                         <div className="absolute z-[20] top-0 left-0 bottom-0 h-full border-r border-soft-black-dark lg:border-r-0 lg:hidden w-5 bg-transparent backdrop-blur-3xl"></div>
                         <div className="w-full mb-10 lg:mb-auto">
                           <div className="mb-6 lg:mb-12 lg:ml-[4px]">

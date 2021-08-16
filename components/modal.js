@@ -29,9 +29,9 @@ function useWindowSize() {
   return windowSize;
 }
 
-export function Modal({ children, defaultOpened = false }, ref) {
+export function Modal({ children, defaultOpened = false, isOpenPass }, ref) {
   const [isBrowser, setIsBrowser] = useState(false);
-  const [isOpen, setIsOpen] = useState(defaultOpened)
+  const [isOpen, setIsOpen] = useState(isOpenPass)
   const close = useCallback(() => setIsOpen(false), [])
   const size = useWindowSize();
 

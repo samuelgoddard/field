@@ -3,19 +3,29 @@ import { AnimatePresence } from 'framer-motion'
 import { useRouter } from 'next/router'
 import { DefaultSeo } from 'next-seo'
 import SEO from '@/helpers/seo.config'
-// import Header from '@/components/header'
-import FPSStats from "react-fps-stats";
-import CookieConsent, { Cookies } from 'react-cookie-consent'
-import { useState } from 'react'
+import CookieConsent, { Cookies, getCookieConsentValue } from 'react-cookie-consent'
+import { useEffect, useState } from 'react'
 import Link from 'next/link'
+import * as gtag from '@/helpers/gtag'
 
 export default function App({ Component, pageProps }) {
   const router = useRouter()
   const showCookieBar = useState(true)
 
+  useEffect(() => {
+    if (getCookieConsentValue()){
+      const handleRouteChange = (url) => {
+        gtag.pageview(url)
+      }
+      router.events.on('routeChangeComplete', handleRouteChange)
+      return () => {
+        router.events.off('routeChangeComplete', handleRouteChange)
+      }
+    }
+  }, [router.events])
+
   return (
     <>
-      {/* <FPSStats left={'auto'} top={0} right={0} /> */}
       <DefaultSeo {...SEO} />
 
       {showCookieBar && (

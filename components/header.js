@@ -1,25 +1,27 @@
 import { useEffect, useRef, useState } from "react";
-// import { useLocomotiveScroll } from 'react-locomotive-scroll'
+import { useLocomotiveScroll } from 'react-locomotive-scroll'
 import Modal from '@/components/modal'
 import MenuTray from "./menu-tray";
 
 export default function Header({ route }) {
-  // const { scroll } = useLocomotiveScroll()
+  const { scroll } = useLocomotiveScroll()
+  const [showLogo, setShowLogo] = useState(false)
   const modalEl = useRef(null)
   const [isOpen, setIsOpen] = useState(false)
-  // let progressBar = null;
 
-  // Monitor Page Scroll Progress Percent
-  // useEffect(() => {
-  //   progressBar = document.querySelector('.menu-button')
-  //   if (scroll) {
-  //     scroll.on('scroll', ({ limit, scroll }) => {
-  //       const progress = scroll.x / limit.x * 100
-  //       progressBar.style.height = `${progress}%`
-  //     })
-  //   }
-  // }, [scroll])
-
+  useEffect(() => {
+    if (scroll) {
+      scroll.on('scroll', ({ limit, scroll }) => {
+        const progress = scroll.x / limit.x * 100
+        
+        if (progress > 4) {
+          setShowLogo(true)
+        } else {
+          setShowLogo(false)
+        } 
+      })
+    }
+  }, [scroll, showLogo])
 
   const toggleModal = () => {
     setIsOpen(!isOpen)
@@ -68,8 +70,8 @@ export default function Header({ route }) {
     </span> */}
 
       {/* Menu Tray */}
-      <Modal ref={modalEl}>
-        <MenuTray modalEl={modalEl} route={route} />
+      <Modal ref={modalEl} isOpenPass={isOpen}>
+        <MenuTray showLogo={showLogo} modalEl={modalEl} route={route} />
       </Modal>
     </header>
   )

@@ -57,7 +57,7 @@ export default function Home() {
                               <Logo width="w-[140px] lg:w-[240px]" />
                             </div>
                             <div className="w-full lg:pr-32 mt-5 my-auto lg:my-auto mb-16">
-                              <h1 className="text-[18vw] lg:text-[100px] xl:text-[120px] 2xl:text-[140px] 3xl:text-[155px] block leading-[0.85] uppercase italic ml-[-28px] lg:ml-[-5px]">Making The Planet Worth More</h1>
+                              <h1 className="text-[18vw] lg:text-[100px] xl:text-[120px] 2xl:text-[140px] 3xl:text-[155px] block leading-[0.85] uppercase italic ml-[-28px] lg:ml-[30px]" data-scroll data-scroll-speed={2}>Making The Planet Worth More</h1>
                             </div>
                             <div className="w-full flex flex-wrap lg:space-x-7 mt-auto lg:px-[30px]">
                               <div className="w-full lg:w-auto mb-2 lg:mb-0">
