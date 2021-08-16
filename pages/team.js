@@ -77,7 +77,7 @@ export default function Team() {
                             </div>
 
                             <div className="lg:pr-10 mb-auto w-full lg:w-[620px] xl:w-[720px] 2xl:w-[800px]">
-                              <h1 className="text-[14.5vw] lg:text-[100px] xl:text-[120px] 2xl:text-[140px] 3xl:text-[155px] block leading-[0.85] uppercase italic ml-[-24px] lg:ml-[55px]" data-scroll data-scroll-speed={2}>Progress Needs Energy</h1>
+                              <h1 className="text-[14.5vw] lg:text-[100px] xl:text-[120px] 2xl:text-[140px] 3xl:text-[155px] block leading-[0.85] uppercase italic ml-[-24px] lg:ml-[3.5vw] xl:ml-[3.8vw] 2xl:ml-[4.4vw] 3xl:ml-[5vw]" data-scroll data-scroll-speed={2}>Progress Needs Energy</h1>
                             </div>
                           </div>
 

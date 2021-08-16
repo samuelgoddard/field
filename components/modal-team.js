@@ -74,7 +74,7 @@ export function ModalTeam({ children, image, name, jobTitle, bio, defaultOpened 
               >
                 <div className="flex flex-wrap h-full relative overflow-hidden">
 
-                <button className="w-[45px] lg:w-[55px] h-[45px] lg:h-[55px] rounded-full flex items-center justify-center bg-off-white-dark hover:text-off-white overflow-hidden group absolute top-0 right-0 m-5 transition-colors ease-in-out duration-500" onClick={close}>
+                <button className="w-[45px] lg:w-[45px] h-[45px] lg:h-[45px] rounded-full flex items-center justify-center bg-off-white-dark hover:text-off-white overflow-hidden group absolute top-0 right-0 m-5 transition-colors ease-in-out duration-500" onClick={close}>
                   <span className="absolute inset-0 w-0 bg-soft-black-dark group-hover:w-full transition-all ease-in-out duration-[600ms]"></span>
 
                   <div className="w-full flex flex-wrap justify-center relative z-10 overflow-hidden mt-[3px]">

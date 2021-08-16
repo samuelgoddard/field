@@ -64,7 +64,7 @@ export default function Mission() {
                             </div>
 
                             <div className="w-full lg:pr-10 mb-auto">
-                              <h1 className="text-[14.5vw] lg:text-[100px] xl:text-[120px] 2xl:text-[140px] 3xl:text-[155px] block leading-[0.85] uppercase italic ml-[-24px] lg:ml-[30px]" data-scroll data-scroll-speed={2}>Accelerate renewable energy <span className="inline lg:hidden">infra-structure</span><span className="hidden lg:inline">infrastructure</span></h1>
+                              <h1 className="text-[14.5vw] lg:text-[100px] xl:text-[120px] 2xl:text-[140px] 3xl:text-[155px] block leading-[0.85] uppercase italic ml-[-24px] lg:ml-[2.5vw] xl:ml-[2.2vw] 2xl:ml-[2vw] 3xl:ml-[2.4vw]" data-scroll data-scroll-speed={2}>Accelerate renewable energy <span className="inline lg:hidden">infra-structure</span><span className="hidden lg:inline">infrastructure</span></h1>
                             </div>
                           </div>
 

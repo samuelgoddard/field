@@ -6,17 +6,19 @@ import SEO from '@/helpers/seo.config'
 import CookieConsent, { Cookies, getCookieConsentValue } from 'react-cookie-consent'
 import { useEffect, useState } from 'react'
 import Link from 'next/link'
+import { Context } from '../context/state';
 import * as gtag from '@/helpers/gtag'
 
 export default function App({ Component, pageProps }) {
   const router = useRouter()
   const showCookieBar = useState(true)
+  const [globalMenuOpen, setGlobalMenuOpen] = useState(false);
 
   useEffect(() => {
     if (getCookieConsentValue()){
       const handleRouteChange = (url) => {
         gtag.pageview(url)
-      }
+    }
       router.events.on('routeChangeComplete', handleRouteChange)
       return () => {
         router.events.off('routeChangeComplete', handleRouteChange)
@@ -58,10 +60,15 @@ export default function App({ Component, pageProps }) {
           This site uses cookies to improve your visiting experience, <Link href="/privacy"><a className="underline inline-block">more info</a></Link>
         </CookieConsent>
       )}
-
-      <AnimatePresence exitBeforeEnter>
-        <Component {...pageProps} key={router.asPath} />
-      </AnimatePresence>
+      <Context.Provider 
+        value={
+          [globalMenuOpen, setGlobalMenuOpen]
+        }
+      >
+        <AnimatePresence exitBeforeEnter>
+          <Component {...pageProps} key={router.asPath} />
+        </AnimatePresence>
+      </Context.Provider>
     </>
   )
 }

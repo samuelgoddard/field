@@ -1,6 +1,6 @@
-
-import React, { useEffect, useImperativeHandle, useState, forwardRef, useCallback } from 'react'
+import React, { useEffect, useImperativeHandle, useState, forwardRef, useCallback, useContext } from 'react'
 import { createPortal } from 'react-dom'
+import { Context } from '../context/state'
 import { m, AnimatePresence } from 'framer-motion'
 
 function useWindowSize() {
@@ -32,7 +32,8 @@ function useWindowSize() {
 export function Modal({ children, defaultOpened = false, isOpenPass }, ref) {
   const [isBrowser, setIsBrowser] = useState(false);
   const [isOpen, setIsOpen] = useState(isOpenPass)
-  const close = useCallback(() => setIsOpen(false), [])
+  const [globalMenuOpen, setGlobalMenuOpen] = useContext(Context);
+  const close = useCallback(() => setGlobalMenuOpen(false), [])
   const size = useWindowSize();
 
   const modalTrayVariant = {
@@ -55,7 +56,7 @@ export function Modal({ children, defaultOpened = false, isOpenPass }, ref) {
   };
 
   useImperativeHandle(ref, () => ({
-    open: () => setIsOpen(true),
+    open: () => setGlobalMenuOpen(true),
     close
   }), [close])
 
@@ -65,8 +66,8 @@ export function Modal({ children, defaultOpened = false, isOpenPass }, ref) {
 
   useEffect(() => {
     setIsBrowser(true);
-    if (isOpen) document.addEventListener('keydown', handleEscape, false)
-    if (isOpen) {
+    if (globalMenuOpen) document.addEventListener('keydown', handleEscape, false)
+    if (globalMenuOpen) {
       document.body.style.overflow = 'hidden';
     } else {
       document.body.style.overflow = 'unset';
@@ -74,13 +75,13 @@ export function Modal({ children, defaultOpened = false, isOpenPass }, ref) {
     return () => {
       document.removeEventListener('keydown', handleEscape, false)
     }
-  }, [handleEscape, isOpen])
+  }, [handleEscape, globalMenuOpen])
 
   if (isBrowser) {
     return createPortal(
       <>
       <AnimatePresence>
-        { isOpen ? (
+        { globalMenuOpen ? (
           <m.div 
             initial={"initial"}
             animate={"isOpen"}
