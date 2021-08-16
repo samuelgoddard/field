@@ -19,10 +19,10 @@ export const team = [{
   image: '/images/charlotte.jpg',
   bio: `<p>Previously Head of PR at Bulb and an Associate Director in the Energy + Industrials team at H+K Strategies, Charlotte has spent her career focusing on communications for businesses driving the transition to a green economy, and fast-growth challenger brands.</p>`
 },{
-  name: `Hana<br/>Lewington`,
-  jobTitle: 'Finance Manager',
-  image: '/images/hana.jpg',
-  bio: `<p>With experience spanning fundraising, M&A and strategic consultancy, Luke was previously Global Strategy lead at food delivery player Glovo as it scaled globally.</p>`
+  name: `Clare<br/>Cooke`,
+  jobTitle: `EA to Amit Gudka`,
+  image: '/images/clare.jpg',
+  bio: `Clare has over 25 years’ experience in event management & logistics within the media industry as well as diary and timeline management for C-Suite executives, NEDs and Entrepreneurs across a broad range of industries.`
 },{
   name: `Stephen<br/>White`,
   jobTitle: 'Finance Director',
@@ -33,4 +33,9 @@ export const team = [{
   jobTitle: 'Lead Data Scientist',
   image: '/images/andreas.jpg',
   bio: `<p>With a passion for generating insights out of data, automating pipelines and bringing models into production, Andreas has extensive experience as a senior data scientist in fintech, insuretech and utility companies.</p>`
+},{
+  name: `Hana<br/>Lewington`,
+  jobTitle: 'Finance Manager',
+  image: '/images/hana.jpg',
+  bio: `<p>With experience spanning fundraising, M&A and strategic consultancy, Luke was previously Global Strategy lead at food delivery player Glovo as it scaled globally.</p>`
 }]

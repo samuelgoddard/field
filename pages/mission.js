@@ -105,11 +105,11 @@ export default function Mission() {
                             <MetaText>The Challenge</MetaText>
                           </div>
 
-                          <h2 className="text-[10.5vw] lg:text-[10vmin] xl:text-[11vmin] 2xl:text-[12vmin] leading-[0.9] mb-6">We need a seismic shift in our energy systems - and we need it now.</h2>
+                          <h2 className="text-[10.5vw] lg:text-[10vmin] xl:text-[11vmin] 2xl:text-[11vmin] 3xl:text-[11.5vmin] leading-[0.9] mb-6">We need a seismic shift in our energy systems - and we need it now.</h2>
                         </div>
                       </section>
 
-                      <section className="w-full lg:w-[130vw] lg:max-w-[1200px] lg:h-full whitespace-normal pb-8 lg:flex lg:flex-wrap relative lg:border-l lg:border-soft-black-dark overflow-hidden" id="mission" data-scroll-section>
+                      <section className="w-full lg:w-[130vw] lg:max-w-[1200px] lg:h-full whitespace-normal pb-8 lg:flex lg:flex-wrap relative lg:border-l 2xl:ml-12 lg:border-soft-black-dark overflow-hidden" id="mission" data-scroll-section>
                         <div className="absolute z-[20] top-0 left-0 bottom-0 h-full border-r border-soft-black-dark lg:border-r-0 lg:hidden w-5"></div>
                         
                         <div className="w-full relative h-[35%] lg:h-[38%] overflow-hidden mb-8 lg:mb-auto">

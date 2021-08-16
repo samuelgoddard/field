@@ -78,10 +78,13 @@ export function ModalTeam({ children, image, name, jobTitle, bio, defaultOpened 
                   </div>
 
                   <div className="w-full lg:w-2/3 ml-auto h-full overflow-y-scroll p-6 lg:p-10 lg:pt-10">
-                    <MetaText>{jobTitle}</MetaText>
-                    <h2 className="text-3xl lg:text-4xl 2xl:text-5xl block uppercase italic mt-2" dangerouslySetInnerHTML={{ __html: name }}></h2>
+                    <div className="mb-5">
+                      <MetaText>{jobTitle}</MetaText>
+                    </div>
 
-                    <div className="content" dangerouslySetInnerHTML={{ __html: bio }}>
+                    <h2 className="text-4xl lg:text-4xl 2xl:text-5xl block uppercase italic leading-none mt-2 lg:mb-8" dangerouslySetInnerHTML={{ __html: name }}></h2>
+
+                    <div className="content leading-snug lg:leading-none lg:text-base" dangerouslySetInnerHTML={{ __html: bio }}>
                     </div>
                   </div>
                 </div>

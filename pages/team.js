@@ -63,7 +63,7 @@ export default function Team() {
                               </Link>
                             </div>
 
-                            <div className="w-full lg:w-8/12 xl:w-9/12  mb-auto">
+                            <div className="w-full lg:w-[620px] xl:w-[720px] 2xl:w-[800px]  mb-auto">
                               <h1 className="text-[14.5vw] lg:text-[100px] xl:text-[120px] 2xl:text-[140px] 3xl:text-[155px] block leading-[0.85] uppercase italic ml-[-26px] lg:ml-[-13px]">Progress Needs Energy</h1>
                             </div>
                           </div>
@@ -84,8 +84,8 @@ export default function Team() {
 
                       <section className="w-full h-[40vh] lg:w-[65vw] lg:max-w-7xl lg:h-full whitespace-normal pl-[42px] pr-[25px] lg:px-0 py-[40px] lg:py-0 relative overflow-hidden" data-scroll-section>
                         <div className="absolute z-[20] top-0 left-0 bottom-0 h-full border-r border-soft-black-dark lg:border-r-0 lg:hidden w-5"></div>
-                        <div className="absolute inset-0 scale-125">
-                          <img src="/images/team.jpg" alt="PLACEHOLDER" className="w-full h-full  object-center object-cover" data-scroll data-scroll-speed={-3} />
+                        <div className="absolute inset-0" data-scroll data-scroll-speed={-3}>
+                          <img src="/images/team.jpg" alt="PLACEHOLDER" className="w-full h-full  object-center object-cover absolute inset-0 scale-125" />
                         </div>
                       </section>
 
@@ -96,16 +96,16 @@ export default function Team() {
                             <MetaText>Our Team</MetaText>
                           </div>
 
-                          <h2 className="text-[10vw] lg:text-[10vmin] xl:text-[11vmin] 2xl:text-[12vmin] leading-[0.9]">We believe systemic changes can be made, and we’re determined to make them happen fast.</h2>
+                          <h2 className="text-[10vw] lg:text-[10vmin] xl:text-[11vmin] 2xl:text-[11vmin] 3xl:text-[11vmin] leading-[0.9]">We believe systemic changes can be made, and we’re determined to make them happen fast.</h2>
                         </div>
                       </section>
 
-                      <section className="lg:h-full pl-[42px] pr-[25px] lg:pr-16 lg:pl-0 pb-[40px] lg:py-0 flex flex-wrap lg:flex-nowrap relative w-full lg:w-auto" data-scroll-section>
+                      <section className="lg:h-full pl-[42px] pr-[25px] lg:pr-16 2xl:pl-16 pb-[40px] lg:py-0 flex flex-wrap lg:flex-nowrap relative w-full lg:w-auto" data-scroll-section>
                         <div className="absolute z-[20] top-0 left-0 bottom-0 h-full border-r border-soft-black-dark lg:border-r-0 lg:hidden w-5 bg-transparent backdrop-blur-3xl"></div>
                         
                         <div className="block lg:hidden w-full">
                           {/* <TeamCarousel slides={team} /> */}
-                          <div className="flex flex-wrap -mx-2">
+                          <div className="flex flex-wrap -mx-3">
                             {team.map((team, index) => {
                               let modal = null;
 
@@ -123,15 +123,17 @@ export default function Team() {
                                 modal = modalEl6
                               } else if (index == 6) {
                                 modal = modalEl7
+                              } else if (index == 7) {
+                                modal = modalEl8
                               }
                               return (
-                                <div className="w-1/2 px-2 mb-4" key={index}>
+                                <div className="w-1/2 px-3 mb-4" key={index}>
                                   <button className="group block hover:border-0 focus:border-0 hover:outline-none focus:outline-none lg:mb-16 relative overflow-hidden" onClick={() => modal.current.open()}>
                                     <img className="block w-full object-center object-cover will-change" src={team.image} alt={team.name} />
                                     <div className="text-left mt-3">
-                                      <MetaText>{team.jobTitle}</MetaText>
+                                      <MetaText small>{team.jobTitle}</MetaText>
                                     </div>
-                                    <h3 className="text-left uppercase italic text-xl leading-tight mt-2" dangerouslySetInnerHTML={{ __html: team.name }}></h3>
+                                    <h3 className="text-left uppercase italic text-xl leading-none mt-2" dangerouslySetInnerHTML={{ __html: team.name }}></h3>
                                   </button>
                                 </div>
                               )
@@ -174,7 +176,7 @@ export default function Team() {
                                 image={team[1].image}
                               />
 
-                              <img className="opacity-30 block w-full object-center object-cover will-change mb-6 lg:mb-16 relative" src="/images/avatar.jpg" alt="Avatar" />
+                              <img className="opacity-10 block w-full object-center object-cover will-change mb-6 lg:mb-16 relative" src="/images/team-placeholder.jpg" alt="Avatar" />
                             </div>
                           </div>
                         </div>
@@ -182,7 +184,7 @@ export default function Team() {
                         <div className="lg:h-full hidden lg:block lg:pl-10">
                           <div className="h-full w-auto lg:w-[30vh] lg:min-w-[30vh]" data-scroll data-scroll-speed={-0.75} data-scroll-direction="vertical">
                             <div className="w-full lg:mt-[-30vh] h-full">
-                              <img className="opacity-30 block w-full object-center object-cover will-change mb-6 lg:mb-16 relative" src="/images/avatar.jpg" alt="Avatar" />
+                              <img className="opacity-10 block w-full object-center object-cover will-change mb-6 lg:mb-16 relative rotate-180" src="/images/team-placeholder.jpg" alt="Avatar" />
 
                               <button className="group block hover:border-0 focus:border-0 hover:outline-none focus:outline-none mb-6 lg:mb-10 relative overflow-hidden" onClick={() => modalEl3.current.open()}>
                                 <img className="inset-0 absolute z-10 mix-blend-overlay will-change opacity-0 group-hover:opacity-100 group-focus:opacity-100 transition-opacity ease-in-out duration-500" src="/images/team-overlay.jpg" alt="Supergraphic Overlay" />
@@ -255,15 +257,15 @@ export default function Team() {
                                 image={team[5].image}
                               />
 
-                              <img className="opacity-30 block w-full object-center object-cover will-change mb-6 lg:mb-16 relative" src="/images/avatar.jpg" alt="Avatar" />
+                              <img className="opacity-10 block w-full object-center object-cover will-change mb-6 lg:mb-16 relative" src="/images/team-placeholder.jpg" alt="Avatar" />
                             </div>
                           </div>
                         </div>
 
                         <div className="lg:h-full hidden lg:block lg:pl-10">
                           <div className="h-full w-auto lg:w-[30vh] lg:min-w-[30vh]" data-scroll data-scroll-speed={-0.75} data-scroll-direction="vertical">
-                            <div className="w-full lg:mt-[-10vh] h-full">
-                              <img className="opacity-30 block w-full object-center object-cover will-change mb-6 lg:mb-16 relative" src="/images/avatar.jpg" alt="Avatar" />
+                            <div className="w-full lg:mt-[-25vh] h-full">
+                              <img className="opacity-10 block w-full object-center object-cover will-change mb-6 lg:mb-16 relative rotate-180" src="/images/team-placeholder.jpg" alt="Avatar" />
 
                               <button className="group block hover:border-0 focus:border-0 hover:outline-none focus:outline-none mb-6 lg:mb-10 relative overflow-hidden" onClick={() => modalEl7.current.open()}>
                                 <img className="inset-0 absolute z-10 mix-blend-overlay will-change opacity-0 group-hover:opacity-100 group-focus:opacity-100 transition-opacity ease-in-out duration-500" src="/images/team-overlay.jpg" alt="Supergraphic Overlay" />
@@ -281,7 +283,22 @@ export default function Team() {
                                 image={team[6].image}
                               />
 
-                              <img className="opacity-30 block w-full object-center object-cover will-change mb-6 lg:mb-16 relative" src="/images/avatar.jpg" alt="Avatar" />
+
+                              <button className="group block hover:border-0 focus:border-0 hover:outline-none focus:outline-none mb-6 lg:mb-10 relative overflow-hidden" onClick={() => modalEl8.current.open()}>
+                                <img className="inset-0 absolute z-10 mix-blend-overlay will-change opacity-0 group-hover:opacity-100 group-focus:opacity-100 transition-opacity ease-in-out duration-500" src="/images/team-overlay.jpg" alt="Supergraphic Overlay" />
+
+                                <img className="opacity-100 hover:opacity-100 transition-opacity duration-500 ease-in-out block w-full object-center object-cover will-change" src={team[7].image} alt={team[7].name} />
+
+                                <h3 className="absolute top-0 mt-8 left-0 text-off-white z-20 text-[28px] 2xl:text-[34px] uppercase italic w-full text-left leading-[0.9] -translate-x-full group-hover:-translate-x-1 transition-transform ease-in-out duration-500" dangerouslySetInnerHTML={{ __html: team[7].name}}></h3>
+                              </button>
+
+                              <ModalTeam
+                                ref={modalEl8}
+                                name={team[7].name}
+                                jobTitle={team[7].jobTitle}
+                                bio={team[7].bio}
+                                image={team[7].image}
+                              />
                             </div>
                           </div>
                         </div>
@@ -301,13 +318,13 @@ export default function Team() {
                         
                         <nav className="w-full mt-auto lg:mr-10">
                           <ul className="border-t border-soft-black-dark">
-                            <li className="py-3 border-b border-soft-black-dark text-[22px] lg:text-[26px] xl:text-[28px] 2xl:text-[28px]">
+                            <li className="py-3 border-b border-soft-black-dark text-[22px] lg:text-[26px] xl:text-[28px] 2xl:text-[42px]">
                               <a href="#" target="_blank" rel="noopener noreferrer" className="hover:text-orange focus:text-orange transition ease-in-out duration-300">→ CTO</a>
                             </li>
-                            <li className="py-3 border-b border-soft-black-dark text-[22px] lg:text-[26px] xl:text-[28px] 2xl:text-[28px]">
+                            <li className="py-3 border-b border-soft-black-dark text-[22px] lg:text-[26px] xl:text-[28px] 2xl:text-[42px]">
                               <a href="#" target="_blank" rel="noopener noreferrer" className="hover:text-orange focus:text-orange transition ease-in-out duration-300">→ FP&amp;A Manager</a>
                             </li>
-                            <li className="py-3 border-b border-soft-black-dark text-[22px] lg:text-[26px] xl:text-[28px] 2xl:text-[28px]">
+                            <li className="py-3 border-b border-soft-black-dark text-[22px] lg:text-[26px] xl:text-[28px] 2xl:text-[42px]">
                               <a href="#" target="_blank" rel="noopener noreferrer" className="hover:text-orange focus:text-orange transition ease-in-out duration-300">→ General Counsel</a>
                             </li>
                           </ul>

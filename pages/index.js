@@ -84,9 +84,9 @@ export default function Home() {
                                 <MetaText>About Us</MetaText>
                               </div>
 
-                              <p className="text-base lg:text-lg 2xl:text-xl leading-tight lg:leading-tight w-10/12 lg:w-11/12 2xl:w-10/12 mb-4 lg:mb-5">We’re breaking new ground, building energy infrastructure to be both renewable and profitable as standard.</p>
+                              <p className="text-base lg:text-lg 2xl:text-xl leading-tight lg:leading-tight 2xl:leading-tight w-10/12 lg:w-11/12 2xl:w-11/12 mb-4 lg:mb-5">We’re breaking new ground, building energy infrastructure to be both renewable and profitable as standard.</p>
                               
-                              <p className="text-base lg:text-lg 2xl:text-xl leading-tight lg:leading-tight w-10/12 lg:w-11/12 2xl:w-10/12 mb-16 lg:mb-10">Field will finance, build, operate and monetise the renewable infrastructure we need to tackle these challenges - starting with battery storage. First in the UK, then globally.</p>
+                              <p className="text-base lg:text-lg 2xl:text-xl leading-tight lg:leading-tight 2xl:leading-tight w-10/12 lg:w-11/12 2xl:w-11/12 mb-16 lg:mb-10">Field will finance, build, operate and monetise the renewable infrastructure we need to tackle these challenges - starting with battery storage. First in the UK, then globally.</p>
 
                               <div className="hidden lg:block">
                                 <ScrollToButton full scrollTarget="#intro">
@@ -111,44 +111,44 @@ export default function Home() {
                             <MetaText>New Generation</MetaText>
                           </div>
 
-                          <h2 className="text-[12.5vw] lg:text-[10vmin] xl:text-[11vmin] 2xl:text-[12vmin] leading-[0.9] ml-[-3px] lg:ml-0">Field. Smart, investable solutions towards net zero.</h2>
+                          <h2 className="text-[12.5vw] lg:text-[10vmin] xl:text-[11vmin] 2xl:text-[11vmin] 3xl:text-[11vmin] leading-[0.9] ml-[-3px] lg:ml-0">Field. Smart, investable solutions towards net zero.</h2>
                         </div>
                       </section>
 
-                      <section className="lg:h-full whitespace-normal pl-[42px] pr-[25px] lg:pr-16 lg:pl-0 pb-[40px] lg:py-0 flex flex-wrap lg:flex-nowrap relative lg:border-r lg:border-soft-black-dark" data-scroll-section>
+                      <section className="lg:h-full whitespace-normal pl-[42px] pr-[25px] lg:pr-16 lg:pl-0 2xl:pl-12 pb-[40px] lg:py-0 flex flex-wrap lg:flex-nowrap relative lg:border-r lg:border-soft-black-dark" data-scroll-section>
                         <div className="absolute z-[20] top-0 left-0 bottom-0 h-full border-r border-soft-black-dark lg:border-r-0 lg:hidden w-5"></div>
-                        <div className="lg:border-l lg:border-soft-black-dark lg:h-full flex items-end lg:min-w-[540px] lg:p-8 mb-12 lg:mb-0">
+                        <div className="lg:border-l lg:border-soft-black-dark lg:h-full flex items-end lg:min-w-[540px] 3xl:w-[600px] lg:p-8 mb-12 lg:mb-0">
                           <div className="lg:pb-[25px]">
                             <img className="w-4/12 lg:w-5/12 will-change mb-5 lg:mb-8" src="/images/finance.png" alt="Finance Icon" />
-                            <h3 className="mb-4 text-[9vw] lg:text-[52px] 2xl:text-[70px] leading-none">Finance</h3>
+                            <h3 className="mb-4 lg:mb-5 2xl:mb-8 text-[9vw] lg:text-[52px] 2xl:text-[58px] leading-none">Finance</h3>
                             <p className="block text-base lg:text-xl leading-tight lg:leading-tight 2xl:leading-tight">We'll draw on our unique experience to raise funds from diverse pools of capital.</p>
                           </div>
                         </div>
-                        <div className="lg:border-l lg:border-soft-black-dark lg:h-full flex items-end lg:min-w-[540px] lg:p-8 mb-12 lg:mb-0">
+                        <div className="lg:border-l lg:border-soft-black-dark lg:h-full flex items-end lg:min-w-[540px] 3xl:w-[600px] lg:p-8 mb-12 lg:mb-0">
                           <div className="">
                             <img className="w-4/12 lg:w-5/12 will-change mb-5 lg:mb-8" src="/images/build.png" alt="Build Icon" />
-                            <h3 className="mb-4 text-[9vw] lg:text-[52px] 2xl:text-[70px] leading-none">Build</h3>
+                            <h3 className="mb-4 lg:mb-5 2xl:mb-8 text-[9vw] lg:text-[52px] 2xl:text-[58px] leading-none">Build</h3>
                             <p className="block text-base lg:text-xl leading-tight lg:leading-tight 2xl:leading-tight">We'll act fast to build the infrastructure we needed. We'll start with energy storage, then push into other infrastructure.</p>
                           </div>
                         </div>
-                        <div className="lg:border-l lg:border-soft-black-dark lg:h-full flex items-end lg:min-w-[540px] lg:p-8 mb-12 lg:mb-0">
+                        <div className="lg:border-l lg:border-soft-black-dark lg:h-full flex items-end lg:min-w-[540px] 3xl:w-[600px] lg:p-8 mb-12 lg:mb-0">
                           <div className=" lg:pb-[25px]">
                             <img className="w-4/12 lg:w-5/12 will-change mb-5 lg:mb-8" src="/images/network.png" alt="Network Icon" />
-                            <h3 className="mb-4 text-[9vw] lg:text-[52px] 2xl:text-[70px] leading-none">Network</h3>
+                            <h3 className="mb-4 lg:mb-5 2xl:mb-8 text-[9vw] lg:text-[52px] 2xl:text-[58px] leading-none">Network</h3>
                             <p className="block text-base lg:text-xl leading-tight lg:leading-tight 2xl:leading-tight">Our market leading analysis will identify the best sites, markets and technology.</p>
                           </div>
                         </div>
-                        <div className="lg:border-l lg:border-soft-black-dark lg:h-full flex items-end lg:min-w-[540px] lg:p-8 mb-12 lg:mb-0">
+                        <div className="lg:border-l lg:border-soft-black-dark lg:h-full flex items-end lg:min-w-[540px] 3xl:w-[600px] lg:p-8 mb-12 lg:mb-0">
                           <div className="">
                             <img className="w-4/12 lg:w-5/12 will-change mb-5 lg:mb-8" src="/images/operate.png" alt="Operate Icon" />
-                            <h3 className="mb-4 text-[9vw] lg:text-[52px] 2xl:text-[70px] leading-none">Operate</h3>
+                            <h3 className="mb-4 lg:mb-5 2xl:mb-8 text-[9vw] lg:text-[52px] 2xl:text-[58px] leading-none">Operate</h3>
                             <p className="block text-base lg:text-xl leading-tight lg:leading-tight 2xl:leading-tight">We'll manage and operate our own infrastructure - and we're building our own software to optimise and connect to our assets.</p>
                           </div>
                         </div>
-                        <div className="lg:border-l lg:border-soft-black-dark lg:h-full flex items-end lg:min-w-[540px] lg:p-8 mb-6 lg:mb-0">
+                        <div className="lg:border-l lg:border-soft-black-dark lg:h-full flex items-end lg:min-w-[540px] 3xl:w-[600px] lg:p-8 mb-6 lg:mb-0">
                           <div className="">
                             <img className="w-4/12 lg:w-5/12 will-change mb-5 lg:mb-8" src="/images/grow.png" alt="Grow Icon" />
-                            <h3 className="mb-4 text-[9vw] lg:text-[52px] 2xl:text-[70px] leading-none">Grow</h3>
+                            <h3 className="mb-4 lg:mb-5 2xl:mb-8 text-[9vw] lg:text-[52px] 2xl:text-[58px] leading-none">Grow</h3>
                             <p className="block text-base lg:text-xl leading-tight lg:leading-tight 2xl:leading-tight">By generating outsized returns from our storage assets, we’ll encourage large-scale investment into the transition to net zero.</p>
                           </div>
                         </div>
