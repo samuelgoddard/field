@@ -50,7 +50,7 @@ export default function Mission() {
                           src={MissionSupergraphic}
                           alt="Field Supergraphic"
                           quality={90}
-                          className={`w-full h-full absolute inset-0 z-0 object-cover object-center will-change`}
+                          className={`w-full h-full absolute inset-0 z-0 object-cover object-center will-change lg:animate-supergraphic`}
                         />
                         
                         <div className="flex flex-wrap lg:items-center h-full relative">

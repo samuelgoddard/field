@@ -46,19 +46,19 @@ export default function Header({ route }) {
 
         <div className={`w-full flex flex-wrap justify-center relative z-10 mt-[6px]`}>
 
-          <div className={`w-full flex flex-wrap justify-center overflow-hidden relative z-10 mb-[5px] transition-opacity duration-500 ease-in-out ${globalMenuOpen ? 'opacity-0' : 'opacity-100'}`}>
+          <div className={`w-full flex flex-wrap justify-center overflow-hidden relative z-10 mb-[5px] transition-opacity  ${globalMenuOpen ? 'opacity-0' : 'opacity-100'}`}>
             <span className="w-[52%] h-[3px] bg-soft-black-dark block transition-transform ease-in-out duration-[600ms] group-hover:translate-y-full"></span>
 
             <span className="w-[52%] h-[3px] bg-off-white absolute inset-0 mx-auto block z-10 transition-transform ease-in-out duration-[600ms] group-hover:translate-y-0 translate-y-full"></span>
           </div>
 
-          <div className={`w-full flex flex-wrap justify-center overflow-hidden relative z-10 mb-[5px] transition-opacity duration-500 ease-in-out ${globalMenuOpen ? 'opacity-0' : 'opacity-100'}`}>
+          <div className={`w-full flex flex-wrap justify-center overflow-hidden relative z-10 mb-[5px] transition-opacity  ${globalMenuOpen ? 'opacity-0' : 'opacity-100'}`}>
             <span className="w-[52%] h-[3px] bg-soft-black-dark block transition-transform ease-in-out duration-[600ms] group-hover:translate-y-full"></span>
 
             <span className="w-[52%] h-[3px] bg-off-white absolute inset-0 mx-auto block z-10 transition-transform ease-in-out duration-[600ms] group-hover:translate-y-0 translate-y-full"></span>
           </div>
           
-          <div className={`absolute inset-0 mt-[-6px] lg:mt-[-2px] ml-[-1px] flex items-center justify-center transition-opacity duration-500 ease-in-out ${globalMenuOpen ? 'opacity-100' : 'opacity-0'}`}>
+          <div className={`absolute inset-0 mt-[-6px] lg:mt-[-5px] ml-[-1px] flex items-center justify-center transition-opacity  ${globalMenuOpen ? 'opacity-100' : 'opacity-0'}`}>
             <svg className="w-5 h-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 357 357"><path fill="currentColor" d="M357 35.7L321.3 0 178.5 142.8 35.7 0 0 35.7l142.8 142.8L0 321.3 35.7 357l142.8-142.8L321.3 357l35.7-35.7-142.8-142.8z"/></svg>
           </div>
         </div>
