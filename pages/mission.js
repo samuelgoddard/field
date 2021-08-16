@@ -169,7 +169,7 @@ export default function Mission() {
                         <div className="lg:flex lg:flex-wrap lg:absolute inset-0 items-end mt-12 lg:mt-0">
                           <div className="w-[37%] h-[150px] lg:w-1/3 pl-[42px] pr-5 lg:px-6 py-3 lg:py-5 lg:h-[25%] flex flex-wrap lg:flex items-center lg:items-start bg-blue">
                             <div className="w-full">
-                              <span className="w-full block uppercase italic text-[22px] lg:text-[42px] leading-none lg:leading-none mb-1 lg:mb-2">2022</span>
+                              <span className="w-full block uppercase italic text-[22px] lg:text-[47px] leading-none lg:leading-none mb-1 lg:mb-2">2022</span>
                               <span className="w-full block text-[13px] lg:text-lg leading-tight lg:leading-tight lg:w-9/12">20 MW UK battery</span>
                             </div>
                             <img className="w-[30px] lg:w-[55px] block mt-auto" src="/images/battery-1.png" alt="Battery Icon" />
@@ -177,14 +177,14 @@ export default function Mission() {
 
                           <div className="w-[75%] h-[150px] lg:w-1/3 pl-[42px] pr-5 lg:px-6 py-3 lg:py-5 lg:h-[66%] flex flex-wrap lg:flex items-center lg:items-start bg-off-white">
                             <div className="w-full">
-                              <span className="w-full block uppercase italic text-[30px] lg:text-[52px] leading-none lg:leading-none mb-1 lg:mb-2">2023</span>
+                              <span className="w-full block uppercase italic text-[30px] lg:text-[75px] leading-none lg:leading-none mb-1 lg:mb-2">2023</span>
                               <span className="w-full block text-[13px] lg:text-lg leading-tight lg:leading-tight lg:w-9/12">300 MW UK<br/>batteries</span>
                             </div>
                             <img className="w-[30px] lg:w-[55px] block mt-auto" src="/images/battery-2.png" alt="Battery Icon" />
                           </div>
                           <div className="w-[90%] h-[150px] lg:w-1/3 pl-[42px] pr-5 lg:px-6 py-3 lg:py-5 lg:h-[90%] flex flex-wrap lg:flex items-center lg:items-start bg-orange">
                             <div className="w-full">
-                              <span className="w-full block uppercase italic text-[38px] lg:text-[62px] leading-none lg:leading-none mb-1 lg:mb-2">2024</span>
+                              <span className="w-full block uppercase italic text-[38px] lg:text-[100px] leading-none lg:leading-none mb-1 lg:mb-2">2024</span>
                               <span className="w-full block text-[13px] lg:text-lg leading-tight lg:leading-tight lg:w-9/12">1.3 GW UK &amp; EU<br/>batteries</span>
                             </div>
                             <img className="w-[30px] lg:w-[55px] block mt-auto" src="/images/battery-3.png" alt="Battery Icon" />
