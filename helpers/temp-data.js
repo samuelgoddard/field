@@ -32,10 +32,10 @@ export const team = [{
   name: `Andreas<br/>Tsangarides`,
   jobTitle: 'Lead Data Scientist',
   image: '/images/andreas.jpg',
-  bio: `<p>With a passion for generating insights out of data, automating pipelines and bringing models into production, Andreas has extensive experience as a senior data scientist in fintech, insuretech and utility companies.</p>`
+  bio: `<p>Andreas has a passion for generating insights out of data, automating pipelines and bringing models into production. With previous companies including IBM and Marshmallow, he has extensive experience as a senior data scientist in the utilities, fintech and insuretech space.</p>`
 },{
   name: `Hana<br/>Lewington`,
   jobTitle: 'Finance Manager',
   image: '/images/hana.jpg',
-  bio: `<p>With experience spanning fundraising, M&A and strategic consultancy, Luke was previously Global Strategy lead at food delivery player Glovo as it scaled globally.</p>`
+  bio: `<p>A ICAEW Chartered Accountant, with previous experience in audit and assurance for Asset and Wealth Management clients at PWC.</p>`
 }]
