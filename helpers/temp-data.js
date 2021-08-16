@@ -1,4 +1,14 @@
 export const team = [{
+    name: `Luke<br/>Gibson`,
+    jobTitle: 'Head of Strategy and Operations',
+    image: '/images/luke.jpg',
+    bio: `<p>With experience spanning fundraising, M&A and strategic consultancy, Luke was previously Global Strategy lead at food delivery player Glovo as it scaled globally.</p>`
+  },{
+    name: `Simon<br/>Williamson`,
+    jobTitle: 'Head of Analysis',
+    image: '/images/simon.jpg',
+    bio: `<p>Simon is an expert in energy market analysis and large infrastructure projects, having previously worked building energy market models at Aurora Energy Research and as a commercial manager for energy storage at Kiwi Power.</p>`
+  },{
   name: `Amit<br/> Gudka`,
   jobTitle: 'Founder',
   image: '/images/amit.jpg',
@@ -9,25 +19,15 @@ export const team = [{
   image: '/images/charlotte.jpg',
   bio: `<p>Previously Head of PR at Bulb and an Associate Director in the Energy + Industrials team at H+K Strategies, Charlotte has spent her career focusing on communications for businesses driving the transition to a green economy, and fast-growth challenger brands.</p>`
 },{
-  name: `Stephen<br/>White`,
-  jobTitle: 'Finance Director',
-  image: '/images/stephen.jpg',
-  bio: `<p>A chartered accountant with a decade of finance experience, Stephen has considerable expertise scaling businesses and building finance functions from scratch.</p>`
-},{
-  name: `Simon<br/>Williamson`,
-  jobTitle: 'Head of Analysis',
-  image: '/images/simon.jpg',
-  bio: `<p>Simon is an expert in energy market analysis and large infrastructure projects, having previously worked building energy market models at Aurora Energy Research and as a commercial manager for energy storage at Kiwi Power.</p>`
-},{
   name: `Hana<br/>Lewington`,
   jobTitle: 'Finance Manager',
   image: '/images/hana.jpg',
   bio: `<p>With experience spanning fundraising, M&A and strategic consultancy, Luke was previously Global Strategy lead at food delivery player Glovo as it scaled globally.</p>`
 },{
-  name: `Luke<br/>Gibson`,
-  jobTitle: 'Head of Strategy and Operations',
-  image: '/images/luke.jpg',
-  bio: `<p>With experience spanning fundraising, M&A and strategic consultancy, Luke was previously Global Strategy lead at food delivery player Glovo as it scaled globally.</p>`
+  name: `Stephen<br/>White`,
+  jobTitle: 'Finance Director',
+  image: '/images/stephen.jpg',
+  bio: `<p>A chartered accountant with a decade of finance experience, Stephen has considerable expertise scaling businesses and building finance functions from scratch.</p>`
 },{
   name: `Andreas<br/>Tsangarides`,
   jobTitle: 'Lead Data Scientist',

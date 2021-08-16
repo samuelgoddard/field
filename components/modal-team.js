@@ -63,7 +63,7 @@ export function ModalTeam({ children, image, name, jobTitle, bio, defaultOpened 
               animate={"isOpen"}
               exit={"exit"}
               variants={modalTrayVariant}
-              className={`z-[100] w-[85%] lg:w-1/2 bg-off-white min-h-[85%] h-[85%] lg:min-h-[50vh] lg:h-[50vh] left-0`}
+              className={`z-[100] w-[85%] lg:w-1/2 bg-off-white min-h-[75%] h-[75%] lg:min-h-[50vh] lg:h-[50vh] left-0`}
             >
               <m.div
                 initial={"initial"}
@@ -73,11 +73,11 @@ export function ModalTeam({ children, image, name, jobTitle, bio, defaultOpened 
                 className="h-full"
               >
                 <div className="flex flex-wrap h-full relative overflow-hidden">
-                  <div className="w-full lg:w-1/3 h-[40vh] lg:h-full border-r border-soft-black-dark absolute top-0 left-0 right-0 lg:right-auto lg:bottom-0">
+                  <div className="w-full lg:w-1/3 h-[40vh] lg:h-full border-r border-soft-black-dark absolute top-0 left-0 right-0 lg:right-auto lg:bottom-0 hidden lg:block">
                     <img className="block w-full h-full object-top object-cover will-change absolute inset-0" src={image} alt={name} />
                   </div>
 
-                  <div className="w-full lg:w-2/3 ml-auto h-full overflow-y-scroll pt-[45vh] p-6 lg:p-10 lg:pt-10">
+                  <div className="w-full lg:w-2/3 ml-auto h-full overflow-y-scroll p-6 lg:p-10 lg:pt-10">
                     <MetaText>{jobTitle}</MetaText>
                     <h2 className="text-3xl lg:text-4xl 2xl:text-5xl block uppercase italic mt-2" dangerouslySetInnerHTML={{ __html: name }}></h2>
 

@@ -100,22 +100,54 @@ export default function Team() {
                         </div>
                       </section>
 
-                      <section className="lg:h-full pl-[42px] pr-[25px] lg:px-16 pb-[40px] lg:py-0 flex flex-wrap lg:flex-nowrap relative w-full lg:w-auto" data-scroll-section>
+                      <section className="lg:h-full pl-[42px] pr-[25px] lg:pr-16 lg:pl-0 pb-[40px] lg:py-0 flex flex-wrap lg:flex-nowrap relative w-full lg:w-auto" data-scroll-section>
                         <div className="absolute z-[20] top-0 left-0 bottom-0 h-full border-r border-soft-black-dark lg:border-r-0 lg:hidden w-5 bg-transparent backdrop-blur-3xl"></div>
                         
                         <div className="block lg:hidden w-full">
-                          <TeamCarousel slides={team} />
+                          {/* <TeamCarousel slides={team} /> */}
+                          <div className="flex flex-wrap -mx-2">
+                            {team.map((team, index) => {
+                              let modal = null;
+
+                              if (index == 0) {
+                                modal = modalEl1
+                              } else if (index == 1) {
+                                modal = modalEl2
+                              } else if (index == 2) {
+                                modal = modalEl3
+                              } else if (index == 3) {
+                                modal = modalEl4
+                              } else if (index == 4) {
+                                modal = modalEl5
+                              } else if (index == 5) {
+                                modal = modalEl6
+                              } else if (index == 6) {
+                                modal = modalEl7
+                              }
+                              return (
+                                <div className="w-1/2 px-2 mb-4" key={index}>
+                                  <button className="group block hover:border-0 focus:border-0 hover:outline-none focus:outline-none lg:mb-16 relative overflow-hidden" onClick={() => modal.current.open()}>
+                                    <img className="block w-full object-center object-cover will-change" src={team.image} alt={team.name} />
+                                    <div className="text-left mt-3">
+                                      <MetaText>{team.jobTitle}</MetaText>
+                                    </div>
+                                    <h3 className="text-left uppercase italic text-xl leading-tight mt-2" dangerouslySetInnerHTML={{ __html: team.name }}></h3>
+                                  </button>
+                                </div>
+                              )
+                            })}
+                          </div>
                         </div>
                         
                         <div className="lg:h-full hidden lg:block">
-                          <div className="h-full w-auto lg:w-[28vh] lg:min-w-[28vh]" data-scroll data-scroll-speed={0.75} data-scroll-direction="vertical">
+                          <div className="h-full w-auto lg:w-[30vh] lg:min-w-[30vh]" data-scroll data-scroll-speed={0.75} data-scroll-direction="vertical">
                             <div className="w-full lg:mt-[-8vh] h-full">
-                              <button className="group block hover:border-0 focus:border-0 hover:outline-none focus:outline-none mb-6 lg:mb-16 relative overflow-hidden" onClick={() => modalEl1.current.open()}>
+                              <button className="group block hover:border-0 focus:border-0 hover:outline-none focus:outline-none mb-6 lg:mb-10 relative overflow-hidden" onClick={() => modalEl1.current.open()}>
                                 <img className="inset-0 absolute z-10 mix-blend-overlay will-change opacity-0 group-hover:opacity-100 group-focus:opacity-100 transition-opacity ease-in-out duration-500" src="/images/team-overlay.jpg" alt="Supergraphic Overlay" />
 
-                                <img className="opacity-70 hover:opacity-100 transition-opacity duration-500 ease-in-out block w-full object-center object-cover will-change" src={team[0].image} alt={team[0].name} />
+                                <img className="opacity-100 hover:opacity-100 transition-opacity duration-500 ease-in-out block w-full object-center object-cover will-change" src={team[0].image} alt={team[0].name} />
 
-                                <h3 className="absolute bottom-0 left-0 text-off-white z-20 text-[38px] uppercase italic w-full text-left leading-[0.9] -translate-x-full group-hover:-translate-x-2 transition-transform ease-in-out duration-500" dangerouslySetInnerHTML={{ __html: team[0].name}}></h3>
+                                <h3 className="absolute bottom-0 left-0 text-off-white z-20 text-[28px] 2xl:text-[34px] uppercase italic w-full text-left leading-[0.9] -translate-x-full group-hover:-translate-x-1 transition-transform ease-in-out duration-500" dangerouslySetInnerHTML={{ __html: team[0].name}}></h3>
                               </button>
 
                               <ModalTeam
@@ -126,12 +158,12 @@ export default function Team() {
                                 image={team[0].image}
                               />
 
-                              <button className="group block hover:border-0 focus:border-0 hover:outline-none focus:outline-none mb-6 lg:mb-16 relative overflow-hidden" onClick={() => modalEl2.current.open()}>
+                              <button className="group block hover:border-0 focus:border-0 hover:outline-none focus:outline-none mb-6 lg:mb-10 relative overflow-hidden" onClick={() => modalEl2.current.open()}>
                                 <img className="inset-0 absolute z-10 mix-blend-overlay will-change opacity-0 group-hover:opacity-100 group-focus:opacity-100 transition-opacity ease-in-out duration-500" src="/images/team-overlay.jpg" alt="Supergraphic Overlay" />
 
-                                <img className="opacity-70 hover:opacity-100 transition-opacity duration-500 ease-in-out block w-full object-center object-cover will-change" src={team[1].image} alt={team[1].name} />
+                                <img className="opacity-100 hover:opacity-100 transition-opacity duration-500 ease-in-out block w-full object-center object-cover will-change" src={team[1].image} alt={team[1].name} />
 
-                                <h3 className="absolute bottom-0 left-0 text-off-white z-20 text-[38px] uppercase italic w-full text-left leading-[0.9] -translate-x-full group-hover:-translate-x-2 transition-transform ease-in-out duration-500" dangerouslySetInnerHTML={{ __html: team[1].name}}></h3>
+                                <h3 className="absolute bottom-0 left-0 text-off-white z-20 text-[28px] 2xl:text-[34px] uppercase italic w-full text-left leading-[0.9] -translate-x-full group-hover:-translate-x-1 transition-transform ease-in-out duration-500" dangerouslySetInnerHTML={{ __html: team[1].name}}></h3>
                               </button>
 
                               <ModalTeam
@@ -147,17 +179,17 @@ export default function Team() {
                           </div>
                         </div>
 
-                        <div className="lg:h-full hidden lg:block lg:pl-16">
-                          <div className="h-full w-auto lg:w-[26vh] lg:min-w-[26vh]" data-scroll data-scroll-speed={-0.75} data-scroll-direction="vertical">
-                            <div className="w-full lg:mt-[-10vh] h-full">
+                        <div className="lg:h-full hidden lg:block lg:pl-10">
+                          <div className="h-full w-auto lg:w-[30vh] lg:min-w-[30vh]" data-scroll data-scroll-speed={-0.75} data-scroll-direction="vertical">
+                            <div className="w-full lg:mt-[-30vh] h-full">
                               <img className="opacity-30 block w-full object-center object-cover will-change mb-6 lg:mb-16 relative" src="/images/avatar.jpg" alt="Avatar" />
 
-                              <button className="group block hover:border-0 focus:border-0 hover:outline-none focus:outline-none mb-6 lg:mb-16 relative overflow-hidden" onClick={() => modalEl3.current.open()}>
+                              <button className="group block hover:border-0 focus:border-0 hover:outline-none focus:outline-none mb-6 lg:mb-10 relative overflow-hidden" onClick={() => modalEl3.current.open()}>
                                 <img className="inset-0 absolute z-10 mix-blend-overlay will-change opacity-0 group-hover:opacity-100 group-focus:opacity-100 transition-opacity ease-in-out duration-500" src="/images/team-overlay.jpg" alt="Supergraphic Overlay" />
 
-                                <img className="opacity-70 hover:opacity-100 transition-opacity duration-500 ease-in-out block w-full object-center object-cover will-change" src={team[2].image} alt={team[2].name} />
+                                <img className="opacity-100 hover:opacity-100 transition-opacity duration-500 ease-in-out block w-full object-center object-cover will-change" src={team[2].image} alt={team[2].name} />
                                 
-                                <h3 className="absolute bottom-0 left-0 text-off-white z-20 text-[38px] uppercase italic w-full text-left leading-[0.9] -translate-x-full group-hover:-translate-x-2 transition-transform ease-in-out duration-500" dangerouslySetInnerHTML={{ __html: team[2].name}}></h3>
+                                <h3 className="absolute bottom-0 left-0 text-off-white z-20 text-[28px] 2xl:text-[34px] uppercase italic w-full text-left leading-[0.9] -translate-x-full group-hover:-translate-x-1 transition-transform ease-in-out duration-500" dangerouslySetInnerHTML={{ __html: team[2].name}}></h3>
                               </button>
 
                               <ModalTeam
@@ -168,12 +200,12 @@ export default function Team() {
                                 image={team[2].image}
                               />
 
-                              <button className="group block hover:border-0 focus:border-0 hover:outline-none focus:outline-none mb-6 lg:mb-16 relative overflow-hidden" onClick={() => modalEl4.current.open()}>
+                              <button className="group block hover:border-0 focus:border-0 hover:outline-none focus:outline-none mb-6 lg:mb-10 relative overflow-hidden" onClick={() => modalEl4.current.open()}>
                                 <img className="inset-0 absolute z-10 mix-blend-overlay will-change opacity-0 group-hover:opacity-100 group-focus:opacity-100 transition-opacity ease-in-out duration-500" src="/images/team-overlay.jpg" alt="Supergraphic Overlay" />
 
-                                <img className="opacity-70 hover:opacity-100 transition-opacity duration-500 ease-in-out block w-full object-center object-cover will-change" src={team[3].image} alt={team[3].name} />
+                                <img className="opacity-100 hover:opacity-100 transition-opacity duration-500 ease-in-out block w-full object-center object-cover will-change" src={team[3].image} alt={team[3].name} />
 
-                                <h3 className="absolute top-0 mt-8 left-0 text-off-white z-20 text-[38px] uppercase italic w-full text-left leading-[0.9] -translate-x-full group-hover:-translate-x-2 transition-transform ease-in-out duration-500" dangerouslySetInnerHTML={{ __html: team[3].name }}></h3>
+                                <h3 className="absolute top-0 mt-8 left-0 text-off-white z-20 text-[28px] 2xl:text-[34px] uppercase italic w-full text-left leading-[0.9] -translate-x-full group-hover:-translate-x-1 transition-transform ease-in-out duration-500" dangerouslySetInnerHTML={{ __html: team[3].name }}></h3>
                               </button>
 
                               <ModalTeam
@@ -187,16 +219,16 @@ export default function Team() {
                           </div>
                         </div>
 
-                        <div className="lg:h-full hidden lg:block lg:pl-16">
-                          <div className="h-full w-auto lg:w-[26vh] lg:min-w-[26vh]" data-scroll data-scroll-speed={0.75} data-scroll-direction="vertical">
+                        <div className="lg:h-full hidden lg:block lg:pl-10">
+                          <div className="h-full w-auto lg:w-[30vh] lg:min-w-[30vh]" data-scroll data-scroll-speed={0.75} data-scroll-direction="vertical">
                             <div className="w-full lg:mt-[-8vh] h-full">
 
-                              <button className="group block hover:border-0 focus:border-0 hover:outline-none focus:outline-none mb-6 lg:mb-16 relative overflow-hidden" onClick={() => modalEl5.current.open()}>
+                              <button className="group block hover:border-0 focus:border-0 hover:outline-none focus:outline-none mb-6 lg:mb-10 relative overflow-hidden" onClick={() => modalEl5.current.open()}>
                                 <img className="inset-0 absolute z-10 mix-blend-overlay will-change opacity-0 group-hover:opacity-100 group-focus:opacity-100 transition-opacity ease-in-out duration-500" src="/images/team-overlay.jpg" alt="Supergraphic Overlay" />
 
-                                <img className="opacity-70 hover:opacity-100 transition-opacity duration-500 ease-in-out block w-full object-center object-cover will-change" src={team[4].image} alt={team[4].name} />
+                                <img className="opacity-100 hover:opacity-100 transition-opacity duration-500 ease-in-out block w-full object-center object-cover will-change" src={team[4].image} alt={team[4].name} />
 
-                                <h3 className="absolute bottom-0 left-0 text-off-white z-20 text-[38px] uppercase italic w-full text-left leading-[0.9] -translate-x-full group-hover:-translate-x-2 transition-transform ease-in-out duration-500" dangerouslySetInnerHTML={{ __html: team[4].name}}></h3>
+                                <h3 className="absolute bottom-0 left-0 text-off-white z-20 text-[28px] 2xl:text-[34px] uppercase italic w-full text-left leading-[0.9] -translate-x-full group-hover:-translate-x-1 transition-transform ease-in-out duration-500" dangerouslySetInnerHTML={{ __html: team[4].name}}></h3>
                               </button>
 
                               <ModalTeam
@@ -207,12 +239,12 @@ export default function Team() {
                                 image={team[4].image}
                               />
 
-                              <button className="group block hover:border-0 focus:border-0 hover:outline-none focus:outline-none mb-6 lg:mb-16 relative overflow-hidden" onClick={() => modalEl6.current.open()}>
+                              <button className="group block hover:border-0 focus:border-0 hover:outline-none focus:outline-none mb-6 lg:mb-10 relative overflow-hidden" onClick={() => modalEl6.current.open()}>
                                 <img className="inset-0 absolute z-10 mix-blend-overlay will-change opacity-0 group-hover:opacity-100 group-focus:opacity-100 transition-opacity ease-in-out duration-500" src="/images/team-overlay.jpg" alt="Supergraphic Overlay" />
 
-                                <img className="opacity-70 hover:opacity-100 transition-opacity duration-500 ease-in-out block w-full object-center object-cover will-change" src={team[5].image} alt={team[5].name} />
+                                <img className="opacity-100 hover:opacity-100 transition-opacity duration-500 ease-in-out block w-full object-center object-cover will-change" src={team[5].image} alt={team[5].name} />
 
-                                <h3 className="absolute bottom-0 left-0 text-off-white z-20 text-[38px] uppercase italic w-full text-left leading-[0.9] -translate-x-full group-hover:-translate-x-2 transition-transform ease-in-out duration-500" dangerouslySetInnerHTML={{ __html: team[5].name}}></h3>
+                                <h3 className="absolute bottom-0 left-0 text-off-white z-20 text-[28px] 2xl:text-[34px] uppercase italic w-full text-left leading-[0.9] -translate-x-full group-hover:-translate-x-1 transition-transform ease-in-out duration-500" dangerouslySetInnerHTML={{ __html: team[5].name}}></h3>
                               </button>
 
                               <ModalTeam
@@ -228,17 +260,17 @@ export default function Team() {
                           </div>
                         </div>
 
-                        <div className="lg:h-full hidden lg:block lg:pl-16">
-                          <div className="h-full w-auto lg:w-[26vh] lg:min-w-[26vh]" data-scroll data-scroll-speed={-0.75} data-scroll-direction="vertical">
+                        <div className="lg:h-full hidden lg:block lg:pl-10">
+                          <div className="h-full w-auto lg:w-[30vh] lg:min-w-[30vh]" data-scroll data-scroll-speed={-0.75} data-scroll-direction="vertical">
                             <div className="w-full lg:mt-[-10vh] h-full">
                               <img className="opacity-30 block w-full object-center object-cover will-change mb-6 lg:mb-16 relative" src="/images/avatar.jpg" alt="Avatar" />
 
-                              <button className="group block hover:border-0 focus:border-0 hover:outline-none focus:outline-none mb-6 lg:mb-16 relative overflow-hidden" onClick={() => modalEl7.current.open()}>
+                              <button className="group block hover:border-0 focus:border-0 hover:outline-none focus:outline-none mb-6 lg:mb-10 relative overflow-hidden" onClick={() => modalEl7.current.open()}>
                                 <img className="inset-0 absolute z-10 mix-blend-overlay will-change opacity-0 group-hover:opacity-100 group-focus:opacity-100 transition-opacity ease-in-out duration-500" src="/images/team-overlay.jpg" alt="Supergraphic Overlay" />
 
-                                <img className="opacity-70 hover:opacity-100 transition-opacity duration-500 ease-in-out block w-full object-center object-cover will-change" src={team[6].image} alt={team[6].name} />
+                                <img className="opacity-100 hover:opacity-100 transition-opacity duration-500 ease-in-out block w-full object-center object-cover will-change" src={team[6].image} alt={team[6].name} />
 
-                                <h3 className="absolute bottom-0 left-0 text-off-white z-20 text-[38px] uppercase italic w-full text-left leading-[0.9] -translate-x-full group-hover:-translate-x-2 transition-transform ease-in-out duration-500" dangerouslySetInnerHTML={{ __html: team[6].name}}></h3>
+                                <h3 className="absolute bottom-0 left-0 text-off-white z-20 text-[28px] 2xl:text-[34px] uppercase italic w-full text-left leading-[0.9] -translate-x-full group-hover:-translate-x-1 transition-transform ease-in-out duration-500" dangerouslySetInnerHTML={{ __html: team[6].name}}></h3>
                               </button>
 
                               <ModalTeam
@@ -267,7 +299,7 @@ export default function Team() {
                           <p className="w-full lg:w-10/12 max-w-2xl text-base lg:text-xl 2xl:text-2xl leading-tight lg:leading-tight 2xl:leading-tight mb-8 lg:mb-16">We're always up for speaking to great people who are determined to make the renewable transition happen. If that sounds like you, say hello at <a className="underline hover:text-orange focus:text-orange transition-colors ease-in-out duration-300" href="mailto:careers@field.energy">careers@field.energy</a>.</p>
                         </div>
                         
-                        <nav className="w-full mt-auto">
+                        <nav className="w-full mt-auto lg:mr-10">
                           <ul className="border-t border-soft-black-dark">
                             <li className="py-3 border-b border-soft-black-dark text-[22px] lg:text-[26px] xl:text-[28px] 2xl:text-[28px]">
                               <a href="#" target="_blank" rel="noopener noreferrer" className="hover:text-orange focus:text-orange transition ease-in-out duration-300">→ CTO</a>
