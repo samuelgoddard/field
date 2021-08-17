@@ -105,6 +105,7 @@ export function Modal({ children, defaultOpened = false, isOpenPass }, ref) {
                 variants={containerVariant}
                 className="h-full overflow-y-scroll"
               >
+                {/* <div className="grain z-[4]"></div> */}
                 {children}
               </m.div>
             </m.div>

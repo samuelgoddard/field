@@ -13,6 +13,7 @@ import ScrollToButton from '@/components/scroll-to-button'
 import Link from 'next/link'
 import Image from 'next/image'
 import homeSupergraphic from 'public/images/home-sh.jpg'
+import Div100vh from 'react-div-100vh'
 
 export default function Home() {
   const containerRef = useRef(null)
@@ -28,8 +29,8 @@ export default function Home() {
         watch={[]}
       >
         <LazyMotion features={domAnimation}>
-          <Header route={router.asPath} />
-            <div data-scroll-container ref={containerRef} id="scroll-container">
+          <Header route={router.asPath}/>
+            <div data-scroll-container ref={containerRef} id="scroll-container" className="relative z-[10]">
               <div>
                 <m.div
                   initial="initial"
@@ -38,8 +39,8 @@ export default function Home() {
                   className=""
                 >
                   <m.main variants={fade} className="">
-                    <div className="flex flex-wrap lg:flex-nowrap flex-row lg:h-screen lg:min-h-screen lg:max-h-[100vh]">
-                      <section className="w-[100vw] min-w-[100vw] 3xl:w-[1920px] 3xl:min-w-[1920px] 3xl:max-w-[1920px] h-full pl-[42px] pr-[20px] lg:pl-[90px] lg:pr-0 whitespace-normal bg-yellow overflow-hidden relative border-b border-soft-black-dark lg:border-b-0" data-scroll-section id="hero">
+                    <Div100vh className="flex flex-wrap lg:flex-nowrap flex-row">
+                      <section className="w-[100vw] min-w-[100vw] 3xl:w-[1920px] 3xl:min-w-[1920px] 3xl:max-w-[1920px] h-auto lg:h-full pl-[42px] pr-[20px] lg:pl-[90px] lg:pr-0 whitespace-normal bg-yellow bg-blend-overlay overflow-hidden relative border-b border-soft-black-dark lg:border-b-0" data-scroll-section id="hero">
                         <div className="absolute z-[20] top-0 left-0 bottom-0 h-full border-r border-soft-black-dark lg:border-r-0 lg:hidden w-5 bg-transparent backdrop-blur-3xl"></div>
 
                         <Image
@@ -48,8 +49,10 @@ export default function Home() {
                           src={homeSupergraphic}
                           alt="Field Supergraphic"
                           quality={90}
-                          className={`w-full h-full absolute inset-0 z-0 object-cover object-center will-change lg:animate-supergraphic`}
+                          className={`w-full h-full absolute inset-0 object-cover object-center will-change`}
                         />
+
+                        <div className="grain grain--over z-[4]"></div>
                         
                         <div className="flex flex-wrap lg:items-center h-full relative">
                           <div className="w-full lg:w-8/12 xl:w-9/12 lg:flex lg:flex-wrap lg:h-full text-soft-black-dark pb-8">
@@ -137,7 +140,7 @@ export default function Home() {
                           <div className="">
                             <img className="w-4/12 lg:w-5/12 will-change mb-5 lg:mb-8" src="/images/build.png" alt="Build Icon" />
                             <h3 className="mb-4 lg:mb-5 2xl:mb-8 text-[9vw] lg:text-[52px] 2xl:text-[58px] leading-none">Build</h3>
-                            <p className="block text-base lg:text-xl leading-tight lg:leading-tight 2xl:leading-tight">We'll act fast to build the infrastructure we needed. We'll start with energy storage, then push into other infrastructure.</p>
+                            <p className="block text-base lg:text-xl leading-tight lg:leading-tight 2xl:leading-tight">We'll act fast to build the infrastructure we need. We'll start with energy storage, then push into other infrastructure.</p>
                           </div>
                         </div>
                         <div className="lg:border-l lg:border-soft-black-dark lg:h-full flex items-end lg:min-w-[540px] 3xl:w-[600px] lg:p-8 mb-12 lg:mb-0">
@@ -151,7 +154,7 @@ export default function Home() {
                           <div className="">
                             <img className="w-4/12 lg:w-5/12 will-change mb-5 lg:mb-8" src="/images/operate.png" alt="Operate Icon" />
                             <h3 className="mb-4 lg:mb-5 2xl:mb-8 text-[9vw] lg:text-[52px] 2xl:text-[58px] leading-none">Operate</h3>
-                            <p className="block text-base lg:text-xl leading-tight lg:leading-tight 2xl:leading-tight">We'll manage and operate our own infrastructure - and we're building our own software to optimise and connect to our assets.</p>
+                            <p className="block text-base lg:text-xl leading-tight lg:leading-tight 2xl:leading-tight">We'll manage and operate our own infrastructure - and we're building software to optimise and connect to our assets.</p>
                           </div>
                         </div>
                         <div className="lg:border-l lg:border-soft-black-dark lg:h-full flex items-end lg:min-w-[540px] 3xl:w-[600px] lg:p-8 mb-6 lg:mb-0">
@@ -173,6 +176,8 @@ export default function Home() {
                           quality={90}
                           className={`w-full h-full absolute inset-0 z-0 object-cover object-center will-change`}
                         />
+
+                        <div className="grain grain--over z-[4]"></div>
 
                         <div className="h-full w-full absolute inset-0 z-20 flex items-center justify-center">
                           {/* @TODO CONVERT TO BUTTON */}
@@ -202,7 +207,7 @@ export default function Home() {
                           </div>
                         </div>
                       </section>
-                    </div>
+                    </Div100vh>
                   </m.main>
 
                   <m.div variants={fade} className="">

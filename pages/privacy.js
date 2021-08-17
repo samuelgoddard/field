@@ -27,7 +27,7 @@ export default function Privacy() {
       >
         <LazyMotion features={domAnimation}>
           <Header route={router.asPath} />
-            <div data-scroll-container ref={containerRef} id="scroll-container">
+            <div data-scroll-container ref={containerRef} id="scroll-container" className="relative z-[10]">
               <div>
                 <m.div
                   initial="initial"

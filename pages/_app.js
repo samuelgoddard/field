@@ -30,6 +30,8 @@ export default function App({ Component, pageProps }) {
     <>
       <DefaultSeo {...SEO} />
 
+      <div className="grain fixed inset-0 z-[1000] pointer-events-none"></div>
+
       {showCookieBar && (
         <CookieConsent
           disableStyles

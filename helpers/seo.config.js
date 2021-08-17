@@ -5,7 +5,7 @@ export default {
   openGraph: {
     type: 'website',
     locale: 'en_GB',
-    url: 'https://field-playground.vercel.app/',
+    url: 'https://field.energy/',
     site_name: `Field Energy`,
     images: [
       {

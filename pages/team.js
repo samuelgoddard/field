@@ -17,6 +17,8 @@ import { team } from '@/helpers/temp-data'
 import Image from 'next/image'
 import teamSupergraphic from 'public/images/team-sg.jpg'
 import teamSupportingImage from 'public/images/team.jpg'
+import Div100vh from 'react-div-100vh'
+import ImageWrapper from '@/components/image-wrapper'
 
 export default function Team() {
   const containerRef = useRef(null)
@@ -29,7 +31,6 @@ export default function Team() {
   const modalEl7 = useRef(null)
   const modalEl8 = useRef(null)
   const router = useRouter()
-  const [imageIsLoaded, setImageIsLoaded] = useState(false)
 
   return (
     <Layout>
@@ -42,7 +43,7 @@ export default function Team() {
       >
         <LazyMotion features={domAnimation}>
           <Header route={router.asPath} />
-            <div data-scroll-container ref={containerRef} id="scroll-container">
+            <div data-scroll-container ref={containerRef} id="scroll-container" className="relative z-[10]">
               <div>
                 <m.div
                   initial="initial"
@@ -51,8 +52,8 @@ export default function Team() {
                   className=""
                 >
                   <m.main variants={fade} className="">
-                    <div className="flex flex-wrap lg:flex-nowrap flex-row lg:h-screen lg:min-h-screen lg:max-h-[100vh] flex-grow">
-                      <section className="w-[100vw] min-w-[100vw] 3xl:w-[1920px] 3xl:min-w-[1920px] 3xl:max-w-[1920px] h-full pl-[42px] pr-[25px] lg:pl-[90px] lg:pr-0 whitespace-normal bg-yellow relative overflow-hidden" data-scroll-section id="hero">
+                    <Div100vh className="flex flex-wrap lg:flex-nowrap flex-row">
+                      <section className="w-[100vw] min-w-[100vw] 3xl:w-[1920px] 3xl:min-w-[1920px] 3xl:max-w-[1920px] h-auto lg:h-full pl-[42px] pr-[25px] lg:pl-[90px] lg:pr-0 whitespace-normal bg-yellow relative overflow-hidden" data-scroll-section id="hero">
                         <div className="absolute z-[20] top-0 left-0 bottom-0 h-full border-r border-soft-black-dark lg:border-r-0 lg:hidden w-5 bg-transparent backdrop-blur-3xl"></div>
 
                         {/* <img className="w-full h-full absolute inset-0 z-0 object-cover object-center will-change" src="/images/team-sg.jpg" alt="Field Supergraphic" /> */}
@@ -63,8 +64,10 @@ export default function Team() {
                           src={teamSupergraphic}
                           alt="Field Supergraphic"
                           quality={90}
-                          className={`w-full h-full absolute inset-0 z-0 object-cover object-center will-change lg:animate-supergraphic`}
+                          className={`w-full h-full absolute inset-0 z-0 object-cover object-center will-change`}
                         />
+
+                        <div className="grain grain--over z-[4]"></div>
 
                         <div className="flex flex-wrap lg:items-center h-full relative">
                           <div className="w-full lg:w-8/12 xl:w-9/12 lg:flex lg:flex-wrap lg:h-full text-soft-black-dark pb-5 lg:pb-8">
@@ -77,7 +80,7 @@ export default function Team() {
                             </div>
 
                             <div className="lg:pr-10 mb-auto w-full lg:w-[620px] xl:w-[720px] 2xl:w-[800px]">
-                              <h1 className="text-[14.5vw] lg:text-[100px] xl:text-[120px] 2xl:text-[140px] 3xl:text-[155px] block leading-[0.85] uppercase italic ml-[-24px] lg:ml-[3.5vw] xl:ml-[3.8vw] 2xl:ml-[4.4vw] 3xl:ml-[5vw]" data-scroll data-scroll-speed={2}>Progress Needs Energy</h1>
+                              <h1 className="text-[14.5vw] lg:text-[100px] xl:text-[120px] 2xl:text-[140px] 3xl:text-[155px] block leading-[0.85] uppercase italic ml-[-24px] lg:ml-[3.3vw] xl:ml-[3.4vw] 2xl:ml-[4vw] 3xl:ml-[5.2vw]" data-scroll data-scroll-speed={2}>Progress Needs Energy</h1>
                             </div>
                           </div>
 
@@ -90,12 +93,12 @@ export default function Team() {
                                 <ol className="text-[20px] lg:text-[22px] leading-tight lg:leading-tight w-full mb-16 lg:mb-8 list-decimal list-inside">
                                   <li className="mb-1">
                                     <ScrollToButton scrollTarget="#intro">
-                                      <span className="inline-block underline group-hover:text-orange-dark focus:text-orange-dark transition-colors ease-in-out duration-500">Our Team</span>
+                                      <span className="inline-block underline group-hover:text-orange-dark focus:text-orange-dark transition-colors ease-in-out duration-500">Our team</span>
                                     </ScrollToButton>
                                   </li>
                                   <li className="mb-1">
                                     <ScrollToButton scrollTarget="#careers">
-                                      <span className="inline-block underline group-hover:text-orange-dark focus:text-orange-dark transition-colors ease-in-out duration-500">Career Opportunities</span>
+                                      <span className="inline-block underline group-hover:text-orange-dark focus:text-orange-dark transition-colors ease-in-out duration-500">Career opportunities</span>
                                     </ScrollToButton>
                                   </li>
                                 </ol>
@@ -121,18 +124,12 @@ export default function Team() {
                         <div className="absolute z-[20] top-0 left-0 bottom-0 h-full border-r border-soft-black-dark lg:border-r-0 lg:hidden w-5"></div>
                         <div className="absolute inset-0" data-scroll data-scroll-speed={-3}>
                           <div className="w-full h-full scale-125" >
-                            <Image
-                              onLoad={event => {
-                              const target = event.target;
-                              if (target.src.indexOf('data:image/gif;base64') < 0) {
-                                  setImageIsLoaded(true)
-                              }
-                            }}
+                            <ImageWrapper
                               layout="fill"
                               src={teamSupportingImage}
                               alt="An Isometric Building"
                               quality={90}
-                              className={`w-full h-full  object-center object-cover absolute inset-0 scale-125 ${imageIsLoaded ? 'opacity-100' : 'opacity-0'} transition-opacity duration-500 ease-in-out`}
+                              className={`w-full h-full  object-center object-cover absolute inset-0 scale-125`}
                             />
                           </div>
                         </div>
@@ -180,20 +177,14 @@ export default function Team() {
                                   <button className="group block hover:border-0 focus:border-0 hover:outline-none focus:outline-none lg:mb-16 relative overflow-hidden" onClick={() => modal.current.open()}>
                                     {/* <img className="block w-full object-center object-cover will-change" src={team.image} alt={team.name} /> */}
 
-                                    <Image
-                                      onLoad={event => {
-                                        const target = event.target;
-                                        if (target.src.indexOf('data:image/gif;base64') < 0) {
-                                            setImageIsLoaded(true)
-                                        }
-                                      }}
+                                    <ImageWrapper
                                       layout="intrinsic"
                                       src={team.image}
                                       alt={team.name}
                                       width={580}
                                       height={796}
                                       quality={90}
-                                      className={`block w-full object-center object-cover will-change ${imageIsLoaded ? 'opacity-100' : 'opacity-0'} transition-opacity duration-500 ease-in-out`}
+                                      className={`block w-full object-center object-cover will-change`}
                                     />
 
                                     <div className="text-left mt-3">
@@ -417,18 +408,14 @@ export default function Team() {
                         {/* <div className="absolute z-[20] top-0 left-0 bottom-0 h-full border-r border-soft-black-dark lg:border-r-0 lg:hidden w-5 bg-off-white"></div> */}
                         
                         <Image
-                          onLoad={event => {
-                            const target = event.target;
-                            if (target.src.indexOf('data:image/gif;base64') < 0) {
-                                setImageIsLoaded(true)
-                            }
-                          }}
                           layout="fill"
                           src={teamSupergraphic}
                           alt="Field Supergraphic"
                           quality={90}
-                          className={`w-full h-full absolute inset-0 z-0 object-cover object-center will-change ${imageIsLoaded ? 'opacity-100' : 'opacity-0'} transition-opacity duration-500 ease-in-out`}
+                          className={`w-full h-full absolute inset-0 z-0 object-cover object-center will-change`}
                         />
+
+                        <div className="grain grain--over z-[4]"></div>
 
                         <div className="h-full w-full absolute inset-0 z-20 flex items-center justify-center">
                           {/* @TODO CONVERT TO BUTTON */}
@@ -458,7 +445,7 @@ export default function Team() {
                           </div>
                         </div>
                       </section>
-                    </div>
+                    </Div100vh>
                   </m.main>
 
                   <m.div variants={fade} className="">

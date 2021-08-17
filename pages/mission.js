@@ -14,6 +14,8 @@ import Link from 'next/link'
 import Image from 'next/image'
 import MissionSupergraphic from 'public/images/mission-sg.jpg'
 import missionImage from 'public/images/mission.jpg'
+import Div100vh from 'react-div-100vh'
+import ImageWrapper from '@/components/image-wrapper'
 
 export default function Mission() {
   const containerRef = useRef(null)
@@ -31,7 +33,7 @@ export default function Mission() {
       >
         <LazyMotion features={domAnimation}>
           <Header route={router.asPath} />
-            <div data-scroll-container ref={containerRef} id="scroll-container">
+            <div data-scroll-container ref={containerRef} id="scroll-container" className="relative z-[10]">
               <div>
                 <m.div
                   initial="initial"
@@ -40,8 +42,8 @@ export default function Mission() {
                   className=""
                 >
                   <m.main variants={fade} className="">
-                    <div className="flex flex-wrap lg:flex-nowrap flex-row lg:h-screen lg:min-h-screen lg:max-h-[100vh]">
-                      <section className="w-[100vw] min-w-[100vw] 3xl:w-[1920px] 3xl:min-w-[1920px] 3xl:max-w-[1920px] h-full pl-[42px] pr-[25px] lg:pl-[90px] lg:pr-0 whitespace-normal bg-yellow relative overflow-hidden border-b border-soft-black-dark lg:border-b-0" data-scroll-section id="hero">
+                    <Div100vh className="flex flex-wrap lg:flex-nowrap flex-row">
+                      <section className="w-[100vw] min-w-[100vw] 3xl:w-[1920px] 3xl:min-w-[1920px] 3xl:max-w-[1920px] h-auto lg:h-full pl-[42px] pr-[25px] lg:pl-[90px] lg:pr-0 whitespace-normal bg-yellow relative overflow-hidden border-b border-soft-black-dark lg:border-b-0" data-scroll-section id="hero">
                         <div className="absolute z-[20] top-0 left-0 bottom-0 h-full border-r border-soft-black-dark lg:border-r-0 lg:hidden w-5 bg-transparent backdrop-blur-3xl"></div>
 
                         <Image
@@ -50,8 +52,10 @@ export default function Mission() {
                           src={MissionSupergraphic}
                           alt="Field Supergraphic"
                           quality={90}
-                          className={`w-full h-full absolute inset-0 z-0 object-cover object-center will-change lg:animate-supergraphic`}
+                          className={`w-full h-full absolute inset-0 z-0 object-cover object-center will-change`}
                         />
+                        
+                        <div className="grain grain--over z-[4]"></div>
                         
                         <div className="flex flex-wrap lg:items-center h-full relative">
                           <div className="w-full lg:w-8/12 xl:w-9/12 lg:flex lg:flex-wrap lg:h-full text-soft-black-dark pb-5 lg:pb-8">
@@ -64,7 +68,7 @@ export default function Mission() {
                             </div>
 
                             <div className="w-full lg:pr-10 mb-auto">
-                              <h1 className="text-[14.5vw] lg:text-[100px] xl:text-[120px] 2xl:text-[140px] 3xl:text-[155px] block leading-[0.85] uppercase italic ml-[-24px] lg:ml-[2.5vw] xl:ml-[2.2vw] 2xl:ml-[2vw] 3xl:ml-[2.4vw]" data-scroll data-scroll-speed={2}>Accelerate renewable energy <span className="inline lg:hidden">infra-structure</span><span className="hidden lg:inline">infrastructure</span></h1>
+                              <h1 className="text-[14.5vw] lg:text-[100px] xl:text-[120px] 2xl:text-[140px] 3xl:text-[155px] block leading-[0.85] uppercase italic ml-[-24px] lg:ml-[2.7vw] xl:ml-[1.7vw] 2xl:ml-[1.8vw] 3xl:ml-[2.5vw]" data-scroll data-scroll-speed={2}>Accelerate renewable energy <span className="inline lg:hidden">infra-structure</span><span className="hidden lg:inline">infrastructure</span></h1>
                             </div>
                           </div>
 
@@ -77,17 +81,17 @@ export default function Mission() {
                                 <ol className="text-[20px] lg:text-[22px] leading-tight lg:leading-tight w-full mb-16 lg:mb-8 list-decimal list-inside">
                                   <li className="mb-1">
                                     <ScrollToButton scrollTarget="#challenge">
-                                      <span className="inline-block underline group-hover:text-orange-dark focus:text-orange-dark transition-colors ease-in-out duration-500">The Challenge</span>
+                                      <span className="inline-block underline group-hover:text-orange-dark focus:text-orange-dark transition-colors ease-in-out duration-500">The challenge</span>
                                     </ScrollToButton>
                                   </li>
                                   <li className="mb-1">
                                     <ScrollToButton scrollTarget="#mission">
-                                      <span className="inline-block underline group-hover:text-orange-dark focus:text-orange-dark transition-colors ease-in-out duration-500">Our Mission</span>
+                                      <span className="inline-block underline group-hover:text-orange-dark focus:text-orange-dark transition-colors ease-in-out duration-500">Our mission</span>
                                     </ScrollToButton>
                                   </li>
                                   <li className="mb-1">
                                     <ScrollToButton scrollTarget="#plan">
-                                      <span className="inline-block underline group-hover:text-orange-dark focus:text-orange-dark transition-colors ease-in-out duration-500">The Plan</span>
+                                      <span className="inline-block underline group-hover:text-orange-dark focus:text-orange-dark transition-colors ease-in-out duration-500">The plan</span>
                                     </ScrollToButton>
                                   </li>
                                 </ol>
@@ -120,26 +124,18 @@ export default function Mission() {
                         </div>
                       </section>
 
-                      <section className="w-full lg:w-[130vw] lg:max-w-[1200px] lg:h-full whitespace-normal pb-8 lg:flex lg:flex-wrap relative lg:border-l 2xl:ml-12 lg:border-soft-black-dark overflow-hidden" id="mission" data-scroll-section>
+                      <section className="w-full lg:w-[130vw] lg:min-w-[1200px] 2xl:min-w-0 lg:max-w-[1200px] 2xl:max-w-[1400px] lg:h-full whitespace-normal pb-8 lg:flex lg:flex-wrap relative lg:border-l 2xl:ml-12 lg:border-soft-black-dark overflow-hidden" id="mission" data-scroll-section>
                         <div className="absolute z-[20] top-0 left-0 bottom-0 h-full border-r border-soft-black-dark lg:border-r-0 lg:hidden w-5"></div>
                         
                         <div className="w-full relative h-[35%] lg:h-[38%] overflow-hidden mb-8 lg:mb-auto">
-                          <div className="lg:absolute inset-0">
-                            <div className="scale-[1.3]">
-                              <Image
+                          <div className="lg:absolute inset-0 w-full">
+                            <div className="scale-[1.3] w-full">
+                              <ImageWrapper
                                 layout="intrinsic"
                                 src={missionImage}
                                 alt="Isometric Building"
-                                quality={90}
-                                className={`w-full h-full object-center object-cover ${imageIsLoaded ? 'opacity-100' : 'opacity-0'} transition-opacity duration-500 ease-in-out`}
+                                className={`w-full h-full object-center object-cover`}
                                 data-scroll data-scroll-direction="vertical" data-scroll-speed={-0.6}
-                                onLoad={event => {
-                                  const target = event.target;
-                                  if (target.src.indexOf('data:image/gif;base64') < 0) {
-                                      setImageIsLoaded(true)
-                                  }
-                                }}
-
                               />
                             </div>
                           </div>
@@ -156,10 +152,12 @@ export default function Mission() {
                         </div>
                       </section>
 
-                      <section className="w-full lg:w-[140vw] lg:max-w-[1400px] 2xl:max-w-[1600px] lg:h-full whitespace-normal lg:pb-12 lg:flex lg:flex-wrap relative border-t lg:border-t-0 lg:border-l border-soft-black-dark lg:border-r overflow-hidden bg-purple pt-8 lg:pt-0" data-scroll-section id="plan">
+                      <section className="w-full lg:w-[140vw] lg:min-w-[1400px] 2xl:min-w-0 lg:max-w-[1400px] 2xl:max-w-[1400px]lg:h-full whitespace-normal lg:pb-12 lg:flex lg:flex-wrap relative border-t lg:border-t-0 lg:border-l border-soft-black-dark lg:border-r overflow-hidden bg-purple pt-8 lg:pt-0" data-scroll-section id="plan">
                         <div className="absolute z-[20] top-0 left-0 bottom-0 h-full border-r border-soft-black-dark lg:border-r-0 lg:hidden w-5 bg-off-white"></div>
+
+                        {/* <div className="grain z-[4]"></div> */}
                         
-                        <div className="w-10/12 lg:w-10/12 mt-auto pt-[5px] pl-[42px] pr-[25pxw] lg:py-8 lg:px-8 max-w-xl lg:absolute lg:top-0 lg:left-0 text-off-white">
+                        <div className="w-10/12 lg:w-10/12 mt-auto pt-[5px] pl-[42px] pr-[25pxw] lg:py-8 lg:px-8 max-w-xl lg:absolute lg:top-0 lg:left-0 text-off-white z-[5]">
                           <div className="mb-6">
                             <MetaText>The Plan</MetaText>
                           </div>
@@ -168,7 +166,7 @@ export default function Mission() {
 
                         <div className="lg:flex lg:flex-wrap lg:absolute inset-0 items-end mt-12 lg:mt-0">
                           <div className="w-[37%] h-[150px] lg:w-1/3 pl-[42px] pr-5 lg:px-6 py-3 lg:py-5 lg:h-[25%] flex flex-wrap lg:flex items-center lg:items-start bg-blue">
-                            <div className="w-full">
+                            <div className="w-full relative z-[5]">
                               <span className="w-full block uppercase italic text-[22px] lg:text-[47px] leading-none lg:leading-none mb-1 lg:mb-2">2022</span>
                               <span className="w-full block text-[13px] lg:text-lg leading-tight lg:leading-tight lg:w-9/12">20 MW UK battery</span>
                             </div>
@@ -176,14 +174,14 @@ export default function Mission() {
                           </div>
 
                           <div className="w-[75%] h-[150px] lg:w-1/3 pl-[42px] pr-5 lg:px-6 py-3 lg:py-5 lg:h-[66%] flex flex-wrap lg:flex items-center lg:items-start bg-off-white">
-                            <div className="w-full">
+                            <div className="w-full relative z-[5]">
                               <span className="w-full block uppercase italic text-[30px] lg:text-[75px] leading-none lg:leading-none mb-1 lg:mb-2">2023</span>
                               <span className="w-full block text-[13px] lg:text-lg leading-tight lg:leading-tight lg:w-9/12">300 MW UK<br/>batteries</span>
                             </div>
                             <img className="w-[30px] lg:w-[55px] block mt-auto" src="/images/battery-2.png" alt="Battery Icon" />
                           </div>
                           <div className="w-[90%] h-[150px] lg:w-1/3 pl-[42px] pr-5 lg:px-6 py-3 lg:py-5 lg:h-[90%] flex flex-wrap lg:flex items-center lg:items-start bg-orange">
-                            <div className="w-full">
+                            <div className="w-full relative z-[5]">
                               <span className="w-full block uppercase italic text-[38px] lg:text-[100px] leading-none lg:leading-none mb-1 lg:mb-2">2024</span>
                               <span className="w-full block text-[13px] lg:text-lg leading-tight lg:leading-tight lg:w-9/12">1.3 GW UK &amp; EU<br/>batteries</span>
                             </div>
@@ -202,6 +200,8 @@ export default function Mission() {
                           quality={90}
                           className={`w-full h-full absolute inset-0 z-0 object-cover object-center will-change`}
                         />
+
+                        <div className="grain grain--over z-[4]"></div>
 
                         <div className="h-full w-full absolute inset-0 z-20 flex items-center justify-center">
                           {/* @TODO CONVERT TO BUTTON */}
@@ -237,7 +237,7 @@ export default function Mission() {
                           </div>
                         </div>
                       </section>
-                    </div>
+                    </Div100vh>
                   </m.main>
 
                   <m.div variants={fade} className="">
