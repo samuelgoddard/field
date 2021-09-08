@@ -40,13 +40,13 @@ export default function MenuTray({ modalEl, route, showLogo, scroll, isOpenPass 
                     animate={"isOpen"}
                     exit={"exit"}
                     variants={reveal}
-                    className="flex items-center"
+                    className={`flex items-center menu-item ${route === '/' && 'menu-item--active'}`}
+                    data-content="Home"
                   >
-                    {route !== '/' && (
+                    {/* {route !== '/' && (
                       <div className="absolute bottom-0 right-0 top-0 h-full bg-off-white w-full group-hover:w-[0] group-focus:w-[0] transition-all ease-in-out duration-[750ms] bg-blend-color mix-blend-color"></div>
-                    )}
-                    <MetaText>01</MetaText>
-                    <span className="block ml-2">Home</span>
+                    )} */}
+                    <span className="block">Home</span>
                   </m.span>
                 </a>
               </Link>
@@ -59,13 +59,13 @@ export default function MenuTray({ modalEl, route, showLogo, scroll, isOpenPass 
                     animate={"isOpen"}
                     exit={"exit"}
                     variants={reveal}
-                    className="flex items-center"
+                    className={`flex items-center menu-item ${route === '/mission' && 'menu-item--active'}`}
+                    data-content="Mission"
                   >
-                    {route !== '/mission' && (
+                    {/* {route !== '/mission' && (
                       <div className="absolute bottom-0 right-0 top-0 h-full bg-off-white w-full group-hover:w-[0] group-focus:w-[0] transition-all ease-in-out duration-[750ms] bg-blend-color mix-blend-color"></div>
-                    )}
-                    <MetaText>02</MetaText>
-                    <span className="block ml-2">Mission</span>
+                    )} */}
+                    <span className="block">Mission</span>
                   </m.span>
                 </a>
               </Link>
@@ -78,13 +78,13 @@ export default function MenuTray({ modalEl, route, showLogo, scroll, isOpenPass 
                     animate={"isOpen"}
                     exit={"exit"}
                     variants={reveal}
-                    className="flex items-center"
+                    className={`flex items-center menu-item ${route === '/team' && 'menu-item--active'}`}
+                    data-content="Team"
                   >
-                    {route !== '/team' && (
+                    {/* {route !== '/team' && (
                       <div className="absolute bottom-0 right-0 top-0 h-full bg-off-white w-full group-hover:w-[0] group-focus:w-[0] transition-all ease-in-out duration-[750ms] bg-blend-color mix-blend-color"></div>
-                    )}
-                    <MetaText>03</MetaText>
-                    <span className="block ml-2">Team</span>
+                    )} */}
+                    <span className="block">Team</span>
                   </m.span>
                 </a>
               </Link>

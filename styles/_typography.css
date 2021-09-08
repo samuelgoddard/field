@@ -71,6 +71,31 @@
   will-change: transform;
 }
 
+.menu-item {
+  position: relative;
+  display: inline-block;
+
+  color: #141414;
+  overflow: hidden;
+  transition: clip-path 400ms ease-in-out;
+}
+
+.menu-item:hover::before {
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+}
+
+.menu-item::before {
+  position: absolute;
+  content: attr(data-content);
+  color: #F07837;
+  clip-path: polygon(0 0, 0 0, 0% 100%, 0 100%);
+  transition: clip-path 400ms ease-in-out;
+}
+
+.menu-item--active::before {
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+}
+
 /* Heading Defaults */
 h1, .h1, h2, .h2, h3, .h3 {
   @apply p-0 mb-6;
@@ -179,5 +204,4 @@ h1, .h1, h2, .h2, h3, .h3 {
 .embla__button--next {
   right: 10px;
 }
-
 
