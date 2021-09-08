@@ -168,18 +168,18 @@ export default function Team(initialData) {
                                     </m.span>
                                   </span>
                                 </div>
-                                <ol className="text-[20px] lg:text-[22px] leading-tight lg:leading-tight w-full mb-16 lg:mb-8">
+                                <ol className="text-[20px] lg:text-[22px] leading-tight lg:leading-tight w-full mb-16 lg:mb-8 list-inside list-decimal">
                                   <li className="mb-1 relative overflow-hidden">
-                                    <m.span variants={reveal} className="inline-block">
+                                    <m.span variants={fade} className="inline-block">
                                       <ScrollToButton scrollTarget="#intro">
-                                        <span className="inline-block underline group-hover:text-orange-dark focus:text-orange-dark transition-colors ease-in-out duration-500">1. {teamLanding.chapter1Title}</span>
+                                        <span className="inline-block underline group-hover:text-orange-dark focus:text-orange-dark transition-colors ease-in-out duration-500">{teamLanding.chapter1Title}</span>
                                       </ScrollToButton>
                                     </m.span>
                                   </li>
                                   <li className="mb-1 overflow-hidden">
-                                    <m.span variants={reveal} className="inline-block">
+                                    <m.span variants={fade} className="inline-block">
                                       <ScrollToButton scrollTarget="#careers">
-                                        <span className="inline-block underline group-hover:text-orange-dark focus:text-orange-dark transition-colors ease-in-out duration-500">2. {teamLanding.chapter2Title}</span>
+                                        <span className="inline-block underline group-hover:text-orange-dark focus:text-orange-dark transition-colors ease-in-out duration-500">{teamLanding.chapter2Title}</span>
                                       </ScrollToButton>
                                     </m.span>
                                   </li>

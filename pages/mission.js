@@ -155,7 +155,7 @@ export default function Mission(initialData) {
 
                                 <span className="hidden overflow-hidden lg:block">
                                   <m.span variants={reveal} className="block">
-                                    <span className="inline lg:hidden">infrastructure</span>
+                                    <span className="inline">infrastructure</span>
                                   </m.span>
                                 </span>
                               </h1>
@@ -172,25 +172,25 @@ export default function Mission(initialData) {
                                     </m.span>
                                   </div>
                                 </div>
-                                <ol className="text-[20px] lg:text-[22px] leading-tight lg:leading-tight w-full mb-16 lg:mb-8">
+                                <ol className="text-[20px] lg:text-[22px] leading-tight lg:leading-tight w-full mb-16 lg:mb-8 list-inside list-decimal">
                                   <li className="mb-1 overflow-hidden">
-                                    <m.span variants={reveal} className="block">
+                                    <m.span variants={fade} className="inline-block">
                                       <ScrollToButton scrollTarget="#challenge">
-                                        <span className="inline-block underline group-hover:text-orange-dark focus:text-orange-dark transition-colors ease-in-out duration-500">1. {mission.chapter1Title}</span>
+                                        <span className="inline-block underline group-hover:text-orange-dark focus:text-orange-dark transition-colors ease-in-out duration-500">{mission.chapter1Title}</span>
                                       </ScrollToButton>
                                     </m.span>
                                   </li>
                                   <li className="mb-1 overflow-hidden">
-                                    <m.span variants={reveal} className="block">
+                                    <m.span variants={fade} className="inline-block">
                                     <ScrollToButton scrollTarget="#mission">
-                                      <span className="inline-block underline group-hover:text-orange-dark focus:text-orange-dark transition-colors ease-in-out duration-500">2. {mission.chapter2Title}</span>
+                                      <span className="inline-block underline group-hover:text-orange-dark focus:text-orange-dark transition-colors ease-in-out duration-500">{mission.chapter2Title}</span>
                                     </ScrollToButton>
                                     </m.span>
                                   </li>
                                   <li className="mb-1 overflow-hidden">
-                                  <m.span variants={reveal} className="block">
+                                  <m.span variants={fade} className="inline-block">
                                     <ScrollToButton scrollTarget="#plan">
-                                      <span className="inline-block underline group-hover:text-orange-dark focus:text-orange-dark transition-colors ease-in-out duration-500">3. {mission.chapter3Title}</span>
+                                      <span className="inline-block underline group-hover:text-orange-dark focus:text-orange-dark transition-colors ease-in-out duration-500">{mission.chapter3Title}</span>
                                     </ScrollToButton>
                                     </m.span>
                                   </li>
