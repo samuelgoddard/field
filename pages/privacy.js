@@ -3,7 +3,7 @@ import { useRouter } from 'next/router'
 import Layout from '@/components/layout'
 import Header from '@/components/header'
 import ProgressBar from '@/components/progress-bar'
-import { fade } from '@/helpers/transitions'
+import { fade, swipe1, swipe2 } from '@/helpers/transitions'
 import { LocomotiveScrollProvider } from 'react-locomotive-scroll'
 import { LazyMotion, domAnimation, m } from 'framer-motion'
 import { NextSeo } from 'next-seo'
@@ -49,13 +49,23 @@ export default function Privacy(initialData) {
   return (
     <Layout>
       <NextSeo title="Privacy Policy" />
+
+      <LazyMotion features={domAnimation}>
+        <m.div
+          initial="initial"
+          animate="enter"
+          exit="exit"
+          className={introContext ? 'opacity-100' : 'opacity-0'}
+        >
+          <m.div className="fixed inset-0 z-[200000] pointer-events-none bg-orange" variants={swipe1}></m.div>
+          <m.div className="fixed inset-0 z-[200000] pointer-events-none bg-orange" variants={swipe2}></m.div>
+        </m.div>
       
-      <LocomotiveScrollProvider
-        options={{ smooth: true, lerp: 0.125, tablet: { smooth: false, breakpoint: 1024 }}}
-        containerRef={containerRef}
-        watch={[]}
-      >
-        <LazyMotion features={domAnimation}>
+        <LocomotiveScrollProvider
+          options={{ smooth: true, lerp: 0.125, tablet: { smooth: false, breakpoint: 1024 }}}
+          containerRef={containerRef}
+          watch={[]}
+        >
           <Header route={router.asPath} />
             <div data-scroll-container ref={containerRef} id="scroll-container" className="relative z-[10]">
               <div>
@@ -73,7 +83,7 @@ export default function Privacy(initialData) {
                         <div className="relative pl-[20px] lg:pl-[90px]">
                           <div className="border-b border-soft-black-dark pl-[15px] lg:pl-[75px] pt-4 pb-4">
                             <Link href="/">
-                              <a className="flex items-center relative z-[60] py-3 leading-none w-1/2"><span className="block rotate-180 text-[25px] lg:text-[40px] mb-[-4px] lg:mb-[-5px]">→</span><span className="block ml-[5px] lg:ml-[6px] lg:text-xl">Back</span></a>
+                              <a className="flex items-center relative z-[60] py-3 leading-none w-1/2 opacity-0 lg:opacity-100"><span className="block rotate-180 text-[25px] lg:text-[40px] mb-[-4px] lg:mb-[-5px]">→</span><span className="block ml-[5px] lg:ml-[6px] lg:text-xl">Back</span></a>
                             </Link>
                           </div>
                           <div className="pl-[15px] lg:pl-[75px] py-8 lg:py-20 border-b border-soft-black-dark">
@@ -103,8 +113,8 @@ export default function Privacy(initialData) {
                 </m.div>
               </div>
             </div>
-          </LazyMotion>
-      </LocomotiveScrollProvider>
+        </LocomotiveScrollProvider>
+      </LazyMotion>
     </Layout>
   )
 }

@@ -119,7 +119,7 @@ export default function Home(initialData) {
                         
                         <div className="flex flex-wrap lg:items-center h-full relative" data-scroll data-scroll-speed={0.4}>
                           <div className="w-full lg:w-8/12 xl:w-9/12 lg:flex lg:flex-wrap lg:h-full text-soft-black-dark pb-8">
-                            <div className="w-full mb-auto lg:px-[30px] pt-[25px] pb-12 lg:py-8">
+                            <div className="w-full mb-auto lg:px-[30px] pt-[25px] pb-12 lg:py-8 opacity-0 lg:opacity-100">
                               <Logo width="w-[140px] lg:w-[240px]" />
                             </div>
                             <div className="w-full 2xl:pr-32 mt-5 my-auto lg:my-auto mb-16">

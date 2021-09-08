@@ -83,7 +83,7 @@ export default function BarSection({title, text, bars}) {
 
           if (i === 0) {
             backgroundColor = 'bg-blue'
-            height = showBars ? 'delay-300 w-[37%] lg:w-1/3 h-[150px] lg:h-[25%]' : 'delay-300 w-[0px] lg:w-1/3 h-[150px] lg:h-0'
+            height = showBars ? 'w-[37%] lg:w-1/3 h-[150px] lg:h-[25%]' : 'delay-300 w-[0px] lg:w-1/3 h-[150px] lg:h-0'
             battery = '/images/battery-1.svg'
             textSize = 'text-[22px] lg:text-[47px]'
           } else if (i === 1) {
@@ -93,7 +93,7 @@ export default function BarSection({title, text, bars}) {
             textSize = 'text-[30px] lg:text-[75px]'
           } else {
             backgroundColor = 'bg-orange'
-            height = showBars ? 'w-[90%] lg:w-1/3 h-[150px] lg:h-[90%]' : 'w-[0px] lg:w-1/3 h-[150px] lg:h-0'
+            height = showBars ? 'delay-300 w-[90%] lg:w-1/3 h-[150px] lg:h-[90%]' : 'w-[0px] lg:w-1/3 h-[150px] lg:h-0'
             battery = '/images/battery-3.svg'
             textSize = 'text-[38px] lg:text-[100px]'
           }

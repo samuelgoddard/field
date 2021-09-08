@@ -118,7 +118,7 @@ export default function Mission(initialData) {
                           <div className="w-full lg:w-8/12 xl:w-9/12 lg:flex lg:flex-wrap lg:h-full text-soft-black-dark pb-5 lg:pb-8">
                             <div className="w-full mb-auto lg:px-[30px] pt-[25px] pb-16 lg:py-8">
                               <Link href="/">
-                                <a className="inline-block relative z-[60]">
+                                <a className="inline-block relative z-[60] opacity-0 lg:opacity-100">
                                   <Logo width="w-[140px] lg:w-[240px]" />
                                 </a>
                               </Link>
@@ -249,7 +249,7 @@ export default function Mission(initialData) {
                             <MetaText>{mission.chapter2Title}</MetaText>
                           </div>
                           
-                          <div className="block text-base lg:text-xl 2xl:text-2xl leading-tight lg:leading-tight 2xl:leading-tight content content--large">
+                          <div className="block text-base lg:text-xl 2xl:text-2xl leading-tight lg:leading-tight 2xl:leading-tight content content--large 3xl:max-w-3xl ">
                             <BlockContent serializers={{ container: ({ children }) => children }} blocks={mission.chapter2Text} />
                           </div>
 
