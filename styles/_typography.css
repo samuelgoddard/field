@@ -78,7 +78,7 @@
 
   /* color: #141414; */
   overflow: hidden;
-  transition: clip-path 600ms cubic-bezier(.2,1.09,.36,.97);
+  transition: clip-path 750ms cubic-bezier(.2,1.09,.36,.97);
 }
 
 .menu-item:hover::before {
@@ -90,7 +90,7 @@
   content: attr(data-content);
   color: #F07837;
   clip-path: polygon(0 0, 0 0, 0% 100%, 0 100%);
-  transition: clip-path 600ms cubic-bezier(.2,1.09,.36,.97);
+  transition: clip-path 750ms cubic-bezier(.2,1.09,.36,.97);
 }
 
 .menu-item--active::before {

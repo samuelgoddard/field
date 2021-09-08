@@ -249,7 +249,7 @@ export default function Mission(initialData) {
                             <MetaText>{mission.chapter2Title}</MetaText>
                           </div>
                           
-                          <div className="block text-base lg:text-xl 2xl:text-2xl leading-tight lg:leading-tight 2xl:leading-tight content content--large 3xl:max-w-3xl ">
+                          <div className="block text-base lg:text-xl 2xl:text-2xl leading-tight lg:leading-tight 2xl:leading-tight content content--large 2xl:max-w-3xl 3xl:max-w-3xl ">
                             <BlockContent serializers={{ container: ({ children }) => children }} blocks={mission.chapter2Text} />
                           </div>
 

@@ -255,7 +255,7 @@ export default function Home(initialData) {
                         {home.pictogramBlocks.map((e,i) => {
                           return (
                             <div key={i} className={`lg:border-l lg:border-soft-black-dark lg:h-full flex items-end lg:min-w-[540px] 3xl:w-[600px] lg:p-8 mb-12 lg:mb-0`}>
-                              <div className={`${ i === 0  ? 'lg:pb-[25px]' : '' }`}>
+                              <div className={`${ i === 0 ? 'lg:pb-[25px]' : '' } ${ i === 2 || i === 3 ? 'lg:pb-[25px] 3xl:pb-0' : '' }`}>
                                 <img className="w-4/12 lg:w-5/12 will-change mb-5 lg:mb-8" src={e.image.asset.url} alt="Finance Icon" />
                                 <h3 className="mb-4 lg:mb-5 2xl:mb-8 text-[9vw] lg:text-[52px] 2xl:text-[58px] leading-none">{e.heading}</h3>
                                 <p className="block text-base lg:text-xl leading-tight lg:leading-tight 2xl:leading-tight">{e.text}</p>
