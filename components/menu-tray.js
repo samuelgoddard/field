@@ -34,7 +34,7 @@ export default function MenuTray({ modalEl, route, showLogo, scroll, isOpenPass 
           <ul>
             <li className="block border-t border-soft-black-dark">
               <Link href="/" passHref>
-                <a className={`flex items-center text-[13vw] md:text-[60px] lg:text-[55px] 2xl:text-[72px] leading-none my-5 px-6 relative group overflow-hidden hover:text-orange focus:text-orange transition-colors ease-in-out duration-500 ${route === '/' && 'text-orange'}`} onClick={() => modalEl.current.close() & scrollToTop()}>
+                <a className={`flex items-center text-[13vw] md:text-[60px] lg:text-[55px] 2xl:text-[72px] leading-none my-5 px-6 relative group overflow-hidden hover:text-orange focus:text-orange transition-colors ease-in-out duration-[650ms] ${route === '/' && 'text-orange'}`} onClick={() => modalEl.current.close() & scrollToTop()}>
                   <m.span 
                     initial={"initial"}
                     animate={"isOpen"}
@@ -53,7 +53,7 @@ export default function MenuTray({ modalEl, route, showLogo, scroll, isOpenPass 
             </li>
             <li className="block border-t border-soft-black-dark">
               <Link href="/mission" onClick={scrollToTop}>
-                <a className={`flex items-center text-[13vw] md:text-[60px] lg:text-[55px] 2xl:text-[72px] leading-none my-5 px-6 relative group overflow-hidden hover:text-orange focus:text-orange transition-colors ease-in-out duration-500 ${route === '/mission' && 'text-orange'}`} onClick={() => modalEl.current.close() & scrollToTop()}>
+                <a className={`flex items-center text-[13vw] md:text-[60px] lg:text-[55px] 2xl:text-[72px] leading-none my-5 px-6 relative group overflow-hidden hover:text-orange focus:text-orange transition-colors ease-in-out duration-[650ms] ${route === '/mission' && 'text-orange'}`} onClick={() => modalEl.current.close() & scrollToTop()}>
                   <m.span 
                     initial={"initial"}
                     animate={"isOpen"}
@@ -72,7 +72,7 @@ export default function MenuTray({ modalEl, route, showLogo, scroll, isOpenPass 
             </li>
             <li className="block border-t border-b border-soft-black-dark">
               <Link href="/team" onClick={scrollToTop}>
-                <a className={`flex items-center text-[13vw] md:text-[60px] lg:text-[55px] 2xl:text-[72px] leading-none my-5 px-6 relative group overflow-hidden hover:text-orange focus:text-orange transition-colors ease-in-out duration-500 ${route === '/team' && 'text-orange'}`} onClick={() => modalEl.current.close() & scrollToTop()}>
+                <a className={`flex items-center text-[13vw] md:text-[60px] lg:text-[55px] 2xl:text-[72px] leading-none my-5 px-6 relative group overflow-hidden hover:text-orange focus:text-orange transition-colors ease-in-out duration-[650ms] ${route === '/team' && 'text-orange'}`} onClick={() => modalEl.current.close() & scrollToTop()}>
                   <m.span 
                     initial={"initial"}
                     animate={"isOpen"}
