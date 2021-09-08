@@ -1,18 +1,50 @@
 import '@/styles/main.css'
-import { AnimatePresence } from 'framer-motion'
+import { AnimatePresence, LazyMotion, m, domAnimation } from 'framer-motion'
 import { useRouter } from 'next/router'
 import { DefaultSeo } from 'next-seo'
 import SEO from '@/helpers/seo.config'
 import CookieConsent, { Cookies, getCookieConsentValue } from 'react-cookie-consent'
 import { useEffect, useState } from 'react'
 import Link from 'next/link'
-import { Context } from '../context/state';
+import { Context } from '../context/state'
+import { IntroContext } from '../context/intro'
+import Div100vh from 'react-div-100vh'
 import * as gtag from '@/helpers/gtag'
+import Logo from '@/components/logo'
+import homeSupergraphic from 'public/images/home-sh.jpg'
+import Image from 'next/image'
+
+const introEnd = {
+  visible: { opacity: 0 },
+  hidden: { opacity: '100%' }
+}
+
+const logoReveal = {
+  visible: { x: '100%' },
+  hidden: { x: 0 }
+}
+
+const swipe1 = {
+  visible: { scaleX: 1.6, x: '130%' },
+  hidden: { scaleX: 1.6, x: '-130%' }
+}
+
+const hideLogo = {
+  visible: {x: 0 },
+  hidden: { x: '-100%' }
+}
+
+const hideLogoFull = {
+  visible: { opacity: 0 },
+  hidden: { opacity: 1 }
+}
+
 
 export default function App({ Component, pageProps }) {
   const router = useRouter()
   const showCookieBar = useState(true)
   const [globalMenuOpen, setGlobalMenuOpen] = useState(false);
+  const [introContext, setIntroContext] = useState(false);
 
   useEffect(() => {
     if (getCookieConsentValue()){
@@ -30,7 +62,7 @@ export default function App({ Component, pageProps }) {
     <>
       <DefaultSeo {...SEO} />
 
-      <div className="grain fixed inset-0 z-[1000] pointer-events-none"></div>
+      <div className="grain fixed inset-0 z-[10000000] pointer-events-none"></div>
 
       {showCookieBar && (
         <CookieConsent
@@ -39,21 +71,6 @@ export default function App({ Component, pageProps }) {
           buttonClasses="underline"
           declineButtonClasses="underline"
           containerClasses="bg-soft-black-dark text-off-white fixed bottom-0 lg:bottom-auto lg:top-0 left-0 lg:left-auto lg:right-0 bottom-auto h-[auto] lg:h-[40px] lg:rounded-full w-full lg:w-[610px] 2xl:w-[640px] z-[999] flex lg:items-center px-6 pt-[20px] pb-[55px] lg:pb-[1px] text-sm lg:pt-0 lg:m-[35px] leading-snug"
-          // style={{
-          //   alignItems: "baseline",
-          //   background: "#141414",
-          //   color: "white",
-          //   display: "block",
-          //   left: "initial",
-          //   right: "0",
-          //   top: "0",
-          //   bottom: "initial",
-          //   position: "absolute",
-          //   width: "600px",
-          //   zIndex: "999",
-          //   margin: "50px",
-          //   borderRadius: "10px"
-          // }}
           buttonText="Accept"
           declineButtonText="Decline"
           enableDeclineButton
@@ -62,15 +79,57 @@ export default function App({ Component, pageProps }) {
           This site uses cookies to improve your visiting experience, <Link href="/privacy"><a className="underline inline-block">more info</a></Link>
         </CookieConsent>
       )}
-      <Context.Provider 
-        value={
-          [globalMenuOpen, setGlobalMenuOpen]
-        }
-      >
-        <AnimatePresence exitBeforeEnter>
-          <Component {...pageProps} key={router.asPath} />
-        </AnimatePresence>
-      </Context.Provider>
+
+      <IntroContext.Provider value={[introContext, setIntroContext]}>
+        <LazyMotion features={domAnimation}>
+          { !introContext && router.asPath == '/' && (
+            <>
+              <m.div initial="hidden"
+                animate="visible" className="fixed inset-0 z-[20000] pointer-events-none bg-orange" variants={swipe1} transition={{ delay: 0.15, duration: 1.8, ease: [0.83, 0, 0.17, 1] }}></m.div>
+
+              <m.div 
+                initial="hidden"
+                animate="visible"
+                variants={introEnd}
+                transition={{ delay: 1, duration: 0.3, ease: [0.83, 0, 0.17, 1] }}
+                className="fixed inset-0 z-[1000] pointer-events-none"
+              >
+                <Div100vh className="fixed inset-0 z-[1000] pointer-events-none bg-off-white">
+                </Div100vh>
+              </m.div>
+              <m.div 
+                initial="hidden"
+                animate="visible"
+                className="fixed inset-0 z-[30000] pointer-events-none"
+              >
+                <Div100vh className="fixed inset-0 z-[30000] pointer-events-none bg-transparent">
+                  <div className="fixed inset-0 w-full h-full z-20 flex flex-col items-center justify-center">
+                    <div className="relative z-10 text-soft-black-dark">
+                      <m.div variants={hideLogoFull} transition={{ delay: 1.1, duration: 0.05, ease: [0.83, 0, 0.17, 1] }} className="relative overflow-hidden">
+
+                        <m.div className="w-full h-full absolute inset-0 bg-orange z-[30000]" variants={hideLogo} transition={{ delay: 0.85, duration: 0.3, ease: [0.83, 0, 0.17, 1] }}></m.div>
+
+
+                        <m.div variants={logoReveal} transition={{ delay: 0.15, duration: 0.55, ease: [0.83, 0, 0.17, 1] }} className="w-full h-full absolute inset-0 bg-off-white z-[30000]"></m.div>
+                        <Logo width="w-[180px] lg:w-[280px]" />
+                      </m.div>
+                    </div>
+                  </div>
+                </Div100vh>
+              </m.div>
+            </>
+          )}
+        </LazyMotion>
+        <Context.Provider 
+          value={
+            [globalMenuOpen, setGlobalMenuOpen]
+          }
+        >
+          <AnimatePresence exitBeforeEnter>
+            <Component {...pageProps} key={router.asPath} />
+          </AnimatePresence>
+        </Context.Provider>
+      </IntroContext.Provider>
     </>
   )
 }

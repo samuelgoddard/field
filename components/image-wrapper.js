@@ -4,6 +4,7 @@ import { useState } from "react"
 export default function ImageWrapper({ priority, layout, src, alt, className, width, height }) {
   const [imageIsLoaded, setImageIsLoaded] = useState(false)
 
+  
   return (
     <Image
       priority={priority}

@@ -39,20 +39,20 @@ export function Modal({ children, defaultOpened = false, isOpenPass }, ref) {
   const modalTrayVariant = {
     // @TODO mobile state for x
     initial: { x: '-100%' },
-    isOpen: { x: size.width > 1024 ? '90px' : '0px', transition: { type: "easeInOut", duration: 0.75, delay: 0.25, ease: [0.83, 0, 0.17, 1] }},
+    isOpen: { x: size.width > 1024 ? '90px' : '0px', transition: { type: "easeInOut", duration: 0.75, delay: 0, ease: [0.83, 0, 0.17, 1] }},
     exit: { x: '-100%', transition: { type: "easeInOut", duration: 0.75, ease: [0.83, 0, 0.17, 1] }}
   };
 
   const modalVariant = {
     initial: { opacity: 0 },
-    isOpen: { opacity: 1, transition: { type: "easeInOut", duration: 0.75, ease: [0.83, 0, 0.17, 1] }},
-    exit: { opacity: 0, transition: { type: "easeInOut", duration: 0.75, delay: 0.25, ease: [0.83, 0, 0.17, 1] }}
+    isOpen: { opacity: 1, transition: { type: "easeInOut", duration: 0.5, ease: [0.83, 0, 0.17, 1] }},
+    exit: { opacity: 0, transition: { type: "easeInOut", duration: 0.5, delay: 0.4, ease: [0.83, 0, 0.17, 1] }}
   };
 
   const containerVariant = {
     initial: { opacity: 0 },
-    isOpen: { opacity: 1, transition: { type: "easeInOut", duration: 0.75, ease: [0.83, 0, 0.17, 1] }},
-    exit: { opacity: 0, transition: { type: "easeInOut", duration: 0.75, ease: [0.83, 0, 0.17, 1] }}
+    isOpen: { opacity: 1, transition: { type: "easeInOut", duration: 0.5, ease: [0.83, 0, 0.17, 1] }},
+    exit: { opacity: 0, transition: { type: "easeInOut", duration: 0.5, ease: [0.83, 0, 0.17, 1] }}
   };
 
   useImperativeHandle(ref, () => ({

@@ -1,6 +1,7 @@
 
 import React, { useEffect, useImperativeHandle, useState, forwardRef, useCallback } from 'react'
 import { createPortal } from 'react-dom'
+import BlockContent from '@sanity/block-content-to-react'
 import { m, AnimatePresence } from 'framer-motion'
 import MetaText from './meta-text';
 
@@ -92,9 +93,10 @@ export function ModalTeam({ children, image, name, jobTitle, bio, defaultOpened 
                       <MetaText>{jobTitle}</MetaText>
                     </div>
 
-                    <h2 className="text-4xl lg:text-4xl 2xl:text-5xl block uppercase italic leading-[1] lg:leading-[0.9] mt-2 lg:mb-8" dangerouslySetInnerHTML={{ __html: name }}></h2>
+                    <h2 className="text-4xl lg:text-4xl 2xl:text-5xl block uppercase italic leading-[1] lg:leading-[0.9] mt-2 lg:mb-8">{name}</h2>
 
-                    <div className="content leading-snug lg:leading-none lg:text-base" dangerouslySetInnerHTML={{ __html: bio }}>
+                    <div className="content leading-snug lg:leading-none lg:text-base">
+                      <BlockContent serializers={{ container: ({ children }) => children }} blocks={bio} />
                     </div>
                   </div>
                 </div>

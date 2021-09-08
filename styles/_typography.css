@@ -1,4 +1,14 @@
 /* Content Stylings */
+.content--pad {
+  & > p {
+    @apply mb-5 last-of-type:mb-0;
+  }
+
+  & > ul {
+    @apply mb-5 last-of-type:mb-0;
+  }
+}
+
 .content {
   & > p {
     @apply mb-5 last-of-type:mb-0 lg:text-lg lg:leading-snug;
@@ -17,7 +27,7 @@
   }
 
   & > p > a {
-    @apply underline hover:text-opacity-25 focus:text-opacity-25;
+    @apply underline transition-colors ease-in-out duration-300 hover:text-orange focus:text-orange;
   }
 
   & > h1, & > .h1 {
@@ -40,6 +50,16 @@
 
   & > p ~ h3 {
     @apply mt-8 block;
+  }
+}
+
+.content--large {
+  & > p {
+    @apply mb-5 last-of-type:mb-0 lg:text-xl 2xl:text-2xl lg:leading-snug
+  }
+
+  & > h3 {
+    @apply text-2xl lg:text-3xl 2xl:text-4xl
   }
 }
 

@@ -79,7 +79,7 @@ export default function Header({ route }) {
 
       {/* Menu Tray */}
       <Modal ref={modalEl} isOpenPass={isOpen}>
-        <MenuTray scroll={scroll} showLogo={showLogo} modalEl={modalEl} route={route} />
+        <MenuTray scroll={scroll} showLogo={showLogo} modalEl={modalEl} route={route} isOpenPass={isOpen} />
       </Modal>
     </header>
   )

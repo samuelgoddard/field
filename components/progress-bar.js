@@ -16,8 +16,8 @@ export default function ProgressBar() {
       scroll.on('scroll', ({ limit, scroll }) => {
         const progress = scroll.x / limit.x * 100
         progressBar.style.width = `${progress}%`
-
-        if (progress > 4) {
+        // console.log(progress)
+        if (progress > 27) {
           setShowLogo(true)
         } else {
           setShowLogo(false)
