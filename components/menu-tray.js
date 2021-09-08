@@ -42,7 +42,9 @@ export default function MenuTray({ modalEl, route, showLogo, scroll, isOpenPass 
                     variants={reveal}
                     className="flex items-center"
                   >
-                    <div className="absolute bottom-0 left-0 h-[1px] mb-[-1px] bg-orange w-0 group-hover:w-full group-focus:w-full transition-all ease-in-out duration-1000"></div>
+                    {route !== '/' && (
+                      <div className="absolute bottom-0 right-0 top-0 h-full bg-off-white w-full group-hover:w-[0] group-focus:w-[0] transition-all ease-in-out duration-[750ms] bg-blend-color mix-blend-color"></div>
+                    )}
                     <MetaText>01</MetaText>
                     <span className="block ml-2">Home</span>
                   </m.span>
@@ -59,7 +61,9 @@ export default function MenuTray({ modalEl, route, showLogo, scroll, isOpenPass 
                     variants={reveal}
                     className="flex items-center"
                   >
-                    <div className="absolute bottom-0 left-0 h-[1px] mb-[-1px] bg-orange w-0 group-hover:w-full group-focus:w-full transition-all ease-in-out duration-1000"></div>
+                    {route !== '/mission' && (
+                      <div className="absolute bottom-0 right-0 top-0 h-full bg-off-white w-full group-hover:w-[0] group-focus:w-[0] transition-all ease-in-out duration-[750ms] bg-blend-color mix-blend-color"></div>
+                    )}
                     <MetaText>02</MetaText>
                     <span className="block ml-2">Mission</span>
                   </m.span>
@@ -76,7 +80,9 @@ export default function MenuTray({ modalEl, route, showLogo, scroll, isOpenPass 
                     variants={reveal}
                     className="flex items-center"
                   >
-                    <div className="absolute bottom-0 left-0 h-[1px] mb-[-1px] bg-orange w-0 group-hover:w-full group-focus:w-full transition-all ease-in-out duration-1000"></div>
+                    {route !== '/team' && (
+                      <div className="absolute bottom-0 right-0 top-0 h-full bg-off-white w-full group-hover:w-[0] group-focus:w-[0] transition-all ease-in-out duration-[750ms] bg-blend-color mix-blend-color"></div>
+                    )}
                     <MetaText>03</MetaText>
                     <span className="block ml-2">Team</span>
                   </m.span>

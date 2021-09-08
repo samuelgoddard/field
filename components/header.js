@@ -47,7 +47,7 @@ export default function Header({ route }) {
         </Link>
       </div>
 
-      <div className="w-full fixed top-0 left-0 right-0 h-[80px] lg:hidden z-[40] text-soft-black-dark border-b border-soft-black-dark">
+      <div className="w-full fixed top-0 left-0 right-0 h-[80px] lg:hidden z-[40] text-soft-black-dark">
         {/* <img className="w-full h-full absolute inset-0 z-0 object-cover object-top-left" src="/images/supergraphic.jpg" alt="Field Supergraphic" /> */}
       </div>
 
