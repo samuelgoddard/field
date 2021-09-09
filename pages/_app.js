@@ -85,13 +85,13 @@ export default function App({ Component, pageProps }) {
           { !introContext && router.asPath == '/' && (
             <>
               <m.div initial="hidden"
-                animate="visible" className="fixed inset-0 z-[20000] pointer-events-none bg-off-white" variants={swipe1} transition={{ delay: 0.35, duration: 2.8, ease: [0.83, 0, 0.17, 1] }}></m.div>
+                animate="visible" className="fixed inset-0 z-[20000] pointer-events-none bg-off-white" variants={swipe1} transition={{ delay: 0.35, duration: 2.4, ease: [0.83, 0, 0.17, 1] }}></m.div>
 
               <m.div 
                 initial="hidden"
                 animate="visible"
                 variants={introEnd}
-                transition={{ delay: 1.6, duration: 0.3, ease: [0.83, 0, 0.17, 1] }}
+                transition={{ delay: 1.4, duration: 0.3, ease: [0.83, 0, 0.17, 1] }}
                 className="fixed inset-0 z-[1000] pointer-events-none"
               >
                 <Div100vh className="fixed inset-0 z-[1000] pointer-events-none bg-off-white">
@@ -105,9 +105,9 @@ export default function App({ Component, pageProps }) {
                 <Div100vh className="fixed inset-0 z-[30000] pointer-events-none bg-transparent">
                   <div className="fixed inset-0 w-full h-full z-20 flex flex-col items-center justify-center">
                     <div className="relative z-10 text-soft-black-dark">
-                      <m.div variants={hideLogoFull} transition={{ delay: 1.9, duration: 0.005, ease: [0.83, 0, 0.17, 1] }} className="relative overflow-hidden">
+                      <m.div variants={hideLogoFull} transition={{ delay: 1.7, duration: 0.005, ease: [0.83, 0, 0.17, 1] }} className="relative overflow-hidden">
 
-                        <m.div className="w-full h-full absolute inset-0 bg-off-white z-[30000]" variants={hideLogo} transition={{ delay: 1.5, duration: 0.55, ease: [0.83, 0, 0.17, 1] }}></m.div>
+                        <m.div className="w-full h-full absolute inset-0 bg-off-white z-[30000]" variants={hideLogo} transition={{ delay: 1.3, duration: 0.55, ease: [0.83, 0, 0.17, 1] }}></m.div>
 
 
                         <m.div variants={logoReveal} transition={{ delay: 0.15, duration: 0.65, ease: [0.83, 0, 0.17, 1] }} className="w-full h-full absolute inset-0 bg-off-white z-[30000]"></m.div>
