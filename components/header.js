@@ -17,6 +17,7 @@ export default function Header({ route }) {
     if (scroll) {
       scroll.on('scroll', ({ limit, scroll }) => {
         const progress = scroll.x / limit.x * 100
+        console.log(scroll)
         
         if (progress > 4) {
           setShowLogo(true)

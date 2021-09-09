@@ -46,7 +46,7 @@ export default function BarSection({title, text, bars}) {
         progressBar.style.width = `${progress}%`
         console.log(progress)
         if (size.width > 1024 ) {
-          if (progress > 67) {
+          if (progress > 58) {
             setShowBars(true)
           } else {
             setShowBars(false)
