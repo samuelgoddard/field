@@ -85,7 +85,7 @@ export default function App({ Component, pageProps }) {
           { !introContext && router.asPath == '/' && (
             <>
               <m.div initial="hidden"
-                animate="visible" className="fixed inset-0 z-[20000] pointer-events-none bg-orange" variants={swipe1} transition={{ delay: 0.35, duration: 2.8, ease: [0.83, 0, 0.17, 1] }}></m.div>
+                animate="visible" className="fixed inset-0 z-[20000] pointer-events-none bg-off-white" variants={swipe1} transition={{ delay: 0.35, duration: 2.8, ease: [0.83, 0, 0.17, 1] }}></m.div>
 
               <m.div 
                 initial="hidden"
@@ -107,7 +107,7 @@ export default function App({ Component, pageProps }) {
                     <div className="relative z-10 text-soft-black-dark">
                       <m.div variants={hideLogoFull} transition={{ delay: 1.9, duration: 0.005, ease: [0.83, 0, 0.17, 1] }} className="relative overflow-hidden">
 
-                        <m.div className="w-full h-full absolute inset-0 bg-orange z-[30000]" variants={hideLogo} transition={{ delay: 1.5, duration: 0.55, ease: [0.83, 0, 0.17, 1] }}></m.div>
+                        <m.div className="w-full h-full absolute inset-0 bg-off-white z-[30000]" variants={hideLogo} transition={{ delay: 1.5, duration: 0.55, ease: [0.83, 0, 0.17, 1] }}></m.div>
 
 
                         <m.div variants={logoReveal} transition={{ delay: 0.15, duration: 0.65, ease: [0.83, 0, 0.17, 1] }} className="w-full h-full absolute inset-0 bg-off-white z-[30000]"></m.div>

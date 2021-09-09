@@ -67,8 +67,8 @@ export default function Mission(initialData) {
           animate="enter"
           exit="exit"
         >
-          <m.div className="fixed inset-0 z-[200000] pointer-events-none bg-orange" variants={swipe1}></m.div>
-          <m.div className="fixed inset-0 z-[200000] pointer-events-none bg-orange" variants={swipe2}></m.div>
+          <m.div className="fixed inset-0 z-[200000] pointer-events-none bg-off-white" variants={swipe1}></m.div>
+          <m.div className="fixed inset-0 z-[200000] pointer-events-none bg-off-white" variants={swipe2}></m.div>
         </m.div>
         
         <LocomotiveScrollProvider
@@ -127,34 +127,34 @@ export default function Mission(initialData) {
                             <div className="w-full lg:pr-10 mb-auto">
                               <h1 className="text-[14.5vw] lg:text-[100px] xl:text-[120px] 2xl:text-[140px] 3xl:text-[155px] block leading-[0.85] uppercase italic ml-[-28px] lg:ml-[-3px] xl:ml-[-5px] 2xl:ml-[-5px] 3xl:ml-[-6px]">
                                 <span className="block overflow-hidden">
-                                  <m.span variants={reveal} className="block">
+                                  <m.span variants={fade} className="block">
                                   Accelerate
                                   </m.span>
                                 </span>
                                 <span className="block overflow-hidden">
-                                  <m.span variants={reveal} className="block">
+                                  <m.span variants={fade} className="block">
                                   renewable
                                   </m.span>
                                 </span>
                                 <span className="block overflow-hidden">
-                                  <m.span variants={reveal} className="block">
+                                  <m.span variants={fade} className="block">
                                   energy
                                   </m.span>
                                 </span>
                                 
                                 <span className="block overflow-hidden lg:hidden">
-                                  <m.span variants={reveal} className="block">
+                                  <m.span variants={fade} className="block">
                                     <span className="inline lg:hidden">infra-</span>
                                   </m.span>
                                 </span>
                                 <span className="block overflow-hidden lg:hidden">
-                                  <m.span variants={reveal} className="block">
+                                  <m.span variants={fade} className="block">
                                     <span className="inline lg:hidden">structure</span>
                                   </m.span>
                                 </span>
 
                                 <span className="hidden overflow-hidden lg:block">
-                                  <m.span variants={reveal} className="block">
+                                  <m.span variants={fade} className="block">
                                     <span className="inline">infrastructure</span>
                                   </m.span>
                                 </span>
@@ -167,7 +167,7 @@ export default function Mission(initialData) {
                               <div className="w-full">
                                 <div className="mb-6 lg:mb-12">
                                   <div className="overflow-hidden relative">
-                                    <m.span variants={reveal} className="block">
+                                    <m.span variants={fade} className="block">
                                       <MetaText>Chapters</MetaText>
                                     </m.span>
                                   </div>
@@ -202,7 +202,7 @@ export default function Mission(initialData) {
                                   <span className="w-full block bg-soft-black-dark text-off-white uppercase text-center rounded-full px-4 lg:px-8 py-3 lg:py-3 text-[16px] lg:text-[50px] relative overflow-hidden leading-[0.8]">
                                     <span className="absolute inset-0 w-0 bg-off-white group-hover:w-full transition-all ease-in-out duration-[600ms]"></span>
                                     <span className="block overflow-hidden relative">
-                                      <m.span variants={reveal} className="block">
+                                      <m.span variants={fade} className="block">
                                         <span className="block relative z-10 transition-transform ease-in-out duration-[600ms] group-hover:translate-y-full mt-[-6px]">→</span>
                                         <span className="absolute inset-0 block z-10 transition-transform ease-in-out duration-[600ms] group-hover:translate-y-0 translate-y-full text-soft-black-dark mt-[-6px]">→</span>
                                       </m.span>

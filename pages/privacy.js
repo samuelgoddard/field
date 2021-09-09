@@ -57,8 +57,8 @@ export default function Privacy(initialData) {
           exit="exit"
           className={introContext ? 'opacity-100' : 'opacity-0'}
         >
-          <m.div className="fixed inset-0 z-[200000] pointer-events-none bg-orange" variants={swipe1}></m.div>
-          <m.div className="fixed inset-0 z-[200000] pointer-events-none bg-orange" variants={swipe2}></m.div>
+          <m.div className="fixed inset-0 z-[200000] pointer-events-none bg-off-white" variants={swipe1}></m.div>
+          <m.div className="fixed inset-0 z-[200000] pointer-events-none bg-off-white" variants={swipe2}></m.div>
         </m.div>
       
         <LocomotiveScrollProvider

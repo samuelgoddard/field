@@ -63,6 +63,7 @@ export default function Team(initialData) {
   const { data: { teamLanding, careers, team }  } = pageService.getPreviewHook(initialData)()
   const [introContext, setIntroContext] = useContext(IntroContext);
   const containerRef = useRef(null)
+  
   const modalEl1 = useRef(null)
   const modalEl2 = useRef(null)
   const modalEl3 = useRef(null)
@@ -71,6 +72,15 @@ export default function Team(initialData) {
   const modalEl6 = useRef(null)
   const modalEl7 = useRef(null)
   const modalEl8 = useRef(null)
+  const modalEl9 = useRef(null)
+  const modalEl10 = useRef(null)
+  const modalEl11 = useRef(null)
+  const modalEl12 = useRef(null)
+  const modalEl13 = useRef(null)
+  const modalEl14 = useRef(null)
+  const modalEl15 = useRef(null)
+  const modalEl16 = useRef(null)
+  
   const router = useRouter()
 
   useEffect(() => {
@@ -87,8 +97,8 @@ export default function Team(initialData) {
           animate="enter"
           exit="exit"
         >
-          <m.div className="fixed inset-0 z-[200000] pointer-events-none bg-orange" variants={swipe1}></m.div>
-          <m.div className="fixed inset-0 z-[200000] pointer-events-none bg-orange" variants={swipe2}></m.div>
+          <m.div className="fixed inset-0 z-[200000] pointer-events-none bg-off-white" variants={swipe1}></m.div>
+          <m.div className="fixed inset-0 z-[200000] pointer-events-none bg-off-white" variants={swipe2}></m.div>
         </m.div>
       
         <LocomotiveScrollProvider
@@ -140,17 +150,17 @@ export default function Team(initialData) {
                             <div className="lg:pr-10 mb-auto w-full lg:w-[620px] xl:w-[720px] 2xl:w-[950px]">
                               <h1 className="text-[14.5vw] lg:text-[100px] xl:text-[120px] 2xl:text-[140px] 3xl:text-[155px] block leading-[0.85] uppercase italic ml-[-25px] lg:ml-[-3px] xl:ml-[-5px] 2xl:ml-[-5px] 3xl:ml-[-6px]">
                                 <span className="block overflow-hidden">
-                                  <m.span variants={reveal} className="block">
+                                  <m.span variants={fade} className="block">
                                     Progress
                                   </m.span>
                                 </span>
                                 <span className="block overflow-hidden">
-                                  <m.span variants={reveal} className="block">
+                                  <m.span variants={fade} className="block">
                                     Needs
                                   </m.span>
                                 </span>
                                 <span className="block overflow-hidden">
-                                  <m.span variants={reveal} className="block">
+                                  <m.span variants={fade} className="block">
                                     Energy
                                   </m.span>
                                 </span>
@@ -163,7 +173,7 @@ export default function Team(initialData) {
                               <div className="w-full">
                                 <div className="mb-6 lg:mb-12">
                                   <span className="block overflow-hidden">
-                                    <m.span variants={reveal} className="block">
+                                    <m.span variants={fade} className="block">
                                       <MetaText>Chapters</MetaText>
                                     </m.span>
                                   </span>
@@ -191,7 +201,7 @@ export default function Team(initialData) {
                                   <span className="w-full block bg-soft-black-dark text-off-white uppercase text-center rounded-full px-4 lg:px-8 py-3 lg:py-3 text-[16px] lg:text-[50px] relative overflow-hidden leading-[0.8]">
                                     <span className="absolute inset-0 w-0 bg-off-white group-hover:w-full transition-all ease-in-out duration-[600ms]"></span>
                                     <span className="block overflow-hidden relative">
-                                      <m.span variants={reveal} className="block">
+                                      <m.span variants={fade} className="block">
                                         <span className="block relative z-10 transition-transform ease-in-out duration-[600ms] group-hover:translate-y-full mt-[-6px]">→</span>
                                         <span className="absolute inset-0 block z-10 transition-transform ease-in-out duration-[600ms] group-hover:translate-y-0 translate-y-full text-soft-black-dark mt-[-6px]">→</span>
                                       </m.span>
@@ -255,6 +265,22 @@ export default function Team(initialData) {
                                 modal = modalEl7
                               } else if (index == 7) {
                                 modal = modalEl8
+                              } else if (index == 8) {
+                                modal = modalEl9
+                              } else if (index == 9) {
+                                modal = modalEl10
+                              } else if (index == 10) {
+                                modal = modalEl11
+                              } else if (index == 11) {
+                                modal = modalEl12
+                              } else if (index == 12) {
+                                modal = modalEl13
+                              } else if (index == 13) {
+                                modal = modalEl14
+                              } else if (index == 14) {
+                                modal = modalEl15
+                              } else if (index == 15) {
+                                modal = modalEl16
                               }
                               return (
                                 <div className="w-1/2 px-3 mb-4" key={index}>
@@ -415,52 +441,162 @@ export default function Team(initialData) {
                           </div>
                         </div>
 
-                        <div className="lg:h-full hidden lg:block lg:pl-10">
-                          <div className="h-full w-auto lg:w-[30vh] lg:min-w-[30vh]" data-scroll data-scroll-speed={-0.75} data-scroll-direction="vertical">
-                            <div className="w-full lg:mt-[-25vh] h-full">
-                              <img className="opacity-10 block w-full object-center object-cover will-change mb-6 lg:mb-16 relative rotate-180" src="/images/team-placeholder.jpg" alt="Avatar" />
+                        {team.length > 6 && (
+                          <div className="lg:h-full hidden lg:block lg:pl-10">
+                            <div className="h-full w-auto lg:w-[30vh] lg:min-w-[30vh]" data-scroll data-scroll-speed={-0.75} data-scroll-direction="vertical">
+                              <div className="w-full lg:mt-[-25vh] h-full">
+                                <img className="opacity-10 block w-full object-center object-cover will-change mb-6 lg:mb-16 relative rotate-180" src="/images/team-placeholder.jpg" alt="Avatar" />
 
-                              <button className="group block hover:border-0 focus:border-0 hover:outline-none focus:outline-none mb-6 lg:mb-10 relative overflow-hidden" onClick={() => modalEl7.current.open()}>
-                                <img className="inset-0 absolute z-10 mix-blend-overlay will-change opacity-0 group-hover:opacity-100 group-focus:opacity-100 transition-opacity ease-in-out duration-500" src="/images/team-overlay.jpg" alt="Supergraphic Overlay" />
+                                <button className="group block hover:border-0 focus:border-0 hover:outline-none focus:outline-none mb-6 lg:mb-10 relative overflow-hidden" onClick={() => modalEl7.current.open()}>
+                                  <img className="inset-0 absolute z-10 mix-blend-overlay will-change opacity-0 group-hover:opacity-100 group-focus:opacity-100 transition-opacity ease-in-out duration-500" src="/images/team-overlay.jpg" alt="Supergraphic Overlay" />
 
-                                <img className="opacity-100 hover:opacity-100 transition-opacity duration-500 ease-in-out block w-full object-center object-cover will-change" src={team[6].avatar.asset.url} alt={team[6].name} />
+                                  <img className="opacity-100 hover:opacity-100 transition-opacity duration-500 ease-in-out block w-full object-center object-cover will-change" src={team[6].avatar.asset.url} alt={team[6].name} />
 
-                                <div className="absolute bottom-0 left-0 w-full h-1/2 bg-gradient-to-t from-black to-transparent opacity-0 group-hover:opacity-70 transition-opacity ease-in-out duration-500"></div>
+                                  <div className="absolute bottom-0 left-0 w-full h-1/2 bg-gradient-to-t from-black to-transparent opacity-0 group-hover:opacity-70 transition-opacity ease-in-out duration-500"></div>
 
-                                <h3 className="absolute bottom-0 left-0 text-off-white z-20 text-[28px] 2xl:text-[34px] uppercase italic w-full text-left leading-[0.9] -translate-x-full group-hover:-translate-x-1 transition-transform ease-in-out duration-500" dangerouslySetInnerHTML={{ __html: team[6].name}}></h3>
-                              </button>
+                                  <h3 className="absolute bottom-0 left-0 text-off-white z-20 text-[28px] 2xl:text-[34px] uppercase italic w-full text-left leading-[0.9] -translate-x-full group-hover:-translate-x-1 transition-transform ease-in-out duration-500" dangerouslySetInnerHTML={{ __html: team[6].name}}></h3>
+                                </button>
 
-                              <ModalTeam
-                                ref={modalEl7}
-                                name={team[6].name}
-                                jobTitle={team[6].jobTitle}
-                                bio={team[6].bio}
-                                image={team[6].avatar.asset.url}
-                              />
+                                <ModalTeam
+                                  ref={modalEl7}
+                                  name={team[6].name}
+                                  jobTitle={team[6].jobTitle}
+                                  bio={team[6].bio}
+                                  image={team[6].avatar.asset.url}
+                                />
 
+                                {team.length > 7 ? (
+                                  <>
+                                    <button className="group block hover:border-0 focus:border-0 hover:outline-none focus:outline-none mb-6 lg:mb-10 relative overflow-hidden" onClick={() => modalEl8.current.open()}>
+                                      <img className="inset-0 absolute z-10 mix-blend-overlay will-change opacity-0 group-hover:opacity-100 group-focus:opacity-100 transition-opacity ease-in-out duration-500" src="/images/team-overlay.jpg" alt="Supergraphic Overlay" />
 
-                              <button className="group block hover:border-0 focus:border-0 hover:outline-none focus:outline-none mb-6 lg:mb-10 relative overflow-hidden" onClick={() => modalEl8.current.open()}>
-                                <img className="inset-0 absolute z-10 mix-blend-overlay will-change opacity-0 group-hover:opacity-100 group-focus:opacity-100 transition-opacity ease-in-out duration-500" src="/images/team-overlay.jpg" alt="Supergraphic Overlay" />
+                                      <img className="opacity-100 hover:opacity-100 transition-opacity duration-500 ease-in-out block w-full object-center object-cover will-change" src={team[7].avatar.asset.url} alt={team[7].name} />
 
-                                <img className="opacity-100 hover:opacity-100 transition-opacity duration-500 ease-in-out block w-full object-center object-cover will-change" src={team[7].avatar.asset.url} alt={team[7].name} />
+                                      <div className="absolute top-0 left-0 w-full h-1/2 bg-gradient-to-b from-black to-transparent opacity-0 group-hover:opacity-70 transition-opacity ease-in-out duration-500"></div>
 
-                                <div className="absolute top-0 left-0 w-full h-1/2 bg-gradient-to-b from-black to-transparent opacity-0 group-hover:opacity-70 transition-opacity ease-in-out duration-500"></div>
+                                      <h3 className="absolute top-0 mt-6 left-0 text-off-white z-20 text-[28px] 2xl:text-[34px] uppercase italic w-full text-left leading-[0.9] -translate-x-full group-hover:-translate-x-1 transition-transform ease-in-out duration-500" dangerouslySetInnerHTML={{ __html: team[7].name}}></h3>
+                                    </button>
 
-                                <h3 className="absolute top-0 mt-6 left-0 text-off-white z-20 text-[28px] 2xl:text-[34px] uppercase italic w-full text-left leading-[0.9] -translate-x-full group-hover:-translate-x-1 transition-transform ease-in-out duration-500" dangerouslySetInnerHTML={{ __html: team[7].name}}></h3>
-                              </button>
-
-                              <ModalTeam
-                                ref={modalEl8}
-                                name={team[7].name}
-                                jobTitle={team[7].jobTitle}
-                                bio={team[7].bio}
-                                image={team[7].avatar.asset.url}
-                              />
+                                    <ModalTeam
+                                      ref={modalEl8}
+                                      name={team[7].name}
+                                      jobTitle={team[7].jobTitle}
+                                      bio={team[7].bio}
+                                      image={team[7].avatar.asset.url}
+                                    />
+                                  </>
+                                ) : (
+                                  <img className="opacity-10 block w-full object-center object-cover will-change mb-6 lg:mb-16 relative rotate-180" src="/images/team-placeholder.jpg" alt="Avatar" />
+                                )}
+                              </div>
                             </div>
                           </div>
-                        </div>
-
+                        )}
                         
+                        {team.length > 8 && (
+                          <div className="lg:h-full hidden lg:block lg:pl-10">
+                            <div className="h-full w-auto lg:w-[30vh] lg:min-w-[30vh]" data-scroll data-scroll-speed={0.75} data-scroll-direction="vertical">
+                              <div className="w-full lg:mt-[-8vh] h-full">
+
+                                <button className="group block hover:border-0 focus:border-0 hover:outline-none focus:outline-none mb-6 lg:mb-10 relative overflow-hidden" onClick={() => modalEl9.current.open()}>
+                                  <img className="inset-0 absolute z-10 mix-blend-overlay will-change opacity-0 group-hover:opacity-100 group-focus:opacity-100 transition-opacity ease-in-out duration-500" src="/images/team-overlay.jpg" alt="Supergraphic Overlay" />
+
+                                  <img className="opacity-100 hover:opacity-100 transition-opacity duration-500 ease-in-out block w-full object-center object-cover will-change" src={team[8].avatar.asset.url} alt={team[8].name} />
+
+                                  <div className="absolute bottom-0 left-0 w-full h-1/2 bg-gradient-to-t from-black to-transparent opacity-0 group-hover:opacity-70 transition-opacity ease-in-out duration-500"></div>
+
+                                  <h3 className="absolute bottom-0 left-0 text-off-white z-20 text-[28px] 2xl:text-[34px] uppercase italic w-full text-left leading-[0.9] -translate-x-full group-hover:-translate-x-1 transition-transform ease-in-out duration-500" dangerouslySetInnerHTML={{ __html: team[8].name}}></h3>
+                                </button>
+
+                                <ModalTeam
+                                  ref={modalEl9}
+                                  name={team[8].name}
+                                  jobTitle={team[8].jobTitle}
+                                  bio={team[8].bio}
+                                  image={team[8].avatar.asset.url}
+                                />
+
+                                {team.length > 9 ? (
+                                  <>
+                                    <button className="group block hover:border-0 focus:border-0 hover:outline-none focus:outline-none mb-6 lg:mb-10 relative overflow-hidden" onClick={() => modalEl10.current.open()}>
+                                      <img className="inset-0 absolute z-10 mix-blend-overlay will-change opacity-0 group-hover:opacity-100 group-focus:opacity-100 transition-opacity ease-in-out duration-500" src="/images/team-overlay.jpg" alt="Supergraphic Overlay" />
+
+                                      <img className="opacity-100 hover:opacity-100 transition-opacity duration-500 ease-in-out block w-full object-center object-cover will-change" src={team[9].avatar.asset.url} alt={team[9].name} />
+
+                                      <div className="absolute bottom-0 left-0 w-full h-1/2 bg-gradient-to-t from-black to-transparent opacity-0 group-hover:opacity-70 transition-opacity ease-in-out duration-500"></div>
+
+                                      <h3 className="absolute bottom-0 left-0 text-off-white z-20 text-[28px] 2xl:text-[34px] uppercase italic w-full text-left leading-[0.9] -translate-x-full group-hover:-translate-x-1 transition-transform ease-in-out duration-500" dangerouslySetInnerHTML={{ __html: team[9].name}}></h3>
+                                    </button>
+
+                                    <ModalTeam
+                                      ref={modalEl10}
+                                      name={team[9].name}
+                                      jobTitle={team[9].jobTitle}
+                                      bio={team[9].bio}
+                                      image={team[9].avatar.asset.url}
+                                    />
+                                  </>
+                                ) : (
+                                  <img className="opacity-10 block w-full object-center object-cover will-change mb-6 lg:mb-16 relative" src="/images/team-placeholder.jpg" alt="Avatar" />
+                                )}
+
+                                <img className="opacity-10 block w-full object-center object-cover will-change mb-6 lg:mb-16 relative" src="/images/team-placeholder.jpg" alt="Avatar" />
+                              </div>
+                            </div>
+                          </div>
+                        )}
+
+                        {team.length > 10 && (
+                          <div className="lg:h-full hidden lg:block lg:pl-10">
+                            <div className="h-full w-auto lg:w-[30vh] lg:min-w-[30vh]" data-scroll data-scroll-speed={-0.75} data-scroll-direction="vertical">
+                              <div className="w-full lg:mt-[-25vh] h-full">
+                                <img className="opacity-10 block w-full object-center object-cover will-change mb-6 lg:mb-16 relative rotate-180" src="/images/team-placeholder.jpg" alt="Avatar" />
+
+                                <button className="group block hover:border-0 focus:border-0 hover:outline-none focus:outline-none mb-6 lg:mb-10 relative overflow-hidden" onClick={() => modalEl11.current.open()}>
+                                  <img className="inset-0 absolute z-10 mix-blend-overlay will-change opacity-0 group-hover:opacity-100 group-focus:opacity-100 transition-opacity ease-in-out duration-500" src="/images/team-overlay.jpg" alt="Supergraphic Overlay" />
+
+                                  <img className="opacity-100 hover:opacity-100 transition-opacity duration-500 ease-in-out block w-full object-center object-cover will-change" src={team[10].avatar.asset.url} alt={team[10].name} />
+
+                                  <div className="absolute bottom-0 left-0 w-full h-1/2 bg-gradient-to-t from-black to-transparent opacity-0 group-hover:opacity-70 transition-opacity ease-in-out duration-500"></div>
+
+                                  <h3 className="absolute bottom-0 left-0 text-off-white z-20 text-[28px] 2xl:text-[34px] uppercase italic w-full text-left leading-[0.9] -translate-x-full group-hover:-translate-x-1 transition-transform ease-in-out duration-500" dangerouslySetInnerHTML={{ __html: team[10].name}}></h3>
+                                </button>
+
+                                <ModalTeam
+                                  ref={modalEl11}
+                                  name={team[10].name}
+                                  jobTitle={team[10].jobTitle}
+                                  bio={team[10].bio}
+                                  image={team[10].avatar.asset.url}
+                                />
+
+                                {team.length > 11 ? (
+                                  <>
+                                    <button className="group block hover:border-0 focus:border-0 hover:outline-none focus:outline-none mb-6 lg:mb-10 relative overflow-hidden" onClick={() => modalEl12.current.open()}>
+                                      <img className="inset-0 absolute z-10 mix-blend-overlay will-change opacity-0 group-hover:opacity-100 group-focus:opacity-100 transition-opacity ease-in-out duration-500" src="/images/team-overlay.jpg" alt="Supergraphic Overlay" />
+
+                                      <img className="opacity-100 hover:opacity-100 transition-opacity duration-500 ease-in-out block w-full object-center object-cover will-change" src={team[11].avatar.asset.url} alt={team[11].name} />
+
+                                      <div className="absolute top-0 left-0 w-full h-1/2 bg-gradient-to-b from-black to-transparent opacity-0 group-hover:opacity-70 transition-opacity ease-in-out duration-500"></div>
+
+                                      <h3 className="absolute top-0 mt-6 left-0 text-off-white z-20 text-[28px] 2xl:text-[34px] uppercase italic w-full text-left leading-[0.9] -translate-x-full group-hover:-translate-x-1 transition-transform ease-in-out duration-500" dangerouslySetInnerHTML={{ __html: team[11].name}}></h3>
+                                    </button>
+
+                                    <ModalTeam
+                                      ref={modalEl12}
+                                      name={team[11].name}
+                                      jobTitle={team[11].jobTitle}
+                                      bio={team[11].bio}
+                                      image={team[11].avatar.asset.url}
+                                    />
+                                  </>
+                                ) : (
+                                  <img className="opacity-10 block w-full object-center object-cover will-change mb-6 lg:mb-16 relative rotate-180" src="/images/team-placeholder.jpg" alt="Avatar" />
+                                )}
+                              </div>
+                            </div>
+                          </div>
+                        )}
                       </m.section>
 
                       <m.section variants={fade} className="w-full lg:w-[110vmin] lg:min-w-[110vmin] lg:h-full whitespace-normal pl-[42px] pr-[25px] lg:pl-12 lg:pr-12 pb-[70px] lg:py-8 lg:flex lg:flex-wrap relative lg:border-r lg:border-soft-black-dark bg-off-white" id="careers">
@@ -480,14 +616,14 @@ export default function Team(initialData) {
                         </div>
                         
                         <nav className="w-full mt-auto lg:mr-10">
-                          <ul className="border-t border-soft-black-dark">
+                          <ul className={`border-t border-soft-black-dark ${careers.length > 4 ? 'flex flex-wrap' : ''}`}>
                             {/* <li className="py-3 border-b border-soft-black-dark text-[22px] lg:text-[26px] xl:text-[28px] 2xl:text-[42px]">
                               <a href="#" target="_blank" rel="noopener noreferrer" className="hover:text-orange focus:text-orange transition ease-in-out duration-300">→ CTO</a>
                             </li> */}
 
                             {careers.map((e, i) => {
                               return (
-                                <li className="py-3 border-b border-soft-black-dark text-[22px] lg:text-[26px] xl:text-[28px] 2xl:text-[42px]" key={i}>
+                                <li className={`py-3 border-b border-soft-black-dark text-[22px] lg:text-[26px] xl:text-[28px] 2xl:text-[42px] ${careers.length > 4 ? 'w-1/2' : ''}`} key={i}>
                                   <Link href={`/${e.slug.current}`}>
                                     <a className="hover:text-orange focus:text-orange transition ease-in-out duration-300">→ {e.title}</a>
                                   </Link>

@@ -16,10 +16,10 @@ export default function MenuTray({ modalEl, route, showLogo, scroll, isOpenPass 
 
   console.log(isOpen)
 
-  const reveal = {
-    initial: { y: '100%' },
-    isOpen: { y: 0, transition: { type: "easeInOut", duration: 0.55, delay: 0.2, ease: [0.83, 0, 0.17, 1] }},
-    exit: { y: '100%', transition: { type: "easeInOut", duration: 0.55, delay: 0, ease: [0.83, 0, 0.17, 1] }}
+  const fade = {
+    initial: { opacity: 0 },
+    isOpen: { opacity: 1, transition: { type: "easeInOut", duration: 0.55, delay: 0.2, ease: [0.83, 0, 0.17, 1] }},
+    exit: { opacity: 0, transition: { type: "easeInOut", duration: 0.55, delay: 0, ease: [0.83, 0, 0.17, 1] }}
   };
 
   return (
@@ -39,7 +39,7 @@ export default function MenuTray({ modalEl, route, showLogo, scroll, isOpenPass 
                     initial={"initial"}
                     animate={"isOpen"}
                     exit={"exit"}
-                    variants={reveal}
+                    variants={fade}
                     className={`flex items-center menu-item ${route === '/' && 'menu-item--active'}`}
                     data-content="Home"
                   >
@@ -58,7 +58,7 @@ export default function MenuTray({ modalEl, route, showLogo, scroll, isOpenPass 
                     initial={"initial"}
                     animate={"isOpen"}
                     exit={"exit"}
-                    variants={reveal}
+                    variants={fade}
                     className={`flex items-center menu-item ${route === '/mission' && 'menu-item--active'}`}
                     data-content="Mission"
                   >
@@ -77,7 +77,7 @@ export default function MenuTray({ modalEl, route, showLogo, scroll, isOpenPass 
                     initial={"initial"}
                     animate={"isOpen"}
                     exit={"exit"}
-                    variants={reveal}
+                    variants={fade}
                     className={`flex items-center menu-item ${route === '/team' && 'menu-item--active'}`}
                     data-content="Team"
                   >
@@ -100,7 +100,7 @@ export default function MenuTray({ modalEl, route, showLogo, scroll, isOpenPass 
                   initial={"initial"}
                   animate={"isOpen"}
                   exit={"exit"}
-                  variants={reveal}
+                  variants={fade}
                   className="block"
                 >
                   <a href="mailto:hello@field.energy" className={`block text-xl lg:text-2xl leading-none hover:text-orange focus:text-orange transition-colors ease-in-out duration-500`} onClick={() => modalEl.current.close()}>Contact us</a>

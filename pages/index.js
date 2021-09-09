@@ -79,8 +79,8 @@ export default function Home(initialData) {
           exit="exit"
           className={introContext ? 'opacity-100' : 'opacity-0'}
         >
-          <m.div className="fixed inset-0 z-[200000] pointer-events-none bg-orange" variants={swipe1}></m.div>
-          <m.div className="fixed inset-0 z-[200000] pointer-events-none bg-orange" variants={swipe2}></m.div>
+          <m.div className="fixed inset-0 z-[200000] pointer-events-none bg-off-white" variants={swipe1}></m.div>
+          <m.div className="fixed inset-0 z-[200000] pointer-events-none bg-off-white" variants={swipe2}></m.div>
         </m.div>
         
         <LocomotiveScrollProvider
@@ -126,17 +126,17 @@ export default function Home(initialData) {
                               <h1 className="text-[18vw] lg:text-[80px] xl:text-[112px] 2xl:text-[130px] 3xl:text-[155px] block leading-[0.85] uppercase italic ml-[-28px] lg:ml-[-3px] xl:ml-[-5px] 2xl:ml-[-5px] 3xl:ml-[-6px]">
                                 <div className="hidden md:block">
                                   <span className="block overflow-hidden">
-                                    <m.span variants={reveal} className="block">
+                                    <m.span variants={fade} className="block">
                                       Making The
                                     </m.span>
                                   </span>
                                   <span className="block overflow-hidden">
-                                    <m.span variants={reveal} className="block">
+                                    <m.span variants={fade} className="block">
                                       Planet Worth
                                     </m.span>
                                   </span>
                                   <span className="block overflow-hidden">
-                                    <m.span variants={reveal} className="block">
+                                    <m.span variants={fade} className="block">
                                       More
                                     </m.span>
                                   </span>
@@ -144,27 +144,27 @@ export default function Home(initialData) {
 
                                 <div className="block md:hidden">
                                   <span className="block overflow-hidden">
-                                    <m.span variants={reveal} className="block">
+                                    <m.span variants={fade} className="block">
                                       Making
                                     </m.span>
                                   </span>
                                   <span className="block overflow-hidden">
-                                    <m.span variants={reveal} className="block">
+                                    <m.span variants={fade} className="block">
                                       The
                                     </m.span>
                                   </span>
                                   <span className="block overflow-hidden">
-                                    <m.span variants={reveal} className="block">
+                                    <m.span variants={fade} className="block">
                                       Planet
                                     </m.span>
                                   </span>
                                   <span className="block overflow-hidden">
-                                    <m.span variants={reveal} className="block">
+                                    <m.span variants={fade} className="block">
                                       Worth
                                     </m.span>
                                   </span>
                                   <span className="block overflow-hidden">
-                                    <m.span variants={reveal} className="block">
+                                    <m.span variants={fade} className="block">
                                       More
                                     </m.span>
                                   </span>
@@ -178,7 +178,7 @@ export default function Home(initialData) {
                                   <a className="group w-full block bg-off-white uppercase text-center rounded-full px-4 lg:px-8 py-4 lg:py-[18px] text-[16px] lg:text-[21px] relative overflow-hidden">
                                     <span className="absolute inset-0 w-0 bg-soft-black-dark group-hover:w-full transition-all ease-in-out duration-[600ms]"></span>
                                     <span className="block overflow-hidden relative leading-none">
-                                      <m.span variants={reveal} className="block">
+                                      <m.span variants={fade} className="block">
                                         <span className="block relative z-10 transition-transform ease-in-out duration-[600ms] group-hover:translate-y-full">Our Mission</span>
                                         <span className="absolute inset-0 block z-10 transition-transform ease-in-out duration-[600ms] group-hover:translate-y-0 translate-y-full text-off-white">Our Mission</span>
                                       </m.span>
@@ -192,7 +192,7 @@ export default function Home(initialData) {
                                   <a className="group w-full block bg-off-white uppercase text-center rounded-full px-4 lg:px-8 py-4 lg:py-[18px] text-[16px] lg:text-[21px] relative overflow-hidden">
                                     <span className="absolute inset-0 w-0 bg-soft-black-dark group-hover:w-full transition-all ease-in-out duration-[600ms]"></span>
                                     <span className="block overflow-hidden relative leading-none">
-                                      <m.span variants={reveal} className="block">
+                                      <m.span variants={fade} className="block">
                                         <span className="block relative z-10 transition-transform ease-in-out duration-[600ms] group-hover:translate-y-full">Our Team</span>
                                         <span className="absolute inset-0 block z-10 transition-transform ease-in-out duration-[600ms] group-hover:translate-y-0 translate-y-full text-off-white">Our Team</span>
                                       </m.span>
@@ -207,7 +207,7 @@ export default function Home(initialData) {
                             <div className="w-full lg:p-8 lg:pb-8">
                               <div className="mb-6 lg:mb-12">
                                 <div className="overflow-hidden">
-                                  <m.span variants={reveal} className="block">
+                                  <m.span variants={fade} className="block">
                                     <MetaText>About Us</MetaText>
                                   </m.span>
                                 </div>
@@ -222,7 +222,7 @@ export default function Home(initialData) {
                                   <span className="w-full block bg-soft-black-dark text-off-white uppercase text-center rounded-full px-4 lg:px-8 py-3 lg:py-3 text-[16px] lg:text-[50px] relative overflow-hidden leading-[0.8]">
                                     <span className="absolute inset-0 w-0 bg-off-white group-hover:w-full transition-all ease-in-out duration-[600ms]"></span>
                                     <span className="block overflow-hidden relative">
-                                      <m.span variants={reveal} className="block">
+                                      <m.span variants={fade} className="block">
                                         <span className="block relative z-10 transition-transform ease-in-out duration-[600ms] group-hover:translate-y-full mt-[-6px]">→</span>
                                         <span className="absolute inset-0 block z-10 transition-transform ease-in-out duration-[600ms] group-hover:translate-y-0 translate-y-full text-soft-black-dark mt-[-6px]">→</span>
                                       </m.span>
