@@ -1,6 +1,6 @@
 export default {
   defaultTitle: 'Field Energy',
-  description: 'We’re breaking new ground, building energy infrastructure to be both renewable and profitable as standard. Field will finance, build, operate and monetise the renewable infrastructure we need to tackle these challenges - starting with battery storage. First in the UK, then globally.',
+  description: 'Field will finance, build and operate the renewable energy infrastructure we need to reach net zero — starting with battery storage.',
   titleTemplate: '%s | Field Energy',
   openGraph: {
     type: 'website',
