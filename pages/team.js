@@ -623,7 +623,7 @@ export default function Team(initialData) {
 
                             {careers.map((e, i) => {
                               return (
-                                <li className={`py-3 border-b border-soft-black-dark text-[22px] lg:text-[26px] xl:text-[28px] 2xl:text-[42px] ${careers.length > 4 ? 'w-1/2' : ''}`} key={i}>
+                                <li className={`py-3 border-b border-soft-black-dark text-[22px] lg:text-[26px] xl:text-[28px] 2xl:text-[42px] ${careers.length > 4 ? 'w-full md:w-1/2' : ''}`} key={i}>
                                   <Link href={`/${e.slug.current}`}>
                                     <a className="hover:text-orange focus:text-orange transition ease-in-out duration-300">→ {e.title}</a>
                                   </Link>
