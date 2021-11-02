@@ -616,12 +616,12 @@ export default function Team(initialData) {
                         </div>
                         
                         <nav className="w-full mt-auto lg:mr-10">
-                          <ul className={`border-t border-soft-black-dark ${careers.length > 4 ? 'flex flex-wrap' : ''}`}>
+                          <ul className={`border-t border-soft-black-dark`}>
                             {/* <li className="py-3 border-b border-soft-black-dark text-[22px] lg:text-[26px] xl:text-[28px] 2xl:text-[42px]">
                               <a href="#" target="_blank" rel="noopener noreferrer" className="hover:text-orange focus:text-orange transition ease-in-out duration-300">→ CTO</a>
                             </li> */}
 
-                            {careers.map((e, i) => {
+                            {/* {careers.map((e, i) => {
                               return (
                                 <li className={`py-3 border-b border-soft-black-dark text-[22px] lg:text-[26px] xl:text-[28px] 2xl:text-[42px] ${careers.length > 4 ? 'w-full md:w-1/2' : ''}`} key={i}>
                                   <Link href={`/${e.slug.current}`}>
@@ -629,10 +629,11 @@ export default function Team(initialData) {
                                   </Link>
                                 </li>
                               )
-                            })}
-                            {/* <li className="py-3 border-b border-soft-black-dark text-[22px] lg:text-[26px] xl:text-[28px] 2xl:text-[42px]">
-                              <a href="/images/_FP&A Manager.pdf" target="_blank" rel="noopener noreferrer" className="hover:text-orange focus:text-orange transition ease-in-out duration-300">→ FP&amp;A Manager</a>
-                            </li> */}
+                            })} */}
+                            
+                            <li className="py-0 xl:py-3 2xl:py-2 border-b border-soft-black-dark text-[22px] lg:text-[26px] xl:text-[32px] 2xl:text-[42px]">
+                              <a href="https://fieldenergy.applytojob.com/" target="_blank" rel="noopener noreferrer" className="hover:text-orange focus:text-orange transition ease-in-out duration-300 flex flex-wrap items-center leading-none py-5">See all open roles <span className="block ml-auto text-[44px] lg:text-[50px] xl:text-[58px] 2xl:text-[70px]">→</span></a>
+                            </li>
                             {/* <li className="py-3 border-b border-soft-black-dark text-[22px] lg:text-[26px] xl:text-[28px] 2xl:text-[42px]">
                               <a href="#" target="_blank" rel="noopener noreferrer" className="hover:text-orange focus:text-orange transition ease-in-out duration-300">→ General Counsel</a>
                             </li> */}
