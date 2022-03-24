@@ -1,29 +1,16 @@
-import React, { useState, useEffect, useCallback } from "react";
-import { useEmblaCarousel } from "embla-carousel/react";
-
-const PrevButton = ({ enabled, onClick }) => (
-  <button
-    className="embla__button embla__button--prev"
-    onClick={onClick}
-    disabled={!enabled}
-  >
-    →
-  </button>
-);
-
-const NextButton = ({ enabled, onClick }) => (
-  <button
-    className="embla__button embla__button--next"
-    onClick={onClick}
-    disabled={!enabled}
-  >
-    →
-  </button>
-);
-
+import React, { useState, useEffect, useCallback, useRef, createRef } from "react";
+import useEmblaCarousel from "embla-carousel-react";
+import { ModalTeam } from "./modal-team";
 
 const TeamCarousel = ({ slides }) => {
-  const [viewportRef, embla] = useEmblaCarousel({ skipSnaps: false });
+  const [viewportRef, embla] = useEmblaCarousel({
+    axis: "y",
+    skipSnaps: false,
+    loop: true,
+    inViewThreshold: 0.85,
+    speed: 4,
+    slidesToScroll: 4
+  });
   const [prevBtnEnabled, setPrevBtnEnabled] = useState(false);
   const [nextBtnEnabled, setNextBtnEnabled] = useState(false);
 
@@ -41,6 +28,8 @@ const TeamCarousel = ({ slides }) => {
     onSelect();
   }, [embla, onSelect]);
 
+  let mmodalEl1 = useRef();
+
   return (
     <div className="embla">
       <div className="embla__viewport" ref={viewportRef}>
@@ -48,22 +37,36 @@ const TeamCarousel = ({ slides }) => {
           {slides.map((slide, index) => (
             <div className="embla__slide" key={index}>
               <div className="embla__slide__inner mb-8">
-                <img
-                  className="embla__slide__img"
-                  src={slide.image}
-                  alt={slide.name}
-                />
-              </div>
-              {/* <h2 className="text-3xl lg:text-4xl 2xl:text-5xl block uppercase italic mt-2">{slide.name}</h2>
+                <button className="group block hover:border-0 focus:border-0 hover:outline-none focus:outline-none mb-6 lg:mb-10 relative overflow-hidden" onClick={() => modalEl1.open()}>
+                  <img className="h-full w-full inset-0 absolute z-10 mix-blend-overlay will-change opacity-0 group-hover:opacity-100 group-focus:opacity-100 transition-opacity ease-in-out duration-500" src="/images/team-overlay.jpg" alt="Supergraphic Overlay" />
 
-              <div className="content" dangerouslySetInnerHTML={{ __html: slide.bio }}>
-              </div> */}
+                  <img className="opacity-100 hover:opacity-100 transition-opacity duration-500 ease-in-out block w-full object-center object-cover will-change" src={slide.avatar.asset.url} alt={slide.name} />
+
+                  <div className="absolute bottom-0 left-0 w-full h-1/2 bg-gradient-to-t from-black to-transparent opacity-0 group-hover:opacity-70 transition-opacity ease-in-out duration-500"></div>
+
+                  <h3 className="absolute bottom-0 left-0 text-off-white z-20 text-[28px] 2xl:text-[34px] uppercase italic w-full text-left leading-[0.9] -translate-x-full group-hover:-translate-x-1 transition-transform ease-in-out duration-500" dangerouslySetInnerHTML={{ __html: slide.name}}></h3>
+                </button>
+              </div>
             </div>
           ))}
         </div>
       </div>
-      <PrevButton onClick={scrollPrev} enabled={prevBtnEnabled} />
-      <NextButton onClick={scrollNext} enabled={nextBtnEnabled} />
+
+      <button
+        className="embla__button embla__button--prev"
+        onClick={scrollPrev}
+        disabled={!prevBtnEnabled}
+      >
+        <span>↑</span>
+      </button>
+
+      <button
+        className="embla__button embla__button--next"
+        onClick={scrollNext}
+        disabled={!nextBtnEnabled}
+      >
+        <span>↓</span>
+      </button>
     </div>
   );
 };
