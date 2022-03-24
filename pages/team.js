@@ -2,6 +2,7 @@ import { useEffect, useRef, useState, useContext, useCallback } from 'react'
 import { useRouter } from 'next/router'
 import useEmblaCarousel from "embla-carousel-react";
 import Layout from '@/components/layout'
+import Slider from 'react-slick'
 import Header from '@/components/header'
 import ProgressBar from '@/components/progress-bar'
 import { fade, reveal, swipe1, swipe2 } from '@/helpers/transitions'
@@ -91,32 +92,44 @@ export default function Team(initialData) {
 
   const router = useRouter()
 
-  const [viewportRef, embla] = useEmblaCarousel({
-    skipSnaps: false,
-    // loop: true,
-    slidesToScroll: 2,
-    inViewThreshold: 0.5,
-    speed: 3,
-    align: 'start',
-  });
-  const [prevBtnEnabled, setPrevBtnEnabled] = useState(false);
-  const [nextBtnEnabled, setNextBtnEnabled] = useState(false);
+  // const [viewportRef, embla] = useEmblaCarousel({
+  //   skipSnaps: false,
+  //   loop: true,
+  //   slidesToScroll: 2,
+  //   inViewThreshold: 0.4,
+  //   containScroll: 'keepSnaps',
+  //   speed: 3,
+  //   align: 'start',
+  // });
+  // const [prevBtnEnabled, setPrevBtnEnabled] = useState(false);
+  // const [nextBtnEnabled, setNextBtnEnabled] = useState(false);
 
-  const scrollPrev = useCallback(() => embla && embla.scrollPrev(), [embla]);
-  const scrollNext = useCallback(() => embla && embla.scrollNext(), [embla]);
-  const onSelect = useCallback(() => {
-    if (!embla) return;
-    setPrevBtnEnabled(embla.canScrollPrev());
-    setNextBtnEnabled(embla.canScrollNext());
-  }, [embla]);
+  // const scrollPrev = useCallback(() => embla && embla.scrollPrev(), [embla]);
+  // const scrollNext = useCallback(() => embla && embla.scrollNext(), [embla]);
+  // const onSelect = useCallback(() => {
+  //   if (!embla) return;
+  //   setPrevBtnEnabled(embla.canScrollPrev());
+  //   setNextBtnEnabled(embla.canScrollNext());
+  // }, [embla]);
+
+  // useEffect(() => {
+  //   setIntroContext(true)
+  //   if (!embla) return;
+  //   embla.on("select", onSelect);
+  //   onSelect();
+  // }, [embla, onSelect]);
 
   useEffect(() => {
     setIntroContext(true)
-    if (!embla) return;
-    embla.on("select", onSelect);
-    onSelect();
-  }, [embla, onSelect]);
+  });
   
+  const settings = {
+    slidesToShow: 5,
+    slidesToScroll: 3,
+    rows: 3,
+    arrows: true,
+    centerPadding: '150px'
+  };
 
   return (
     <Layout>
@@ -359,93 +372,80 @@ export default function Team(initialData) {
                           </div>
                         </div>
                         <div className="lg:h-full hidden lg:block">
-                          <div className="h-full w-auto">
-                            <div className="embla">
-                              <div className="embla__viewport" ref={viewportRef}>
-                                <div className="embla__container">
-                                  {team.map((slide, index) => {
-                                      let modal = null;
+                          <div className="w-[90vw] mt-[-10vh]">
+                            <Slider {...settings}>
+                              {team.map((slide, index) => {
+                                let modal = null;
 
-                                      if (index == 0) {
-                                        modal = modalEl1
-                                      } else if (index == 1) {
-                                        modal = modalEl2
-                                      } else if (index == 2) {
-                                        modal = modalEl3
-                                      } else if (index == 3) {
-                                        modal = modalEl4
-                                      } else if (index == 4) {
-                                        modal = modalEl5
-                                      } else if (index == 5) {
-                                        modal = modalEl6
-                                      } else if (index == 6) {
-                                        modal = modalEl7
-                                      } else if (index == 7) {
-                                        modal = modalEl8
-                                      } else if (index == 8) {
-                                        modal = modalEl9
-                                      } else if (index == 9) {
-                                        modal = modalEl10
-                                      } else if (index == 10) {
-                                        modal = modalEl11
-                                      } else if (index == 11) {
-                                        modal = modalEl12
-                                      } else if (index == 12) {
-                                        modal = modalEl13
-                                      } else if (index == 13) {
-                                        modal = modalEl14
-                                      } else if (index == 14) {
-                                        modal = modalEl15
-                                      } else if (index == 15) {
-                                        modal = modalEl16
-                                      } else if (index == 16) {
-                                        modal = modalEl17
-                                      } else if (index == 17) {
-                                        modal = modalEl18
-                                      } else if (index == 18) {
-                                        modal = modalEl19
-                                      } else if (index == 19) {
-                                        modal = modalEl20
-                                      } else if (index == 20) {
-                                        modal = modalEl21
-                                      } else if (index == 21) {
-                                        modal = modalEl22
-                                      }
-                                    return (
-                                      <div className="embla__slide" key={index}>
-                                        <div className="embla__slide__inner">
-                                          <button className="group hover:border-0 focus:border-0 hover:outline-none focus:outline-none mb-6 lg:mb-10 relative overflow-hidden block w-full h-full" onClick={() => modal.current.open()}>
-                                            <img className="h-full w-full inset-0 absolute z-10 mix-blend-overlay will-change opacity-0 group-hover:opacity-100 group-focus:opacity-100 transition-opacity ease-in-out duration-500" src="/images/team-overlay.jpg" alt="Supergraphic Overlay" />
+                                if (index == 0) {
+                                  modal = modalEl1
+                                } else if (index == 1) {
+                                  modal = modalEl2
+                                } else if (index == 2) {
+                                  modal = modalEl3
+                                } else if (index == 3) {
+                                  modal = modalEl4
+                                } else if (index == 4) {
+                                  modal = modalEl5
+                                } else if (index == 5) {
+                                  modal = modalEl6
+                                } else if (index == 6) {
+                                  modal = modalEl7
+                                } else if (index == 7) {
+                                  modal = modalEl8
+                                } else if (index == 8) {
+                                  modal = modalEl9
+                                } else if (index == 9) {
+                                  modal = modalEl10
+                                } else if (index == 10) {
+                                  modal = modalEl11
+                                } else if (index == 11) {
+                                  modal = modalEl12
+                                } else if (index == 12) {
+                                  modal = modalEl13
+                                } else if (index == 13) {
+                                  modal = modalEl14
+                                } else if (index == 14) {
+                                  modal = modalEl15
+                                } else if (index == 15) {
+                                  modal = modalEl16
+                                } else if (index == 16) {
+                                  modal = modalEl17
+                                } else if (index == 17) {
+                                  modal = modalEl18
+                                } else if (index == 18) {
+                                  modal = modalEl19
+                                } else if (index == 19) {
+                                  modal = modalEl20
+                                } else if (index == 20) {
+                                  modal = modalEl21
+                                } else if (index == 21) {
+                                  modal = modalEl22
+                                }
+                                
+                                return (
+                                  <div key={index} className="w-1/2 h-[40vh] px-4 py-4 ">
+                                    <div className="bg-black bg-opacity-20 w-full h-full relative overflow-hidden">
+                                      <button className="group hover:border-0 focus:border-0 hover:outline-none focus:outline-none mb-6 lg:mb-10 relative overflow-hidden block w-full h-full" onClick={() => modal.current.open()}>
+                                        <ImageWrapper
+                                          layout="fill"
+                                          src={slide.avatar.asset.url}
+                                          alt={slide.name}
+                                          className={`opacity-100 hover:opacity-100 transition-opacity duration-500 ease-in-out block w-full h-full object-top object-cover will-change`}
+                                        />
+                                        
 
-                                            <img className="opacity-100 hover:opacity-100 transition-opacity duration-500 ease-in-out block w-full h-full object-bottom object-cover will-change" src={slide.avatar.asset.url} alt={slide.name} />
+                                        <img className="h-full w-full inset-0 absolute z-10 mix-blend-overlay will-change opacity-0 group-hover:opacity-100 group-focus:opacity-100 transition-opacity ease-in-out duration-500" src="/images/team-overlay.jpg" alt="Supergraphic Overlay" />
 
-                                            <div className="absolute bottom-0 left-0 w-full h-1/2 bg-gradient-to-t from-black to-transparent opacity-0 group-hover:opacity-70 transition-opacity ease-in-out duration-500"></div>
+                                        <div className="absolute bottom-0 left-0 w-full h-1/2 bg-gradient-to-t from-black to-transparent opacity-0 group-hover:opacity-70 transition-opacity ease-in-out duration-500"></div>
 
-                                            <h3 className="absolute bottom-0 left-0 text-off-white z-20 text-[28px] 2xl:text-[34px] uppercase italic w-full text-left leading-[0.9] -translate-x-full group-hover:-translate-x-1 transition-transform ease-in-out duration-500" dangerouslySetInnerHTML={{ __html: slide.name}}></h3>
-                                          </button>
-                                        </div>
-                                      </div>
-                                    )
-                                  })}
-                                </div>
-                              </div>
-
-                              <button
-                                className="embla__button embla__button--prev"
-                                onClick={scrollPrev}
-                                disabled={!prevBtnEnabled}
-                              >
-                                <span>←</span>
-                              </button>
-
-                              <button
-                                className="embla__button embla__button--next"
-                                onClick={scrollNext}
-                                disabled={!nextBtnEnabled}
-                              >
-                                <span>→</span>
-                              </button>
-                            </div>
+                                        <h3 className="absolute bottom-0 left-0 text-off-white z-20 text-[28px] 2xl:text-[34px] uppercase italic w-full text-left leading-[0.9] -translate-x-full group-hover:-translate-x-1 transition-transform ease-in-out duration-500" dangerouslySetInnerHTML={{ __html: slide.name}}></h3>
+                                      </button>
+                                    </div>
+                                  </div>
+                                )
+                              })}
+                            </Slider>
                           </div>
                         </div>
                         
