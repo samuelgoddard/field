@@ -372,7 +372,8 @@ export default function Team(initialData) {
                           </div>
                         </div>
                         <div className="lg:h-full hidden lg:block">
-                          <div className="w-[90vw] mt-[-10vh]">
+                          <div className="w-[90vw] mt-[-10vh] relative">
+                            <div className="absolute top-0 right-0 bottom-0 h-full w-[18vw] bg-off-white z-50 backdrop-opacity-50 opacity-75 backdrop-filter"></div>
                             <Slider {...settings}>
                               {team.map((slide, index) => {
                                 let modal = null;
@@ -424,7 +425,7 @@ export default function Team(initialData) {
                                 }
                                 
                                 return (
-                                  <div key={index} className="w-1/2 h-[40vh] px-4 py-4 ">
+                                  <div key={index} className="w-1/2 h-[40vh] px-4 py-4">
                                     <div className="bg-black bg-opacity-20 w-full h-full relative overflow-hidden">
                                       <button className="group hover:border-0 focus:border-0 hover:outline-none focus:outline-none mb-6 lg:mb-10 relative overflow-hidden block w-full h-full" onClick={() => modal.current.open()}>
                                         <ImageWrapper
