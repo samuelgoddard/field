@@ -374,7 +374,13 @@ export default function Team(initialData) {
                         </div>
                         <div className="lg:h-full hidden lg:block">
                           <div className="w-[90vw] mt-[1.25vh] relative">
-                            <div className="absolute top-0 right-0 bottom-0 h-full w-[18vw] bg-off-white z-50 backdrop-opacity-50 opacity-75 backdrop-filter"></div>
+                            <div className="absolute top-0 right-0 bottom-0 h-full w-[18vw] bg-off-white z-50 backdrop-opacity-75 opacity-75 backdrop-filter"></div>
+                            
+                            <div className="absolute top-0 left-[-2px] bottom-0 h-full w-[8.6vw] bg-off-white z-50"></div>
+
+                            <div className="absolute top-0 left-0 bottom-0 h-full w-[18vw] bg-off-white z-50 backdrop-opacity-50 opacity-75 backdrop-filter"></div>
+                            
+                            <div className="absolute top-0 right-[-2px] bottom-0 h-full w-[8.6vw] bg-off-white z-50"></div>
                             <Slider {...settings}>
                               {team.map((slide, index) => {
                                 let modal = null;
@@ -435,7 +441,6 @@ export default function Team(initialData) {
                                           className={`opacity-100 hover:opacity-100 transition-opacity duration-500 ease-in-out block w-full h-full object-top object-cover will-change`}
                                         />
                                         
-
                                         <img className="h-full w-full inset-0 absolute z-10 mix-blend-overlay will-change opacity-0 group-hover:opacity-100 group-focus:opacity-100 transition-opacity ease-in-out duration-500" src="/images/team-overlay.jpg" alt="Supergraphic Overlay" />
 
                                         <div className="absolute bottom-0 left-0 w-full h-1/2 bg-gradient-to-t from-black to-transparent opacity-0 group-hover:opacity-70 transition-opacity ease-in-out duration-500"></div>

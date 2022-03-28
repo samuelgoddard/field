@@ -141,8 +141,7 @@ body {
     color: #fff;
 }
 .slick-prev {
-    left: -25px;
-    @apply hidden !important;
+    left: 7.2vw;
 }
 [dir="rtl"] .slick-prev {
     right: -25px;
