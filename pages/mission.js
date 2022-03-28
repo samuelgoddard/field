@@ -107,7 +107,7 @@ export default function Mission(initialData) {
                             layout="fill"
                             src={MissionSupergraphic}
                             alt="Field Supergraphic"
-                            quality={90}
+                            quality={75}
                             className={`w-full h-full absolute inset-0 z-0 object-cover object-center will-change supergraphic--animation`}
                           />
                         </m.div>

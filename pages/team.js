@@ -25,6 +25,7 @@ import Div100vh from 'react-div-100vh'
 import ImageWrapper from '@/components/image-wrapper'
 import { IntroContext } from '../context/intro'
 import TeamCarousel from '@/components/team-carousel'
+import SanityImage from '@/components/sanity-image';
 
 const query = `{
   "teamLanding": *[_type == "teamLanding"][0]{
@@ -174,7 +175,7 @@ export default function Team(initialData) {
                             layout="fill"
                             src={teamSupergraphic}
                             alt="Field Supergraphic"
-                            quality={90}
+                            quality={75}
                             className={`w-full h-full absolute inset-0 z-0 object-cover object-center will-change supergraphic--animation`}
                           />
                         </m.div>
@@ -364,7 +365,7 @@ export default function Team(initialData) {
                                     name={team.name}
                                     jobTitle={team.jobTitle}
                                     bio={team.bio}
-                                    image={team.avatar.asset.url}
+                                    image={team.avatar}
                                   />
                                 </div>
                               )
@@ -428,9 +429,8 @@ export default function Team(initialData) {
                                   <div key={index} className="w-1/2 h-[32.5vh] px-4 py-4">
                                     <div className="bg-black bg-opacity-20 w-full h-full relative overflow-hidden">
                                       <button className="group hover:border-0 focus:border-0 hover:outline-none focus:outline-none mb-6 lg:mb-10 relative overflow-hidden block w-full h-full" onClick={() => modal.current.open()}>
-                                        <ImageWrapper
-                                          layout="fill"
-                                          src={slide.avatar.asset.url}
+                                        <SanityImage
+                                          image={slide.avatar}
                                           alt={slide.name}
                                           className={`opacity-100 hover:opacity-100 transition-opacity duration-500 ease-in-out block w-full h-full object-top object-cover will-change`}
                                         />

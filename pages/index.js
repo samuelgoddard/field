@@ -110,7 +110,7 @@ export default function Home(initialData) {
                             layout="fill"
                             src={homeSupergraphic}
                             alt="Field Supergraphic"
-                            quality={90}
+                            quality={75}
                             className={`w-full h-full absolute inset-0 object-fill lg:object-cover object-right-bottom lg:object-center will-change supergraphic--animation`}
                           />
                         </m.div>
