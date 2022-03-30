@@ -225,6 +225,6 @@ body {
 
 .object-cover {
   img {
-    @apply object-cover object-top w-full h-full absolute inset-0;
+    @apply object-cover object-center w-full h-full absolute inset-0;
   }
 }
